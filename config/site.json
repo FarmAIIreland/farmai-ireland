@@ -1,0 +1,87 @@
+{
+  "site": {
+    "name": "FarmAI Ireland",
+    "tagline": "Practical AI knowledge, built for Irish farming",
+    "description": "FarmAI Ireland helps Irish farmers understand and use AI tools — plain English, no hype, just what works on the ground.",
+    "url": "https://farmaiireland.ie",
+    "email": "hello@farmaiireland.ie",
+    "language": "en-IE",
+    "country": "Ireland"
+  },
+  "navigation": {
+    "main": [
+      { "label": "Home",    "path": "/" },
+      { "label": "Read",    "path": "/read" },
+      { "label": "Guides",  "path": "/guides" },
+      { "label": "Tools",   "path": "/tools" },
+      { "label": "About",   "path": "/about" }
+    ],
+    "footer": [
+      { "label": "Privacy Policy", "path": "/legal/privacy" },
+      { "label": "Terms of Use",   "path": "/legal/terms" },
+      { "label": "Cookie Policy",  "path": "/legal/cookies" },
+      { "label": "Disclaimer",     "path": "/legal/disclaimer" }
+    ]
+  },
+  "seo": {
+    "defaultTitle": "FarmAI Ireland — AI for Irish Farmers",
+    "defaultDescription": "Practical guides, articles and tools helping Irish farmers get to grips with AI — written in plain English.",
+    "keywords": ["AI for farmers", "Irish farming technology", "farm tech Ireland", "precision farming Ireland"],
+    "ogImage": "/images/farmai-og.jpg",
+    "twitterHandle": "@FarmAIIreland"
+  },
+  "content": {
+    "postsPerPage": 10,
+    "featuredArticlesOnHome": 3,
+    "pillars": [
+      {
+        "slug": "dairy",
+        "label": "Dairy",
+        "description": "AI tools and insights for Irish dairy farmers — from herd management to milk recording.",
+        "tag": "Dairy"
+      },
+      {
+        "slug": "beef-sheep",
+        "label": "Beef & Sheep",
+        "description": "Practical AI for beef and sheep farmers — weighing, health monitoring, and more.",
+        "tag": "Beef & Sheep"
+      },
+      {
+        "slug": "tillage",
+        "label": "Tillage",
+        "description": "How AI is helping tillage farmers with crop planning, weather, and yield forecasting.",
+        "tag": "Tillage"
+      }
+    ],
+    "officialAdviceBanner": "This guide is a starting point. For decisions about grants, animal health, or significant farm investments, always check with your Teagasc advisor or relevant authority.",
+    "faq": [
+      {
+        "question": "Will AI replace me as a farmer?",
+        "answer": "No. AI is a tool, not a replacement. It handles data and pattern recognition — the judgment, experience, and knowledge of your land stays with you. Every guide we publish is designed to put you in control, not hand it over to a machine."
+      },
+      {
+        "question": "Do I need to be tech-savvy to use AI tools?",
+        "answer": "Most of the AI tools we cover work on a smartphone and need little more than a photo or a few taps. We only cover tools that are genuinely accessible — if it needs a computer science degree, we won't recommend it."
+      },
+      {
+        "question": "How much does AI cost for farmers?",
+        "answer": "Many tools are free or low-cost. Some are built into existing farm management software you may already use. We always include a cost section in our guides so you know what you're getting into before you start."
+      },
+      {
+        "question": "Can I trust the information on FarmAI Ireland?",
+        "answer": "Every article and guide draws from publicly available information from Teagasc, gov.ie, ICBF, Bord Bia, and other trusted Irish agricultural bodies. We cite our sources in every piece. We're not affiliated with any government body or agri-business."
+      }
+    ]
+  },
+  "ads": {
+    "enabled": false
+  },
+  "analytics": {
+    "googleAnalytics": "G-XXXXXXXXXX"
+  },
+  "social": {
+    "youtube":  "https://www.youtube.com/@FarmAIIreland",
+    "twitter":  "https://twitter.com/FarmAIIreland",
+    "facebook": "https://www.facebook.com/FarmAIIreland"
+  }
+}
