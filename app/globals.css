@@ -2,20 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-inter: 'Inter', sans-serif;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
+  font-family: var(--font-lora), Georgia, serif;
   background-color: #F7F5F0;
   color: #1A1A1A;
   font-size: 16px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 @layer utilities {

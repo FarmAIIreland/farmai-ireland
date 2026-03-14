@@ -1,6 +1,7 @@
 import { notFound }        from 'next/navigation';
 import { MDXRemote }       from 'next-mdx-remote/rsc';
 import { getArticleBySlug, getArticleSlugs } from '@/lib/getContent';
+import { formatPillar }    from '@/lib/formatPillar';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
 
@@ -32,9 +33,9 @@ export default function ArticlePage({ params }: Props) {
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4">
           <span className="text-[11px] font-semibold uppercase tracking-wide text-brand-green">
-            {article.pillar.replace(/-/g, ' ')}
+            {formatPillar(article.pillar)}
           </span>
           <span className="text-ui-muted text-xs">·</span>
           <time className="text-ui-muted text-xs" dateTime={article.date}>{formattedDate}</time>
@@ -42,7 +43,7 @@ export default function ArticlePage({ params }: Props) {
           <span className="text-ui-muted text-xs">{article.readTime} min read</span>
         </div>
 
-        {/* Title */}
+        {/* Title — weight 600 */}
         <h1 className="font-serif text-3xl sm:text-4xl font-semibold text-ui-text leading-snug mb-6">
           {article.title}
         </h1>
@@ -54,7 +55,7 @@ export default function ArticlePage({ params }: Props) {
           </div>
         )}
 
-        {/* Body */}
+        {/* Body — weight 400, Lora via prose */}
         <div className="prose prose-lg max-w-none prose-headings:font-serif prose-a:text-brand-green prose-a:no-underline hover:prose-a:underline">
           <MDXRemote source={article.content} />
         </div>
@@ -67,7 +68,7 @@ export default function ArticlePage({ params }: Props) {
               {article.sources.map(s => (
                 <li key={s.url} className="text-sm">
                   <a href={s.url} target="_blank" rel="noopener noreferrer"
-                     className="font-medium text-brand-green hover:underline">
+                     className="font-semibold text-brand-green hover:underline">
                     {s.label}
                   </a>
                   {s.description && (

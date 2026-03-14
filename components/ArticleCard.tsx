@@ -1,12 +1,13 @@
 import Link from 'next/link';
+import { formatPillar } from '@/lib/formatPillar';
 
 interface ArticleCardProps {
-  title:    string;
-  slug:     string;
-  pillar:   string;
-  date:     string;
-  readTime: number;
-  excerpt?: string;
+  title:     string;
+  slug:      string;
+  pillar:    string;
+  date:      string;
+  readTime:  number;
+  excerpt?:  string;
   basePath?: 'read' | 'guides';
 }
 
@@ -40,7 +41,7 @@ export function ArticleCard({
       <div className="flex flex-col flex-1 p-5">
         {/* Pillar tag */}
         <span className="inline-block mb-2 text-[11px] font-semibold uppercase tracking-wide text-brand-green">
-          {pillar.replace(/-/g, ' ')}
+          {formatPillar(pillar)}
         </span>
 
         {/* Title */}

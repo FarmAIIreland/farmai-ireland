@@ -10,9 +10,9 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          green:      '#1D9E75',
-          dark:       '#085041',
-          amber:      '#E8A020',
+          green:  '#1D9E75',
+          dark:   '#085041',
+          amber:  '#E8A020',
         },
         ui: {
           bg:     '#F7F5F0',
@@ -22,8 +22,12 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans:  ['var(--font-inter)', 'sans-serif'],
+        // Lora is used for everything — body, headings, nav, buttons
+        sans:  ['var(--font-lora)', 'Georgia', 'serif'],
         serif: ['var(--font-lora)', 'Georgia', 'serif'],
+      },
+      borderRadius: {
+        button: '0.5rem',
       },
       maxWidth: {
         reading: '700px',
@@ -32,11 +36,12 @@ const config: Config = {
       typography: {
         DEFAULT: {
           css: {
+            fontFamily:     'var(--font-lora), Georgia, serif',
             color:          '#1A1A1A',
             a:              { color: '#1D9E75', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } },
-            h1:             { color: '#1A1A1A' },
-            h2:             { color: '#1A1A1A' },
-            h3:             { color: '#1A1A1A' },
+            h1:             { color: '#1A1A1A', fontFamily: 'var(--font-lora), Georgia, serif', fontWeight: '600' },
+            h2:             { color: '#1A1A1A', fontFamily: 'var(--font-lora), Georgia, serif', fontWeight: '600' },
+            h3:             { color: '#1A1A1A', fontFamily: 'var(--font-lora), Georgia, serif', fontWeight: '600' },
             strong:         { color: '#1A1A1A' },
             'code::before': { content: '""' },
             'code::after':  { content: '""' },
