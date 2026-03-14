@@ -2,6 +2,7 @@ import { notFound }        from 'next/navigation';
 import { MDXRemote }       from 'next-mdx-remote/rsc';
 import { getGuideBySlug, getGuideSlugs } from '@/lib/getContent';
 import { formatPillar }    from '@/lib/formatPillar';
+import { ArticleFeedback } from '@/components/ArticleFeedback';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
 
@@ -79,6 +80,9 @@ export default function GuidePage({ params }: Props) {
             </ul>
           </div>
         )}
+
+        {/* Feedback */}
+        <ArticleFeedback slug={guide.slug} page="guides" />
 
       </article>
     </main>
