@@ -1,5 +1,8 @@
-import Link from 'next/link';
+import Link  from 'next/link';
+import Image from 'next/image';
 import { formatPillar } from '@/lib/formatPillar';
+
+const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80';
 
 interface ArticleCardProps {
   title:     string;
@@ -8,6 +11,7 @@ interface ArticleCardProps {
   date:      string;
   readTime:  number;
   excerpt?:  string;
+  image?:    string;
   basePath?: 'read' | 'guides';
 }
 
@@ -18,9 +22,11 @@ export function ArticleCard({
   date,
   readTime,
   excerpt,
+  image,
   basePath = 'read',
 }: ArticleCardProps) {
-  const href = `/${basePath}/${slug}`;
+  const href   = `/${basePath}/${slug}`;
+  const imgSrc = image ?? DEFAULT_IMAGE;
 
   const formattedDate = new Date(date).toLocaleDateString('en-IE', {
     day:   'numeric',
@@ -33,9 +39,15 @@ export function ArticleCard({
       href={href}
       className="group flex flex-col bg-white rounded-[16px] border border-ui-border shadow-sm hover:shadow-md transition-shadow overflow-hidden"
     >
-      {/* Placeholder image area */}
-      <div className="aspect-[16/9] bg-gradient-to-br from-[#e8f5ef] to-[#d4ede3] flex items-center justify-center">
-        <span className="text-brand-green/30 text-4xl">🌿</span>
+      {/* Cover image */}
+      <div className="relative aspect-[16/9] overflow-hidden">
+        <Image
+          src={imgSrc}
+          alt=""
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+        />
       </div>
 
       <div className="flex flex-col flex-1 p-5">

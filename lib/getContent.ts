@@ -9,6 +9,7 @@ export interface ArticleMeta {
   date:                 string;
   readTime:             number;
   excerpt?:             string;
+  image?:               string;
   featured?:            boolean;
   officialAdviceBanner?: boolean;
   sources?:             { label: string; url: string; description: string }[];

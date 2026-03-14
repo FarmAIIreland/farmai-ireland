@@ -1,6 +1,7 @@
 ---
 title: "Your first 10 ChatGPT prompts as an Irish farmer — copy, paste, done"
 slug: "chatgpt-first-10-prompts-farmers"
+image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
 type: "guide"
 pillar: "getting-started"
 date: "2026-05-07"

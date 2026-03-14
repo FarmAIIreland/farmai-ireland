@@ -1,6 +1,7 @@
 ---
 title: "What is NDVI and can it actually help on your farm? A plain English explanation"
 slug: "ndvi-satellite-maps-irish-farms"
+image: "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=800&q=80"
 type: "guide"
 pillar: "machinery"
 date: "2026-04-23"

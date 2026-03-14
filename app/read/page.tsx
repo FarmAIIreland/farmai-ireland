@@ -29,6 +29,7 @@ export default function ReadPage() {
                 date={article.date}
                 readTime={article.readTime}
                 excerpt={article.excerpt}
+                image={article.image}
                 basePath="read"
               />
             ))}

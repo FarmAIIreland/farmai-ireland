@@ -29,6 +29,7 @@ export default function GuidesPage() {
                 date={guide.date}
                 readTime={guide.readTime}
                 excerpt={guide.excerpt}
+                image={guide.image}
                 basePath="guides"
               />
             ))}
