@@ -29,9 +29,25 @@ const config: Config = {
         reading: '700px',
         site:    '1200px',
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            color:          '#1A1A1A',
+            a:              { color: '#1D9E75', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } },
+            h1:             { color: '#1A1A1A' },
+            h2:             { color: '#1A1A1A' },
+            h3:             { color: '#1A1A1A' },
+            strong:         { color: '#1A1A1A' },
+            'code::before': { content: '""' },
+            'code::after':  { content: '""' },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 };
 
 export default config;
