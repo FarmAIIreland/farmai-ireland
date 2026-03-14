@@ -16,7 +16,7 @@ export function NewsletterStrip() {
       <div className="max-w-2xl mx-auto text-center">
 
         {/* Eyebrow */}
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#5DCAA5] mb-3">
+        <p className="inline-flex items-center text-xs font-semibold uppercase tracking-[0.2em] text-[#5DCAA5] mb-3 border-l-4 border-[#E8A020] pl-3">
           FarmAI Monthly
         </p>
 

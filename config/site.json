@@ -10,23 +10,55 @@
   },
   "navigation": {
     "main": [
-      { "label": "Home",    "path": "/" },
-      { "label": "Read",    "path": "/read" },
-      { "label": "Guides",  "path": "/guides" },
-      { "label": "Tools",   "path": "/tools" },
-      { "label": "About",   "path": "/about" }
+      {
+        "label": "Home",
+        "path": "/"
+      },
+      {
+        "label": "Read",
+        "path": "/read"
+      },
+      {
+        "label": "Guides",
+        "path": "/guides"
+      },
+      {
+        "label": "Tools",
+        "path": "/tools"
+      },
+      {
+        "label": "About",
+        "path": "/about"
+      }
     ],
     "footer": [
-      { "label": "Privacy Policy", "path": "/legal/privacy" },
-      { "label": "Terms of Use",   "path": "/legal/terms" },
-      { "label": "Cookie Policy",  "path": "/legal/cookies" },
-      { "label": "Disclaimer",     "path": "/legal/disclaimer" }
+      {
+        "label": "Privacy Policy",
+        "path": "/legal/privacy"
+      },
+      {
+        "label": "Terms of Use",
+        "path": "/legal/terms"
+      },
+      {
+        "label": "Cookie Policy",
+        "path": "/legal/cookies"
+      },
+      {
+        "label": "Disclaimer",
+        "path": "/legal/disclaimer"
+      }
     ]
   },
   "seo": {
     "defaultTitle": "FarmAI Ireland — AI for Irish Farmers",
     "defaultDescription": "Practical guides, articles and tools helping Irish farmers get to grips with AI — written in plain English.",
-    "keywords": ["AI for farmers", "Irish farming technology", "farm tech Ireland", "precision farming Ireland"],
+    "keywords": [
+      "AI for farmers",
+      "Irish farming technology",
+      "farm tech Ireland",
+      "precision farming Ireland"
+    ],
     "ogImage": "/images/farmai-og.jpg",
     "twitterHandle": "@FarmAIIreland"
   },
@@ -80,8 +112,18 @@
     "googleAnalytics": "G-XXXXXXXXXX"
   },
   "social": {
-    "youtube":  "https://www.youtube.com/@FarmAIIreland",
-    "twitter":  "https://twitter.com/FarmAIIreland",
+    "youtube": "https://www.youtube.com/@FarmAIIreland",
+    "twitter": "https://twitter.com/FarmAIIreland",
     "facebook": "https://www.facebook.com/FarmAIIreland"
+  },
+  "hero": {
+    "line1": "FarmAI Ireland —",
+    "phrases": [
+      "Learn AI",
+      "Save Time",
+      "Cut Paperwork",
+      "Tips & Tricks",
+      "Real Answers"
+    ]
   }
 }

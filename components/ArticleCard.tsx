@@ -30,7 +30,7 @@ export function ArticleCard({
   return (
     <Link
       href={href}
-      className="group flex flex-col bg-white rounded-[12px] border border-ui-border shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+      className="group flex flex-col bg-white rounded-[16px] border border-ui-border shadow-sm hover:shadow-md transition-shadow overflow-hidden"
     >
       {/* Placeholder image area */}
       <div className="aspect-[16/9] bg-gradient-to-br from-[#e8f5ef] to-[#d4ede3] flex items-center justify-center">
