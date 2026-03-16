@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FarmAI Ireland — Operation Pipeline</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #F7F5F0;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 24px;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    font-family: 'Lora', serif;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 6px;
+  }
+
+  .header p {
+    font-size: 13px;
+    color: #6B7280;
+  }
+
+  /* Pipeline columns */
+  .pipeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .row-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6B7280;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 0;
+  }
+
+  .row.three { justify-content: space-between; }
+
+  .box {
+    border-radius: 10px;
+    padding: 14px 18px;
+    flex: 1;
+    max-width: 260px;
+    border: 1px solid;
+  }
+
+  .box-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A1A1A;
+    margin-bottom: 3px;
+  }
+
+  .box-sub {
+    font-size: 12px;
+    color: #6B7280;
+    line-height: 1.4;
+  }
+
+  /* Colours */
+  .teal   { background: #E1F5EE; border-color: #1D9E75; }
+  .teal .box-title { color: #085041; }
+  .amber  { background: #FEF3CD; border-color: #E8A020; }
+  .amber .box-title { color: #7A4E00; }
+  .blue   { background: #E6F1FB; border-color: #378ADD; }
+  .blue .box-title { color: #0C447C; }
+  .gray   { background: #F1EFE8; border-color: #B4B2A9; }
+  .gray .box-title { color: #2C2C2A; }
+  .green  { background: #EAF3DE; border-color: #639922; }
+  .green .box-title { color: #173404; }
+  .purple { background: #EEEDFE; border-color: #7F77DD; }
+  .purple .box-title { color: #26215C; }
+  .coral  { background: #FAECE7; border-color: #D85A30; }
+  .coral .box-title { color: #4A1B0C; }
+
+  /* Arrows */
+  .arrow-row {
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+  }
+
+  .arrow-row.split {
+    justify-content: space-around;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+
+  .arrow-line {
+    width: 1.5px;
+    height: 20px;
+    background: #B4B2A9;
+  }
+
+  .arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #B4B2A9;
+  }
+
+  .arrow-label {
+    font-size: 11px;
+    color: #6B7280;
+    margin-bottom: 2px;
+  }
+
+  /* Connector for three→one */
+  .funnel-arrows {
+    position: relative;
+    height: 36px;
+    margin: 0 0 0 0;
+  }
+
+  .funnel-arrows svg {
+    width: 100%;
+    height: 36px;
+  }
+
+  /* Revenue section */
+  .revenue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .revenue-item {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 12px 14px;
+  }
+
+  .revenue-item .label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #6B7280;
+    margin-bottom: 4px;
+  }
+
+  .revenue-item .value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1D9E75;
+  }
+
+  .revenue-item .note {
+    font-size: 11px;
+    color: #6B7280;
+    margin-top: 2px;
+  }
+
+  /* KPI row */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .kpi-box {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .kpi-box .metric { font-size: 11px; color: #6B7280; }
+  .kpi-box .target { font-size: 16px; font-weight: 600; color: #1D9E75; }
+
+  /* section gap */
+  .section { margin-bottom: 6px; }
+  .section-gap { margin-top: 24px; }
+
+  /* footer */
+  .footer {
+    text-align: center;
+    margin-top: 36px;
+    font-size: 12px;
+    color: #6B7280;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #1D9E75;
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="badge">FarmAI Ireland</div>
+    <h1>Full Operation Pipeline</h1>
+    <p>From idea to live article — weekly rhythm, ~4–5 hours total</p>
+  </div>
+
+  <!-- CONTENT INPUTS -->
+  <div class="section">
+    <div class="row-label">Content inputs</div>
+    <div class="row three">
+      <div class="box teal">
+        <div class="box-title">50-topic backlog</div>
+        <div class="box-sub">content-strategy.md — organised by pillar</div>
+      </div>
+      <div class="box teal">
+        <div class="box-title">Your ideas</div>
+        <div class="box-sub">Google Form bookmark on phone → Sheet</div>
+      </div>
+      <div class="box teal">
+        <div class="box-title">Reader questions</div>
+        <div class="box-sub">Ask FarmAI contact form submissions</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">
+    <div class="arrow">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+    </div>
+  </div>
+
+  <!-- SUNDAY CRON -->
+  <div class="section">
+    <div class="row-label">Sunday 8pm — automated</div>
+    <div class="row">
+      <div class="box amber" style="max-width:520px; width:100%">
+        <div class="box-title">Vercel Cron fires → Claude API</div>
+        <div class="box-sub">Reads ideas sheet first, then backlog. Generates 3 draft articles in FarmAI voice. Pulls Unsplash image per article. Saves to /content/drafts/</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">
+    <div class="arrow">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+    </div>
+  </div>
+
+  <!-- PREVIEW EMAIL -->
+  <div class="section">
+    <div class="row-label">Monday morning — your inbox</div>
+    <div class="row">
+      <div class="box blue" style="max-width:520px; width:100%">
+        <div class="box-title">Preview email → hello@farmai.ie</div>
+        <div class="box-sub">Title, first paragraph, and GitHub link for each of the 3 drafts. Reply "approve" or give feedback. Takes 5 minutes over coffee.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row split">
+    <div class="arrow">
+      <div class="arrow-label">Approve</div>
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+    </div>
+    <div class="arrow">
+      <div class="arrow-label">Feedback</div>
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+    </div>
+  </div>
+
+  <!-- APPROVE / REVISE -->
+  <div class="section">
+    <div class="row" style="gap:24px; max-width:600px; margin:0 auto;">
+      <div class="box green">
+        <div class="box-title">Commit + push</div>
+        <div class="box-sub">Claude Code → GitHub → Vercel deploys in 60s</div>
+      </div>
+      <div class="box gray">
+        <div class="box-title">Revise</div>
+        <div class="box-sub">Claude rewrites, sends new preview</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">
+    <div class="arrow">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+    </div>
+  </div>
+
+  <!-- LIVE -->
+  <div class="section">
+    <div class="row">
+      <div class="box teal" style="max-width:520px; width:100%; text-align:center;">
+        <div class="box-title">Live on farmai.ie</div>
+        <div class="box-sub">Article visible, Airtable feedback active, sitemap updated, GA tracking</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">
+    <div class="arrow">
+      <div class="arrow-line"></div>
+      <div class="arrow-head"></div>
+    </div>
+  </div>
+
+  <!-- KPI EMAIL -->
+  <div class="section">
+    <div class="row-label">Monday 8am KPI email</div>
+    <div class="row">
+      <div class="box purple" style="max-width:520px; width:100%">
+        <div class="box-title">Weekly report → hello@farmai.ie</div>
+        <div class="box-sub">6 KPI numbers + broken link flags + unread sponsorship inbox count</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KPI TARGETS -->
+  <div class="section-gap">
+    <div class="row-label">Month 3 KPI targets</div>
+    <div class="kpi-row">
+      <div class="kpi-box"><div class="metric">Monthly visitors</div><div class="target">2,000</div></div>
+      <div class="kpi-box"><div class="metric">Email subscribers</div><div class="target">200</div></div>
+      <div class="kpi-box"><div class="metric">Newsletter open rate</div><div class="target">40%+</div></div>
+      <div class="kpi-box"><div class="metric">Articles published</div><div class="target">30+</div></div>
+      <div class="kpi-box"><div class="metric">Thumbs up rate</div><div class="target">70%+</div></div>
+      <div class="kpi-box"><div class="metric">Active sponsors</div><div class="target">1+</div></div>
+    </div>
+  </div>
+
+  <!-- REVENUE -->
+  <div class="section-gap">
+    <div class="row-label">Revenue streams — in priority order</div>
+    <div class="revenue-grid">
+      <div class="revenue-item">
+        <div class="label">Month 3 — Sponsorship</div>
+        <div class="value">€400–800/month</div>
+        <div class="note">FBD, AIB Agri, Tiirlán — category exclusivity</div>
+      </div>
+      <div class="revenue-item">
+        <div class="label">Month 3 — YouTube</div>
+        <div class="value">Partner Programme</div>
+        <div class="note">ElevenLabs + Pictory pipeline. 1k subs target.</div>
+      </div>
+      <div class="revenue-item">
+        <div class="label">Month 6 — Display ads</div>
+        <div class="value">Google AdSense</div>
+        <div class="note">Only after trust established — not before</div>
+      </div>
+      <div class="revenue-item">
+        <div class="label">Year 2 — Scale</div>
+        <div class="value">License / acquire</div>
+        <div class="note">ConstructionAI.ie, TradeAI.ie — same playbook</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BREAK EVEN -->
+  <div class="section-gap">
+    <div class="row-label">Break-even summary</div>
+    <div class="row">
+      <div class="box amber" style="max-width:100%; width:100%">
+        <div class="box-title">Core monthly burn: €99 &nbsp;·&nbsp; Full with YouTube: €154 &nbsp;·&nbsp; One sponsor at €400/month = profitable</div>
+        <div class="box-sub">Three verticals × one sponsor each at €300/month = €900 revenue vs ~€350 costs. Content sites sell at 30–40× monthly revenue.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    FarmAI Ireland · Operated by Samac Consulting · hello@farmai.ie · March 2026
+  </div>
+
+</div>
+</body>
+</html>
