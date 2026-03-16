@@ -106,7 +106,8 @@
     ]
   },
   "ads": {
-    "enabled": false
+    "enabled":       false,
+    "activeSponsors": 0
   },
   "analytics": {
     "googleAnalytics": "G-VQC756088N"

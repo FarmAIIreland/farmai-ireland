@@ -68,8 +68,39 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 |------|-------|
 | Mailchimp form action URL | https://farmai.us8.list-manage.com/subscribe/post?u=1f348941acbc5a0faa981e4f0&id=2757c8b36c |
 | Airtable Base ID | app53fvQL3Imcp2ao |
-| Airtable Table ID | tbldrruA63sW4ieVj |
+| Airtable Feedback Table ID | tbldrruA63sW4ieVj |
 | Airtable API key location | 1Password — Airtable API Token FarmAI |
+
+---
+
+## Environment Variables — Vercel
+
+| Variable | Purpose | Where to get it |
+|----------|---------|-----------------|
+| `AIRTABLE_API_KEY` | Airtable write access (feedback + KPI snapshots) | 1Password — Airtable API Token FarmAI |
+| `AIRTABLE_BASE_ID` | Airtable base | `app53fvQL3Imcp2ao` |
+| `AIRTABLE_TABLE_ID` | Feedback table | `tbldrruA63sW4ieVj` |
+| `AIRTABLE_KPI_TABLE_ID` | KPI snapshots table (week-on-week) | Create table in Airtable — see note below |
+| `MAILCHIMP_API_KEY` | Mailchimp subscriber + open rate data | Mailchimp → Account → Extras → API keys |
+| `MAILCHIMP_LIST_ID` | Mailchimp audience ID | Mailchimp → Audience → Settings → Audience name and defaults |
+| `MAILCHIMP_SERVER_PREFIX` | Mailchimp data centre prefix | `us8` (from form URL) |
+| `VERCEL_API_TOKEN` | Read Vercel Web Analytics | vercel.com/account/tokens |
+| `VERCEL_PROJECT_ID` | Vercel project identifier | Vercel project → Settings → General |
+| `RESEND_API_KEY` | Send Monday KPI email | resend.com → API Keys |
+| `RESEND_FROM_EMAIL` | From address for KPI email (optional) | Default: `KPI Report <reports@farmaiireland.ie>` — domain must be verified in Resend |
+| `DASHBOARD_PASSWORD` | Password for /dashboard | Set any strong password |
+
+### Airtable KPI Snapshots table setup
+Create a table called **KPI Snapshots** in base `app53fvQL3Imcp2ao` with these fields:
+- `Date` — Date field
+- `Visitors` — Number
+- `Subscribers` — Number
+- `OpenRate` — Number (stores 0–100)
+- `ThumbsUpRate` — Number (stores 0–100)
+- `ArticleCount` — Number
+- `Sponsors` — Number
+
+Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week deltas on the dashboard appear after the second Monday report.
 
 ---
 
