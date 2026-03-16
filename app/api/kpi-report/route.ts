@@ -64,7 +64,7 @@ export async function GET() {
     const resend = new Resend(resendKey);
     const { error } = await resend.emails.send({
       from:    process.env.RESEND_FROM_EMAIL ?? 'KPI Report <reports@farmai.ie>',
-      to:      'hello@farmai.ie',
+      to:      'mrjohnfrobinson@gmail.com', // TEMP: testing only
       subject: `FarmAI Ireland — Weekly KPI Report (${shortDate})`,
       text:    emailBody,
     });
