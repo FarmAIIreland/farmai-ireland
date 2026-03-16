@@ -1,5 +1,8 @@
 import Link from 'next/link';
-import { fetchKpis, fetchPreviousSnapshot } from '@/lib/kpi';
+import { fetchKpis, fetchPreviousSnapshot, fetchGmailUnread } from '@/lib/kpi';
+
+const HERO_IMAGE =
+  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -16,9 +19,9 @@ function wowDelta(
     return { text: 'No prior data', cls: 'text-ui-muted' };
   }
   const diff = current - previous;
-  if (diff === 0) return { text: '→ no change', cls: 'text-ui-muted' };
+  if (diff === 0) return { text: '→ no change',                               cls: 'text-ui-muted'   };
   if (diff > 0)   return { text: `↑ ${diff.toLocaleString('en-IE')}`,         cls: 'text-brand-green' };
-                  return { text: `↓ ${Math.abs(diff).toLocaleString('en-IE')}`, cls: 'text-red-500' };
+                  return { text: `↓ ${Math.abs(diff).toLocaleString('en-IE')}`, cls: 'text-red-500'  };
 }
 
 // ─── KPI Card ─────────────────────────────────────────────────────────────────
@@ -27,13 +30,15 @@ function KpiCard({
   label,
   value,
   wow,
+  accent = false,
 }: {
-  label: string;
-  value: string;
-  wow:   { text: string; cls: string };
+  label:   string;
+  value:   string;
+  wow:     { text: string; cls: string };
+  accent?: boolean;
 }) {
   return (
-    <div className="bg-white rounded-[12px] border border-ui-border p-6 flex flex-col gap-2">
+    <div className={`rounded-[12px] border p-6 flex flex-col gap-2 ${accent ? 'bg-[#e8f5ef] border-brand-green/30' : 'bg-white border-ui-border'}`}>
       <p className="text-[11px] font-semibold uppercase tracking-widest text-ui-muted">{label}</p>
       <p className="text-5xl font-bold text-ui-text leading-none">{value}</p>
       <p className={`text-sm font-medium ${wow.cls}`}>{wow.text} vs last week</p>
@@ -44,90 +49,113 @@ function KpiCard({
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default async function DashboardPage() {
-  const [kpi, prev] = await Promise.all([
+  const [kpi, prev, gmail] = await Promise.all([
     fetchKpis(),
     fetchPreviousSnapshot(),
+    fetchGmailUnread(),
   ]);
-
-  const cards: { label: string; value: string; current: number | null; previous: number | null }[] = [
-    {
-      label:    'Monthly Visitors',
-      value:    fmt(kpi.visitors),
-      current:  kpi.visitors,
-      previous: prev?.visitors ?? null,
-    },
-    {
-      label:    'Email Subscribers',
-      value:    fmt(kpi.subscribers),
-      current:  kpi.subscribers,
-      previous: prev?.subscribers ?? null,
-    },
-    {
-      label:    'Newsletter Open Rate',
-      value:    fmt(kpi.openRate, '%'),
-      current:  kpi.openRate,
-      previous: prev?.openRate ?? null,
-    },
-    {
-      label:    'Articles Published',
-      value:    fmt(kpi.articleCount),
-      current:  kpi.articleCount,
-      previous: prev?.articleCount ?? null,
-    },
-    {
-      label:    'Thumbs Up Rate',
-      value:    fmt(kpi.thumbsUpRate, '%'),
-      current:  kpi.thumbsUpRate,
-      previous: prev?.thumbsUpRate ?? null,
-    },
-    {
-      label:    'Active Sponsors',
-      value:    fmt(kpi.sponsors),
-      current:  kpi.sponsors,
-      previous: prev?.sponsors ?? null,
-    },
-  ];
 
   const fetchedAt = new Date(kpi.fetchedAt).toLocaleString('en-IE', {
     weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
     hour: '2-digit', minute: '2-digit',
   });
 
+  const kpiCards = [
+    { label: 'Monthly Visitors',      value: fmt(kpi.visitors),    current: kpi.visitors,    previous: prev?.visitors    ?? null },
+    { label: 'Newsletter Open Rate',  value: fmt(kpi.openRate, '%'), current: kpi.openRate,  previous: prev?.openRate    ?? null },
+    { label: 'Articles Published',    value: fmt(kpi.articleCount),  current: kpi.articleCount, previous: prev?.articleCount ?? null },
+    { label: 'Thumbs Up Rate',        value: fmt(kpi.thumbsUpRate, '%'), current: kpi.thumbsUpRate, previous: prev?.thumbsUpRate ?? null },
+    { label: 'Active Sponsors',       value: fmt(kpi.sponsors),     current: kpi.sponsors,    previous: prev?.sponsors    ?? null },
+  ];
+
+  const inboxCards = [
+    { label: 'Sponsorship Unread',    value: fmt(gmail.sponsorship), current: gmail.sponsorship, previous: null },
+    { label: 'Media Unread',          value: fmt(gmail.media),       current: gmail.media,       previous: null },
+  ];
+
   return (
-    <div className="min-h-screen bg-ui-bg px-4 py-12">
-      <div className="max-w-site mx-auto">
+    <div className="min-h-screen bg-ui-bg">
 
-        {/* Header */}
-        <div className="flex items-start justify-between mb-10 gap-4">
-          <div>
-            <h1 className="text-3xl font-bold text-ui-text mb-1">KPI Dashboard</h1>
-            <p className="text-sm text-ui-muted">FarmAI Ireland · {fetchedAt}</p>
+      {/* Header with farmland background */}
+      <div
+        className="relative px-4 py-12 overflow-hidden"
+        style={{ backgroundImage: `url('${HERO_IMAGE}')`, backgroundSize: 'cover', backgroundPosition: 'center 60%' }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="relative z-10 max-w-site mx-auto">
+
+          {/* Nav */}
+          <div className="flex items-start justify-between mb-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-white/60">FarmAI Ireland</p>
+            <Link
+              href="/api/dashboard-logout"
+              className="text-sm text-white/70 hover:text-white border border-white/30 px-4 py-1.5 rounded-button transition-colors"
+            >
+              Sign out
+            </Link>
           </div>
-          <Link
-            href="/api/dashboard-logout"
-            className="shrink-0 text-sm text-ui-muted hover:text-ui-text border border-ui-border px-4 py-2 rounded-button transition-colors"
-          >
-            Sign out
-          </Link>
+
+          {/* Hero subscriber number */}
+          <div className="mb-2">
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-white/60 mb-1">
+              Email Subscribers
+            </p>
+            <p className="text-7xl sm:text-8xl font-bold text-white leading-none">
+              {fmt(kpi.subscribers)}
+            </p>
+            <p className={`text-sm font-medium mt-2 ${wowDelta(kpi.subscribers, prev?.subscribers ?? null).cls.replace('text-brand-green', 'text-emerald-400')}`}>
+              {wowDelta(kpi.subscribers, prev?.subscribers ?? null).text} vs last week
+            </p>
+          </div>
+
+          <p className="text-xs text-white/50 mt-6">{fetchedAt}</p>
+        </div>
+      </div>
+
+      {/* KPI Grid */}
+      <div className="px-4 py-10 max-w-site mx-auto space-y-8">
+
+        <div>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-ui-muted mb-4">Site Metrics</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {kpiCards.map(c => (
+              <KpiCard
+                key={c.label}
+                label={c.label}
+                value={c.value}
+                wow={wowDelta(c.current, c.previous)}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* KPI Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cards.map(c => (
-            <KpiCard
-              key={c.label}
-              label={c.label}
-              value={c.value}
-              wow={wowDelta(c.current, c.previous)}
-            />
-          ))}
+        <div>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-ui-muted mb-4">Inbox Monitor</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {inboxCards.map(c => (
+              <KpiCard
+                key={c.label}
+                label={c.label}
+                value={c.value}
+                wow={wowDelta(c.current, c.previous)}
+                accent={typeof c.current === 'number' && c.current > 0}
+              />
+            ))}
+          </div>
+          {(gmail.sponsorship === null && gmail.media === null) && (
+            <p className="text-xs text-ui-muted mt-3">
+              Gmail not connected — set GMAIL_* env vars and run{' '}
+              <code className="bg-white border border-ui-border rounded px-1">/api/gmail-setup</code> once.
+            </p>
+          )}
         </div>
 
-        {/* Footer note */}
-        <p className="mt-10 text-xs text-ui-muted">
-          Data refreshes on every page load. Automated email every Monday at 8am via{' '}
-          <code className="bg-white border border-ui-border rounded px-1 py-0.5">/api/kpi-report</code>.
-          Week-on-week deltas appear after the second Monday report.
+        <p className="text-xs text-ui-muted pb-4">
+          Data refreshes on every page load. Monday 8am email via{' '}
+          <code className="bg-white border border-ui-border rounded px-1">/api/kpi-report</code>.{' '}
+          Sunday 8pm content pipeline via{' '}
+          <code className="bg-white border border-ui-border rounded px-1">/api/content-pipeline</code>.{' '}
+          WoW deltas appear after second Monday report.
         </p>
 
       </div>

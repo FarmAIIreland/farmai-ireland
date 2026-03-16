@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 16, 2026 · Session 7*
+*Last updated: March 16, 2026 · Session 9*
 
 ---
 
@@ -37,6 +37,12 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | farmai.ie pointed at Vercel | ❌ Pending — DNS A record in Hosting Ireland (see instructions below) |
 | Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
 | Google Analytics ID added | ✅ Done — Session 7 (G-VQC756088N in config/site.json) |
+| KPI dashboard (/dashboard) | ✅ Done — Session 8/9 — password-protected, WoW deltas, farmland hero |
+| Monday KPI email + broken link check | ✅ Done — Session 8/9 — /api/kpi-report + Vercel Cron Mon 8am UTC |
+| Sunday content pipeline | ✅ Done — Session 9 — /api/content-pipeline + Vercel Cron Sun 8pm UTC |
+| Daily email responder drafts | ✅ Done — Session 9 — /api/email-responder + Vercel Cron daily 8am UTC |
+| Gmail labels + filters setup | ✅ Done — Session 9 — /api/gmail-setup one-time route |
+| Gmail unread inbox monitor on dashboard | ✅ Done — Session 9 — Sponsorship + Media label counts |
 
 ---
 
@@ -89,6 +95,14 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | `RESEND_API_KEY` | Send Monday KPI email | resend.com → API Keys |
 | `RESEND_FROM_EMAIL` | From address for KPI email (optional) | Default: `KPI Report <reports@farmaiireland.ie>` — domain must be verified in Resend |
 | `DASHBOARD_PASSWORD` | Password for /dashboard | Set any strong password |
+| `ANTHROPIC_API_KEY` | Claude API for content pipeline article generation | console.anthropic.com → API Keys |
+| `UNSPLASH_ACCESS_KEY` | Unsplash image search for generated articles | unsplash.com/developers → Your apps |
+| `GMAIL_CLIENT_ID` | Gmail OAuth2 — client ID | Google Cloud Console → APIs & Services → Credentials |
+| `GMAIL_CLIENT_SECRET` | Gmail OAuth2 — client secret | Google Cloud Console → APIs & Services → Credentials |
+| `GMAIL_REFRESH_TOKEN` | Gmail OAuth2 — long-lived refresh token | Generate via OAuth2 playground with gmail.modify + gmail.settings.basic scopes |
+| `GOOGLE_SHEETS_ID` | Google Sheet ID for idea capture form | Extract from sheet URL — `docs.google.com/spreadsheets/d/{ID}/edit` |
+| `GITHUB_TOKEN` | GitHub PAT for committing draft articles | github.com → Settings → Developer settings → Personal access tokens (repo scope) |
+| `GITHUB_REPO` | GitHub repo for content commits (optional) | Default: `FarmAIIreland/farmai-ireland` |
 
 ### Airtable KPI Snapshots table setup
 Create a table called **KPI Snapshots** in base `app53fvQL3Imcp2ao` with these fields:
@@ -101,6 +115,30 @@ Create a table called **KPI Snapshots** in base `app53fvQL3Imcp2ao` with these f
 - `Sponsors` — Number
 
 Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week deltas on the dashboard appear after the second Monday report.
+
+---
+
+## Automation — Vercel Cron Jobs
+
+| Cron | Schedule | What it does |
+|------|----------|--------------|
+| `/api/kpi-report` | Monday 8am UTC | Fetches 6 KPIs, checks broken links, sends plain-text email via Resend, saves Airtable snapshot |
+| `/api/content-pipeline` | Sunday 8pm UTC | Reads Google Sheet ideas + content-strategy.md backlog, generates 3 draft articles via Claude API, commits to `/content/drafts/` via GitHub API, emails preview |
+| `/api/email-responder` | Daily 8am UTC | Reads unread Gmail per label (Sponsorship/Media/Reader/Partnership/Complaint), creates draft replies from `/docs/email-templates.md`, marks as read, sends notification email if drafts created |
+
+### One-time setup routes
+
+| Route | Purpose |
+|-------|---------|
+| `GET /api/gmail-setup` | Creates Gmail labels and keyword filters from `/docs/gmail-config.md`. Safe to re-run (idempotent). |
+
+### Config files (edit in /docs, auto-deploys on push)
+
+| File | Controls |
+|------|---------|
+| `docs/gmail-config.md` | Gmail label list + filter keywords per label + notification address |
+| `docs/email-templates.md` | Reply templates per label with `{{firstName}}`, `{{originalSubject}}`, `{{todayDate}}` variables |
+| `docs/content-strategy.md` | 50-topic backlog — pipeline picks unpublished topics from here |
 
 ---
 
@@ -164,6 +202,8 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 5 | Mailchimp connected, Airtable created + wired, ArticleFeedback live, homepage reviewed — all 6 sections confirmed |
 | Session 6 | Outstanding items: DNS, Cloudflare, Analytics, polish pass, Unsplash images, 2 articles, sitemap/robots |
 | Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created; GA script wired in layout.tsx; button border polished; robots.txt confirmed live; Airtable feedback broken — diagnosed incorrect AIRTABLE_TABLE_ID in Vercel env vars, corrected to tbldrruA63sW4ieVj, redeployed, confirmed working; Google Analytics ID G-VQC756088N added to config/site.json; section spacing fix identified (not yet applied); DNS/Cloudflare pending manual setup |
+| Session 8 | KPI dashboard built (/dashboard + login + middleware); Monday KPI email + Vercel Cron; Unsplash images curated for all 10 content files; hero redesigned to h-[40vh]/h-[50vh] banner with larger departures board text |
+| Session 9 | Full automation build: content pipeline (Claude API → GitHub drafts → Resend preview), idea capture (Google Sheets), email responder (Gmail drafts from templates), Gmail filters setup, broken link checker, dashboard upgraded (subscriber hero + Gmail inbox monitor + farmland bg), all crons configured in vercel.json, all config editable in /docs markdown files |
 
 ---
 
@@ -181,16 +221,20 @@ This keeps the context document live and accurate for the next session opener.
 
 ---
 
-## Session 8 — Next Actions (Priority Order)
+## Session 10 — Next Actions (Priority Order)
 
 | # | Action | Status |
 |---|--------|--------|
-| 1 | Section spacing fix — py-12 → py-12 md:py-20 on article/guide pages; py-12 sm:py-20 on home sections + TopicPillars | ❌ Code change needed |
-| 2 | Point farmai.ie at Vercel — add A record 76.76.21.21 in Hosting Ireland DNS panel | ❌ Manual |
-| 3 | Set up Cloudflare free account — proxy farmai.ie through Cloudflare after DNS is live | ❌ Manual |
-| 4 | Mobile 375px visual check on live site | ❌ Manual |
-| 5 | Cookie banner | ❌ Not started |
-| 6 | Draft PR outreach copy + create social accounts — soft launch prep | ❌ Not started |
+| 1 | Configure Google OAuth2 — get GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN and add to Vercel | ❌ Manual — Google Cloud Console |
+| 2 | Run /api/gmail-setup once after setting Gmail env vars — creates Sponsorship, Media, Reader, Partnership, Complaint labels + filters | ❌ Manual (one-time) |
+| 3 | Add ANTHROPIC_API_KEY, UNSPLASH_ACCESS_KEY, GOOGLE_SHEETS_ID, GITHUB_TOKEN to Vercel | ❌ Manual |
+| 4 | Create Google Form → connected to Google Sheet for idea capture; set GOOGLE_SHEETS_ID | ❌ Manual |
+| 5 | Verify resend.com domain (farmaiireland.ie) and confirm RESEND_FROM_EMAIL | ❌ Manual |
+| 6 | Section spacing fix — py-12 → py-12 md:py-20 on article/guide pages | ❌ Code change needed |
+| 7 | Point farmai.ie at Vercel — add A record 76.76.21.21 in Hosting Ireland DNS panel | ❌ Manual |
+| 8 | Set up Cloudflare free account — proxy farmai.ie through Cloudflare after DNS is live | ❌ Manual |
+| 9 | Mobile 375px visual check on live site | ❌ Manual |
+| 10 | Cookie banner | ❌ Not started |
 
 ---
 

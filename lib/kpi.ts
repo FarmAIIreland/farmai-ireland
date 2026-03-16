@@ -1,5 +1,7 @@
 import fs   from 'fs';
 import path from 'path';
+import { getGoogleAccessToken } from './google-auth';
+import { getLabelId, getUnreadCount } from './gmail';
 
 export interface KpiData {
   visitors:     number | null;
@@ -224,6 +226,35 @@ export async function fetchPreviousSnapshot(): Promise<KpiData | null> {
   } catch (err) {
     console.error('fetchPreviousSnapshot error:', err);
     return null;
+  }
+}
+
+// ─── Gmail unread counts ──────────────────────────────────────────────────────
+
+export interface GmailUnread {
+  sponsorship: number | null;
+  media:       number | null;
+}
+
+export async function fetchGmailUnread(): Promise<GmailUnread> {
+  const token = await getGoogleAccessToken();
+  if (!token) return { sponsorship: null, media: null };
+
+  try {
+    const [sponsorshipId, mediaId] = await Promise.all([
+      getLabelId(token, 'Sponsorship'),
+      getLabelId(token, 'Media'),
+    ]);
+
+    const [sponsorship, media] = await Promise.all([
+      sponsorshipId ? getUnreadCount(token, sponsorshipId) : Promise.resolve(null),
+      mediaId       ? getUnreadCount(token, mediaId)       : Promise.resolve(null),
+    ]);
+
+    return { sponsorship, media };
+  } catch (err) {
+    console.error('fetchGmailUnread error:', err);
+    return { sponsorship: null, media: null };
   }
 }
 

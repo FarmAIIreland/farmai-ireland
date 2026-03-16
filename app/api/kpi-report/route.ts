@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 import { Resend }       from 'resend';
 import { fetchKpis, saveKpiSnapshot } from '@/lib/kpi';
+import { checkBrokenLinks }           from '@/lib/broken-links';
+
+export const maxDuration = 60;
 
 function fmt(n: number | null, suffix = ''): string {
   if (n === null) return '—';
@@ -9,7 +12,10 @@ function fmt(n: number | null, suffix = ''): string {
 
 export async function GET() {
   try {
-    const kpi = await fetchKpis();
+    const [kpi, broken] = await Promise.all([
+      fetchKpis(),
+      checkBrokenLinks(),
+    ]);
 
     const dateStr = new Date().toLocaleDateString('en-IE', {
       weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
@@ -19,6 +25,17 @@ export async function GET() {
     });
 
     const line = '─'.repeat(42);
+
+    const brokenSection = broken.length > 0
+      ? [
+          ``,
+          line,
+          `Broken Links (${broken.length} found):`,
+          ``,
+          ...broken.map(b => `${b.file}\n  → ${b.url} [${b.status}]`),
+        ].join('\n')
+      : `\n${line}\nBroken Links: none found ✓`;
+
     const emailBody = [
       `FarmAI Ireland — Weekly KPI Report`,
       dateStr,
@@ -30,6 +47,7 @@ export async function GET() {
       `Articles Published    ${fmt(kpi.articleCount)}`,
       `Thumbs Up Rate        ${fmt(kpi.thumbsUpRate, '%')}`,
       `Active Sponsors       ${fmt(kpi.sponsors)}`,
+      brokenSection,
       ``,
       line,
       `Generated automatically every Monday at 8am.`,
