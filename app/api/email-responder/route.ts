@@ -142,7 +142,7 @@ export async function GET() {
     if (resendKey) {
       const resend = new Resend(resendKey);
       await resend.emails.send({
-        from:    process.env.RESEND_FROM_EMAIL ?? 'FarmAI <reports@farmaiireland.ie>',
+        from:    process.env.RESEND_FROM_EMAIL ?? 'FarmAI <reports@farmai.ie>',
         to:      'hello@farmai.ie',
         subject: `${totalDrafts} draft response${totalDrafts !== 1 ? 's' : ''} ready in Gmail`,
         text: [

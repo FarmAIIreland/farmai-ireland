@@ -58,7 +58,7 @@ export async function GET() {
     if (resendKey) {
       const resend = new Resend(resendKey);
       await resend.emails.send({
-        from:    process.env.RESEND_FROM_EMAIL ?? 'FarmAI Pipeline <reports@farmaiireland.ie>',
+        from:    process.env.RESEND_FROM_EMAIL ?? 'FarmAI Pipeline <reports@farmai.ie>',
         to:      'hello@farmai.ie',
         subject: `${drafts.length} new draft${drafts.length !== 1 ? 's' : ''} ready — FarmAI Content Pipeline`,
         text:    emailBody,
