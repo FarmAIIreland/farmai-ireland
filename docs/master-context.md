@@ -139,6 +139,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | `docs/gmail-config.md` | Gmail label list + filter keywords per label + notification address |
 | `docs/email-templates.md` | Reply templates per label with `{{firstName}}`, `{{originalSubject}}`, `{{todayDate}}` variables |
 | `docs/content-strategy.md` | 50-topic backlog — pipeline picks unpublished topics from here |
+| `docs/content-review-prompt.md` | 4-persona quality gate (Síle, Declan, Aoife, Pádraic) — run on every article before commit |
 
 ---
 
