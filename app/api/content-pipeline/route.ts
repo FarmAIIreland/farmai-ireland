@@ -73,6 +73,6 @@ export async function GET() {
     });
   } catch (err) {
     console.error('Content pipeline error:', err);
-    return NextResponse.json({ error: 'Pipeline failed' }, { status: 500 });
+    return NextResponse.json({ error: 'Pipeline failed', detail: String(err) }, { status: 500 });
   }
 }

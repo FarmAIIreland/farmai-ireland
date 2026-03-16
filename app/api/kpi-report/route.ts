@@ -71,7 +71,7 @@ export async function GET() {
 
     if (error) {
       console.error('Resend error:', error);
-      return NextResponse.json({ error: 'Email send failed' }, { status: 500 });
+      return NextResponse.json({ error: 'Email send failed', detail: error }, { status: 500 });
     }
 
     // Save snapshot for week-on-week tracking
