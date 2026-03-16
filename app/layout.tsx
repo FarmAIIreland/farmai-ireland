@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
 import { Lora } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import siteConfig from '@/config/site.json';
+
+const GA_ID = siteConfig.analytics.googleAnalytics;
 
 const lora = Lora({
   subsets:  ['latin'],
@@ -35,6 +38,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-IE" className={lora.variable}>
       <body className="flex flex-col min-h-screen font-sans">
+        {GA_ID && !GA_ID.includes('XXXXXXXXXX') && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`}
+            </Script>
+          </>
+        )}
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

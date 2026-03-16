@@ -111,7 +111,7 @@ export function HeroSection() {
           </Link>
           <Link
             href="/guides"
-            className="inline-block border border-white/60 text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-white/10 transition-colors text-sm"
+            className="inline-block border-2 border-white/75 text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-white/10 transition-colors text-sm"
           >
             Start here if you&apos;re new
           </Link>
