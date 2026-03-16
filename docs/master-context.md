@@ -210,6 +210,24 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 
 ---
 
+## Autonomy Rules — Claude Code Operating Instructions
+
+Proceed autonomously on all standard development and content tasks. Only stop if:
+1. Something is about to be permanently deleted
+2. A build error blocks progress and cannot be resolved
+3. A credential is needed that isn't in 1Password or Vercel env vars
+
+### Bash autonomy — session warmup
+At the start of every session, before doing anything else, run this warmup block to pre-approve all common command patterns:
+
+```
+cd C:/Users/johnf/farmai-ireland && git status && npx vercel env ls 2>&1 && npm --version && curl --version 2>&1
+```
+
+Select "Yes, and don't ask again" for every pattern that appears. This clears the permission prompts for the rest of the session.
+
+---
+
 ## Standing Instruction — End of Every Session
 
 At the end of every Claude Code session, do the following before closing:
