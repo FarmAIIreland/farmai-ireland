@@ -80,6 +80,6 @@ export async function GET() {
     return NextResponse.json({ ok: true, kpi });
   } catch (err) {
     console.error('KPI report error:', err);
-    return NextResponse.json({ error: 'Unexpected error' }, { status: 500 });
+    return NextResponse.json({ error: 'Unexpected error', detail: String(err) }, { status: 500 });
   }
 }
