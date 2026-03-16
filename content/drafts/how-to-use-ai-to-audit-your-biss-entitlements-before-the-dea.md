@@ -10,82 +10,75 @@ difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
 status: "draft"
-excerpt: "Use free AI tools to check your BISS entitlements are correct before the May deadline costs you money"
+excerpt: "Use AI tools to check your BISS entitlements are correct before the application deadline closes"
 sources:
-  - url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/biss/"
-    label: "Teagasc BISS Guide"
-    description: "Teagasc overview of the Basic Income Support for Sustainability scheme and entitlement rules"
+  - url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/basic-income-support-for-sustainability-biss/"
+    label: "Teagasc – BISS Overview"
+    description: "Teagasc guidance on BISS eligibility, entitlements, and payment conditions under the new CAP"
 ---
 
 ## How to Use AI to Audit Your BISS Entitlements Before the Deadline
 
-If your BISS payment last year felt a bit light, or you're not fully sure your entitlements match the land you're actually farming, this is for you. An AI tool won't replace your agricultural consultant — but it can help you spot gaps, ask better questions, and walk into that conversation with your advisor already halfway prepared. That's an hour of work that could put real money back in your pocket.
+If you've been staring at your BISS statement wondering whether you're getting what you're actually entitled to, you're not alone. This guide shows you how to use free and low-cost AI tools to cross-check your entitlements, spot errors, and flag questions before the Department of Agriculture's application deadline — without needing to be a computer expert or a payments specialist.
 
 ---
 
-### The Problem: Most Farmers Don't Audit Their Own Entitlements
+### The Problem: Easy to Miss, Expensive to Ignore
 
-BISS — the Basic Income Support for Sustainability scheme — replaced the old Basic Payment Scheme in 2023. Entitlements transferred across, but the rules around eligible land, stocking requirements, and eco-scheme conditions have shifted. Teagasc estimates that a significant number of farmers are either holding entitlements they can't fully activate, or are unaware of a discrepancy between their declared hectares and their actual payment.
+BISS replaced BPS in 2023, and with it came a fresh set of rules around eligible land, minimum activity requirements, and eco-scheme conditions. Teagasc has reported that a significant number of farmers are either not claiming their full entitlements or are sitting on inactive ones that could be lost.
 
-The May deadline for your annual BASS/BISS application on agfood.ie comes around fast. If you're waiting until April to look at this, you're already cutting it fine.
+For an 80-cow suckler operation in Roscommon, the difference between a correct claim and a careless one can run to thousands of euro. The land parcel boundaries on your LPIS map might not match what you're actually farming. You might have entitlements that haven't been fully activated. Or your eco-scheme conditionality might not be ticked off properly.
 
----
-
-### The Tool: A Plain-Language AI Assistant
-
-You don't need anything fancy. ChatGPT (free version), Microsoft Copilot (free, built into Edge browser), or Google Gemini will all do the job here. These are conversational AI tools — you type a question in plain English, they give you a plain English answer. Think of it like texting a very well-read friend who's read every Teagasc manual cover to cover.
-
-They won't log into agfood.ie for you, and they won't access your herd number. What they *will* do is help you understand your entitlements, flag what to check, and draft a list of questions for your Teagasc advisor or agricultural consultant.
+The deadline for the annual BISS application through the Department of Agriculture's online portal (agfood.ie) is typically mid-May. Miss it or submit it wrong, and you're either facing a penalty or leaving money behind.
 
 ---
 
-### Step-by-Step: How to Do the Audit
+### The Tool: AI as Your Second Set of Eyes
 
-**Step 1 — Pull your documents together first**
+AI won't file your application for you, and it can't access your Department portal. What it *can* do is help you:
 
-Before you open any AI tool, get hold of:
-- Your most recent BISS payment statement (available on agfood.ie under your profile)
-- Your land parcel details from the same portal
-- Last year's Single Farm Payment application summary
-- Any correspondence from the Department of Agriculture about entitlement transfers
+- Understand the rules in plain English by uploading or pasting official documents
+- Check whether your current setup meets eligibility conditions
+- Spot inconsistencies between what you're claiming and what you're actually doing on the farm
+- Draft a list of questions to bring to your advisor or Teagasc planner
 
-Having these in front of you means you can ask specific questions, not vague ones.
+The tools most useful here are **ChatGPT** (free tier works fine), **Microsoft Copilot** (free with a Microsoft account), or **Google Gemini**. You don't need to pay for anything to get started.
 
-**Step 2 — Ask the AI to explain your entitlement type**
+---
 
-Type something like: *"I have 60 BISS entitlements in Ireland and I farm 75 hectares of eligible land. Can you explain whether I should be activating all 60, and what happens to the extra hectares?"*
+### Step-by-Step: Running Your Audit
 
-The AI will walk you through the basic rule: you need one eligible hectare to activate one entitlement. It'll flag that unused entitlements can lapse after two years, which is exactly the kind of thing that slips past a busy farmer.
+**Step 1 — Pull your documents together**
+Before you open any AI tool, gather: your most recent BISS statement from agfood.ie, your LPIS map printout, last year's application summary, and any letters from the Department about your entitlements. If you don't have these, log in to agfood.ie or ring your local Department office.
 
-**Step 3 — Check eco-scheme eligibility**
+**Step 2 — Open your AI tool and set the context**
+Type something like: *"I'm an Irish beef farmer applying for BISS. I'm going to paste some details about my farm and my entitlements. I want you to help me check if everything looks correct based on the current Irish CAP rules."* This focuses the tool straight away.
 
-Ask the AI: *"What are the eco-scheme actions available to a beef farmer in Ireland under BISS 2025, and which ones are most straightforward to qualify for?"*
+**Step 3 — Paste in your details**
+Copy the key figures from your statement — number of entitlements, hectares declared, payment rate — and paste them in. Don't include your PPSN or any sensitive personal data. Ask the AI to flag anything that looks unusual or worth questioning.
 
-It will give you a list — things like low-emission slurry spreading, multi-species swards, or minimum tillage. Cross-check anything it tells you against the Teagasc BISS guide (linked at the bottom of this article) before acting on it.
+**Step 4 — Ask it to explain any conditions you're unsure about**
+For example: *"What are the minimum activity requirements for BISS in Ireland for a suckler farmer?"* or *"What do I need to do to qualify for the full eco-scheme payment?"* Compare the answers against your own situation.
 
-**Step 4 — Build a checklist for your advisor**
-
-Ask the AI to generate a simple checklist: *"Give me 10 questions I should ask my agricultural consultant before submitting my BISS application in May."*
-
-Print that list. Bring it to your next Teagasc discussion group or your advisor's office. You'll get more out of a 30-minute meeting if you arrive with focused questions rather than a general worry.
-
-**Step 5 — Double-check parcel eligibility**
-
-Ask the AI to explain what land qualifies as eligible agricultural area under BISS — scrub, waterlogged ground, and certain forestry areas can reduce your eligible hectares without you realising it. If you've had land drainage issues or planted hedgerows, this is worth raising.
+**Step 5 — Build your question list**
+Ask the AI to summarise what you should clarify with a professional. Print that list and bring it to your Teagasc advisor, your farm consultant, or your ANC/ACRES planner before you submit.
 
 ---
 
 ### What It Costs
 
-Nothing. ChatGPT, Copilot, and Gemini are all free to use at a basic level. You don't need a subscription to do this kind of research. The paid versions offer longer conversations and faster responses, but for a focused audit session, the free tier is fine.
+Using ChatGPT, Copilot, or Gemini on the free tier costs nothing. If you want to upload a PDF of your BISS statement directly, ChatGPT Plus costs around €20/month — useful if you're dealing with a lot of documents, but not essential.
+
+Your Teagasc advisor, if you have one through a Teagasc farm plan, can review your final claim at no extra charge. If you're using a private agricultural consultant, expect to pay €100–€200 for a BISS review, which is well worth it if your entitlements are above average value.
 
 ---
 
 ### Where to Get Help
 
-- **Teagasc** — Your local Teagasc advisor can review your entitlements and confirm eligibility. Find your local office at teagasc.ie
-- **agfood.ie** — The Department of Agriculture's portal where you submit your BISS application and view your entitlement history
-- **Citizens Information** — citizensinformation.ie has a plain-English explainer on BISS if you want background before talking to an advisor
-- **ICBF** — If your eco-scheme actions involve herd management, icbf.com data can support your application
+- **agfood.ie** — submit your application and view your current entitlements
+- **Teagasc.ie** — BISS guidance, local advisor contacts, and farm management supports
+- **gov.ie/agriculture** — official CAP payment scheme rules and deadlines
+- **Citizens Information (citizensinformation.ie)** — plain-English breakdown of your rights if you receive a penalty notice
+- **Your local Teagasc office** — ring ahead and ask specifically for a BISS entitlement review before the May deadline
 
-One last thing: AI gives you a starting point, not a final answer. For anything involving actual money or a formal submission, run it past a qualified agricultural consultant or your Teagasc advisor. But using AI to prepare for that conversation? That's just good sense.
+AI won't replace your advisor, and it won't catch every error. But used right, it's a solid first pass — the kind of check you'd do yourself if you had the time and knew exactly what to look for. Take an hour before the deadline. It could be the most valuable hour you spend on paperwork all year.
