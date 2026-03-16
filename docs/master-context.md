@@ -263,15 +263,22 @@ This keeps the context document live and accurate for the next session opener.
 | 6 | Ampersand rendering check | ❌ |
 | 7 | OfficialAdviceBanner audit on all guide pages | ❌ |
 
-### Priority 3 — Manual steps (no Claude Code needed)
+### Priority 3 — Content
 
 | # | Action | Status |
 |---|--------|--------|
-| 8 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
-| 9 | Social accounts: follow /docs/social-setup.md | ❌ Manual |
-| 10 | Press release: send same day social goes live | ❌ Manual |
-| 11 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ❌ Manual |
-| 12 | Set up Cloudflare after DNS is live | ❌ Manual |
+| 8 | Write: "ChatGPT, Claude or Gemini — which one should an Irish farmer use?" — beginner, getting-started pillar, ~600 words, three tools max, one use case each, clear recommendation | ❌ |
+| 9 | Update existing glossary (`ai-glossary-plain-english-farmers.md`) — add LLM, prompt, AI model, token definitions | ❌ |
+
+### Priority 4 — Manual steps (no Claude Code needed)
+
+| # | Action | Status |
+|---|--------|--------|
+| 10 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
+| 11 | Social accounts: follow /docs/social-setup.md | ❌ Manual |
+| 12 | Press release: send same day social goes live | ❌ Manual |
+| 13 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ❌ Manual |
+| 14 | Set up Cloudflare after DNS is live | ❌ Manual |
 
 ---
 
