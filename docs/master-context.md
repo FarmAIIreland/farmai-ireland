@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 16, 2026 · Session 9*
+*Last updated: March 16, 2026 · Session 10*
 
 ---
 
@@ -63,7 +63,7 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | Ampersand fix + OfficialAdviceBanner | ✅ Confirmed correct in code — verify on live site |
 | Section spacing — 80px desktop / 48px mobile | ⏳ py-12 → py-12 md:py-20 needed on article/guide pages + home sections |
 | Mobile 375px check | ⏳ Visual check needed on live site |
-| Cookie banner | ❌ Not yet |
+| Cookie banner | ✅ Done — Session 10 — localStorage flag, Accept/Decline, GA loads on Accept only |
 | sitemap.xml + robots.txt | ✅ Done Session 7 — app/sitemap.ts + public/robots.txt live |
 
 ---
@@ -158,6 +158,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | ai-glossary-plain-english-farmers.md | ✅ Live |
 | ai-acres-scheme-paperwork.md | ✅ Live — Session 7 |
 | heat-detection-apps-ireland-review.md | ✅ Live — Session 7 |
+| chatgpt-herd-register-icbf.md | ⏳ Written Session 10 — awaiting approval to commit |
 
 ---
 
@@ -204,6 +205,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created; GA script wired in layout.tsx; button border polished; robots.txt confirmed live; Airtable feedback broken — diagnosed incorrect AIRTABLE_TABLE_ID in Vercel env vars, corrected to tbldrruA63sW4ieVj, redeployed, confirmed working; Google Analytics ID G-VQC756088N added to config/site.json; section spacing fix identified (not yet applied); DNS/Cloudflare pending manual setup |
 | Session 8 | KPI dashboard built (/dashboard + login + middleware); Monday KPI email + Vercel Cron; Unsplash images curated for all 10 content files; hero redesigned to h-[40vh]/h-[50vh] banner with larger departures board text |
 | Session 9 | Full automation build: content pipeline (Claude API → GitHub drafts → Resend preview), idea capture (Google Sheets), email responder (Gmail drafts from templates), Gmail filters setup, broken link checker, dashboard upgraded (subscriber hero + Gmail inbox monitor + farmland bg), all crons configured in vercel.json, all config editable in /docs markdown files |
+| Session 10 | Cookie banner (GDPR, localStorage, Accept/Decline, GA consent-gated); departures board font 20% bigger (text-6xl/text-7xl/text-9xl); /docs/farmai-pipeline.html, /docs/social-setup.md, /docs/press-release.md, /docs/future-ideas-monetization.md confirmed/created; CLONE.md repo root; herd register article written (awaiting approval); vercel.json crons confirmed correct; env vars confirmed documented; GitHub template repo = manual step |
 
 ---
 
@@ -221,7 +223,7 @@ This keeps the context document live and accurate for the next session opener.
 
 ---
 
-## Session 10 — Next Actions (Priority Order)
+## Session 11 — Next Actions (Priority Order)
 
 | # | Action | Status |
 |---|--------|--------|
@@ -234,7 +236,8 @@ This keeps the context document live and accurate for the next session opener.
 | 7 | Point farmai.ie at Vercel — add A record 76.76.21.21 in Hosting Ireland DNS panel | ❌ Manual |
 | 8 | Set up Cloudflare free account — proxy farmai.ie through Cloudflare after DNS is live | ❌ Manual |
 | 9 | Mobile 375px visual check on live site | ❌ Manual |
-| 10 | Cookie banner | ❌ Not started |
+| 10 | Flip farmai-ireland repo to GitHub template — Settings → Template repository → tick the box | ❌ Manual — GitHub UI only, cannot be done via API |
+| 11 | Approve herd register article → commit chatgpt-herd-register-icbf.md | ⏳ Awaiting approval |
 
 ---
 

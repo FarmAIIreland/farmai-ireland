@@ -80,7 +80,7 @@ export function HeroSection() {
           aria-atomic="true"
         >
           <p
-            className="font-bold text-5xl sm:text-6xl md:text-8xl leading-tight inline-block"
+            className="font-bold text-6xl sm:text-7xl md:text-9xl leading-tight inline-block"
             style={{
               color:           '#1D9E75',
               transform,
