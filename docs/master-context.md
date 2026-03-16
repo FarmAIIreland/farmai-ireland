@@ -36,7 +36,7 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | ArticleFeedback wired to Airtable | ✅ Done — Session 5; confirmed working Session 7 |
 | farmai.ie pointed at Vercel | ❌ Pending — DNS A record in Hosting Ireland (see instructions below) |
 | Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
-| Google Analytics ID added | ✅ Done — Session 7 (G-VQC756088N in config/site.json) |
+| Google Analytics ID added | ✅ Done — Session 7 (G-VQC7560BBN in config/site.json) |
 | KPI dashboard (/dashboard) | ✅ Done — Session 8/9 — password-protected, WoW deltas, farmland hero |
 | Monday KPI email + broken link check | ✅ Done — Session 8/9 — /api/kpi-report + Vercel Cron Mon 8am UTC |
 | Sunday content pipeline | ✅ Done — Session 9 — /api/content-pipeline + Vercel Cron Sun 8pm UTC |
@@ -203,7 +203,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 4 | Site live on Vercel, departures board hero, warmth design, 10 articles live, routing built |
 | Session 5 | Mailchimp connected, Airtable created + wired, ArticleFeedback live, homepage reviewed — all 6 sections confirmed |
 | Session 6 | Outstanding items: DNS, Cloudflare, Analytics, polish pass, Unsplash images, 2 articles, sitemap/robots |
-| Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created; GA script wired in layout.tsx; button border polished; robots.txt confirmed live; Airtable feedback broken — diagnosed incorrect AIRTABLE_TABLE_ID in Vercel env vars, corrected to tbldrruA63sW4ieVj, redeployed, confirmed working; Google Analytics ID G-VQC756088N added to config/site.json; section spacing fix identified (not yet applied); DNS/Cloudflare pending manual setup |
+| Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created; GA script wired in layout.tsx; button border polished; robots.txt confirmed live; Airtable feedback broken — diagnosed incorrect AIRTABLE_TABLE_ID in Vercel env vars, corrected to tbldrruA63sW4ieVj, redeployed, confirmed working; Google Analytics ID G-VQC7560BBN added to config/site.json; section spacing fix identified (not yet applied); DNS/Cloudflare pending manual setup |
 | Session 8 | KPI dashboard built (/dashboard + login + middleware); Monday KPI email + Vercel Cron; Unsplash images curated for all 10 content files; hero redesigned to h-[40vh]/h-[50vh] banner with larger departures board text |
 | Session 9 | Full automation build: content pipeline (Claude API → GitHub drafts → Resend preview), idea capture (Google Sheets), email responder (Gmail drafts from templates), Gmail filters setup, broken link checker, dashboard upgraded (subscriber hero + Gmail inbox monitor + farmland bg), all crons configured in vercel.json, all config editable in /docs markdown files |
 | Session 10 | Cookie banner (GDPR, localStorage, Accept/Decline, GA consent-gated); departures board font 20% bigger (text-6xl/text-7xl/text-9xl); /docs/farmai-pipeline.html, /docs/social-setup.md, /docs/press-release.md, /docs/future-ideas-monetization.md confirmed/created; CLONE.md repo root; herd register article written (awaiting approval); vercel.json crons confirmed correct; env vars confirmed documented; GitHub template repo = manual step |
