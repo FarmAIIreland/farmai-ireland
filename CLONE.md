@@ -142,12 +142,19 @@ Keep the structure. Rewrite the content entirely.
 - Update the newsletter subscribe form in the new site
 - Set `MAILCHIMP_LIST_ID` in Vercel
 
+**Transactional email — domain verification + DMARC (mandatory):**
+Before setting `RESEND_FROM_EMAIL`, the sending domain must be verified in Resend and have valid DNS records:
+- Add the Resend-provided SPF and DKIM records in Hosting Ireland DNS
+- Add a DMARC record: `TXT @ v=DMARC1; p=none; rua=mailto:hello@[yourdomain].ie`
+- DMARC is mandatory — without it, transactional email will land in spam or be rejected by Google Workspace inboxes
+- Verify all three records are propagated before triggering any cron email endpoint
+
 **All env vars in Vercel:**
 See /docs/master-context.md for the full variable list. Each vertical needs its own values for:
 - `AIRTABLE_BASE_ID`, `AIRTABLE_TABLE_ID`, `AIRTABLE_KPI_TABLE_ID`
 - `MAILCHIMP_LIST_ID`
 - `GOOGLE_SHEETS_ID` (new idea capture sheet)
-- `RESEND_FROM_EMAIL` (e.g. `reports@constructionaiireland.ie`)
+- `RESEND_FROM_EMAIL` (e.g. `reports@constructionai.ie` — must be a verified Resend domain)
 - `DASHBOARD_PASSWORD`
 - `GITHUB_REPO` (e.g. `FarmAIIreland/constructionai-ireland`)
 - `GMAIL_*` tokens (new Gmail account for the vertical)

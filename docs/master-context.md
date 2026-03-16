@@ -140,6 +140,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | `docs/email-templates.md` | Reply templates per label with `{{firstName}}`, `{{originalSubject}}`, `{{todayDate}}` variables |
 | `docs/content-strategy.md` | 50-topic backlog — pipeline picks unpublished topics from here |
 | `docs/content-review-prompt.md` | 4-persona quality gate (Síle, Declan, Aoife, Pádraic) — run on every article before commit |
+| `docs/link-exceptions.md` | Sites that return false-positive 403s in link checker (moocall, chat.openai.com, pasturebase.ie) — do not flag as broken |
 
 ---
 

@@ -22,7 +22,7 @@ sponsorship:
   logo: ""
 sources:
   - label: "Teagasc Digital Farming"
-    url: "https://www.teagasc.ie/rural-economy/rural-development/digital-farming/"
+    url: "https://www.teagasc.ie/rural-economy/schemes/"
     description: "Irish farming digital adoption context"
 ---
 

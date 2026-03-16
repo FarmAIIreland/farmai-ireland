@@ -15,13 +15,13 @@ featured: false
 officialAdviceBanner: false
 sources:
   - label: "ICBF — How EBI is Calculated"
-    url: "https://www.icbf.com/wp/animal-evaluation/"
+    url: "https://www.icbf.com/genetic-evaluations/"
     description: "Irish Cattle Breeding Federation explanation of their animal evaluation and genomic prediction methods"
   - label: "ICBF — Genomics Programme"
     url: "https://www.icbf.com/wp/genomics/"
     description: "ICBF genomics programme overview including genotyping costs and benefits for Irish herds"
   - label: "Teagasc — Dairy Breeding and Genetics"
-    url: "https://www.teagasc.ie/animals/dairy/breeding/"
+    url: "https://www.teagasc.ie/animals/dairy/breeding-genetics/"
     description: "Teagasc guidance on using EBI and breeding indexes in dairy herd management"
 ---
 

@@ -15,13 +15,13 @@ featured: false
 officialAdviceBanner: false
 sources:
   - label: "ICBF Herd Register Compliance"
-    url: "https://www.icbf.com/wp/icbf-herd-register/"
+    url: "https://www.icbf.com/herd-book-services/"
     description: "ICBF guidance on herd register requirements for Irish cattle farmers"
   - label: "DAFM — Cattle Movement and Notification"
-    url: "https://www.gov.ie/en/service/animal-movement-notification-system/"
+    url: "https://aim.gov.ie/"
     description: "Department of Agriculture guidance on cattle movement notifications and AMNS"
   - label: "Teagasc — Cattle Recording"
-    url: "https://www.teagasc.ie/animals/beef/recording/"
+    url: "https://www.teagasc.ie/animals/beef/breeding-genetics/"
     description: "Teagasc guidance on cattle performance recording and ICBF submission"
 ---
 

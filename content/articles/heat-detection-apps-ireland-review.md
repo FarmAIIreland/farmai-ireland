@@ -18,13 +18,13 @@ sources:
     url: "https://www.icbf.com/wp/research/"
     description: "Irish Cattle Breeding Federation data on national herd reproductive performance"
   - label: "Teagasc Dairy Manual — Reproduction"
-    url: "https://www.teagasc.ie/animals/dairy/reproduction/"
+    url: "https://www.teagasc.ie/animals/dairy/breeding-genetics/"
     description: "Teagasc guidance on dairy herd reproduction management"
   - label: "Moocall HEAT"
     url: "https://moocall.com/heat"
     description: "Moocall HEAT pedometer system product information"
-  - label: "SenseHub (MSD Animal Health)"
-    url: "https://www.merck-animal-health.com/sensehub/"
+  - label: "SenseHub (Allflex/MSD)"
+    url: "https://allflex.global/sensehub/"
     description: "SenseHub cattle monitoring system product information"
 ---
 

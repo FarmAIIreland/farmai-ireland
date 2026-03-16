@@ -25,7 +25,7 @@ sources:
     url: "https://www.teagasc.ie/advisory/"
     description: "Teagasc advisory service scope and contact information"
   - label: "Teagasc Digital Farming Strategy"
-    url: "https://www.teagasc.ie/rural-economy/rural-development/digital-farming/"
+    url: "https://www.teagasc.ie/rural-economy/schemes/"
     description: "Teagasc's own position on digital tools and AI in Irish farming"
 ---
 

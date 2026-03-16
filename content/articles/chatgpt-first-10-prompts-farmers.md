@@ -15,7 +15,7 @@ featured: false
 officialAdviceBanner: false
 sources:
   - label: "Teagasc — Digital Farming Programme"
-    url: "https://www.teagasc.ie/rural-economy/rural-development/digitalisation/"
+    url: "https://www.teagasc.ie/rural-economy/schemes/"
     description: "Teagasc overview of digital and AI tools being tested across Irish farm types"
   - label: "ChatGPT — OpenAI"
     url: "https://chat.openai.com"

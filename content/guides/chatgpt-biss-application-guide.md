@@ -22,10 +22,10 @@ sponsorship:
   logo: ""
 sources:
   - label: "Department of Agriculture — BISS 2026"
-    url: "https://www.gov.ie/en/service/66d57-basic-income-support-for-sustainability-biss/"
+    url: "https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/"
     description: "Official scheme rules, eligibility and deadlines"
   - label: "Teagasc Direct Payments Guidance"
-    url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/"
+    url: "https://www.teagasc.ie/rural-economy/direct-payments/"
     description: "Practical BISS application support and Teagasc advisor contacts"
   - label: "agfood.ie — Land Parcel Identification System"
     url: "https://www.agfood.ie"

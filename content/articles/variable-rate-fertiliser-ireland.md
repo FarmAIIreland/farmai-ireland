@@ -15,13 +15,13 @@ featured: false
 officialAdviceBanner: false
 sources:
   - label: "Teagasc — Precision Agriculture and Soil Fertility"
-    url: "https://www.teagasc.ie/crops/soil/soil-fertility/"
+    url: "https://www.teagasc.ie/environment/soil/soil-fertility/"
     description: "Teagasc guidance on soil sampling, fertility indices, and precision nutrient management"
   - label: "Teagasc — Fertiliser Recommendations"
-    url: "https://www.teagasc.ie/crops/soil/major-nutrients/"
+    url: "https://www.teagasc.ie/environment/soil/soil-fertility/"
     description: "Teagasc major nutrient recommendations by soil index and crop type"
-  - label: "DAFM — Nitrates Action Programme"
-    url: "https://www.gov.ie/en/publication/c8248-nitrates-action-programme/"
+  - label: "Teagasc — Nitrates Action Programme"
+    url: "https://www.teagasc.ie/environment/nitrates/"
     description: "Department of Agriculture nitrates regulations affecting fertiliser application in Ireland"
 ---
 

@@ -27,13 +27,13 @@ sponsorship:
   logo: ""
 sources:
   - label: "Teagasc Calving Management Guidelines"
-    url: "https://www.teagasc.ie/animals/beef/calving/"
+    url: "https://www.teagasc.ie/animals/beef/calf-rearing/"
     description: "Used for calving intervention timing and record-keeping requirements"
   - label: "ICBF — Irish Cattle Breeding Federation"
     url: "https://www.icbf.com"
     description: "Used for tagging compliance and EBI data submission context"
   - label: "Department of Agriculture — Bovine Animal Tagging Regulations"
-    url: "https://www.gov.ie/en/service/ae3e2-bovine-animal-tagging/"
+    url: "https://aim.gov.ie/"
     description: "Used for statutory tagging and movement recording obligations"
 ---
 

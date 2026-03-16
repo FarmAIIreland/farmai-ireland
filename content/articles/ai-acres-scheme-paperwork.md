@@ -15,13 +15,13 @@ featured: false
 officialAdviceBanner: true
 sources:
   - label: "ACRES Scheme — Department of Agriculture"
-    url: "https://www.gov.ie/en/service/acres-agri-climate-rural-environment-scheme/"
+    url: "https://www.gov.ie/acres/"
     description: "Official ACRES scheme information, eligibility criteria, and payment rates"
   - label: "Teagasc ACRES Guidance"
-    url: "https://www.teagasc.ie/rural-economy/rural-development/agri-environment/acres/"
+    url: "https://www.teagasc.ie/rural-economy/schemes/"
     description: "Teagasc advisory guidance on ACRES participation and scoring"
   - label: "ACRES Co-operation Teams"
-    url: "https://www.gov.ie/en/service/acres-agri-climate-rural-environment-scheme/"
+    url: "https://www.gov.ie/acres/"
     description: "Information on the ACRES Co-operation approach and scoring system"
 ---
 

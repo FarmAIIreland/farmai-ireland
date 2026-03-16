@@ -25,7 +25,7 @@ sources:
     url: "https://www.copernicus.eu"
     description: "Source of free Sentinel-2 satellite imagery used in NDVI tools"
   - label: "Teagasc Precision Agriculture"
-    url: "https://www.teagasc.ie/crops/soil-and-soil-fertility/precision-agriculture/"
+    url: "https://www.teagasc.ie/environment/soil/soil-fertility/"
     description: "Irish precision ag context and soil variability data"
   - label: "EOS Crop Monitoring"
     url: "https://eos.com/products/crop-monitoring/"
