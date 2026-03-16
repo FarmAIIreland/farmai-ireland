@@ -44,8 +44,7 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0a2018]"
-      style={{ minHeight: 'calc(100svh - 64px)' }}
+      className="relative w-full overflow-hidden bg-[#0a2018] h-[40vh] sm:h-[50vh]"
     >
       {/* Background image */}
       <Image
@@ -62,14 +61,14 @@ export function HeroSection() {
 
       {/* Content — absolutely fills section so flex centering is reliable */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-5">
-        <div className="text-center max-w-3xl w-full py-16">
+        <div className="text-center max-w-3xl w-full">
         {/* Badge */}
-        <span className="inline-block mb-5 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider sm:tracking-widest rounded-full bg-brand-green/25 border border-brand-green/50 text-[#5DCAA5]">
+        <span className="inline-block mb-3 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider sm:tracking-widest rounded-full bg-brand-green/25 border border-brand-green/50 text-[#5DCAA5]">
           Built for Irish farmers
         </span>
 
         {/* Line 1 — static, weight 700 */}
-        <p className="text-white font-bold text-3xl sm:text-4xl md:text-6xl leading-tight mb-2 tracking-tight">
+        <p className="text-white font-bold text-xl sm:text-2xl md:text-3xl leading-tight mb-2 tracking-tight">
           {siteConfig.hero.line1}
         </p>
 
@@ -81,7 +80,7 @@ export function HeroSection() {
           aria-atomic="true"
         >
           <p
-            className="font-bold text-4xl sm:text-5xl md:text-7xl leading-tight inline-block"
+            className="font-bold text-5xl sm:text-6xl md:text-8xl leading-tight inline-block"
             style={{
               color:           '#1D9E75',
               transform,
@@ -97,7 +96,7 @@ export function HeroSection() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-7 sm:mt-8">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5 sm:mt-6">
           <Link
             href="/read"
             className="inline-block bg-brand-green text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-opacity-90 transition-colors text-sm"
