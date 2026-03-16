@@ -3,6 +3,7 @@ import { Resend }                from 'resend';
 import { runContentPipeline }   from '@/lib/content-pipeline';
 import { checkBrokenLinks }     from '@/lib/broken-links';
 
+export const dynamic = 'force-dynamic';
 export const maxDuration = 120;
 
 export async function GET() {

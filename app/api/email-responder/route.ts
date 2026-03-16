@@ -1,6 +1,8 @@
 import { NextResponse }       from 'next/server';
 import fs                    from 'fs';
 import path                  from 'path';
+
+export const dynamic = 'force-dynamic';
 import { Resend }            from 'resend';
 import { getGoogleAccessToken } from '@/lib/google-auth';
 import {

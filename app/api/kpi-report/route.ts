@@ -3,6 +3,7 @@ import { Resend }       from 'resend';
 import { fetchKpis, saveKpiSnapshot } from '@/lib/kpi';
 import { checkBrokenLinks }           from '@/lib/broken-links';
 
+export const dynamic = 'force-dynamic';
 export const maxDuration = 60;
 
 function fmt(n: number | null, suffix = ''): string {
