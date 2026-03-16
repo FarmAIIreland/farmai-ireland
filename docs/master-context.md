@@ -206,7 +206,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created; GA script wired in layout.tsx; button border polished; robots.txt confirmed live; Airtable feedback broken — diagnosed incorrect AIRTABLE_TABLE_ID in Vercel env vars, corrected to tbldrruA63sW4ieVj, redeployed, confirmed working; Google Analytics ID G-VQC7560BBN added to config/site.json; section spacing fix identified (not yet applied); DNS/Cloudflare pending manual setup |
 | Session 8 | KPI dashboard built (/dashboard + login + middleware); Monday KPI email + Vercel Cron; Unsplash images curated for all 10 content files; hero redesigned to h-[40vh]/h-[50vh] banner with larger departures board text |
 | Session 9 | Full automation build: content pipeline (Claude API → GitHub drafts → Resend preview), idea capture (Google Sheets), email responder (Gmail drafts from templates), Gmail filters setup, broken link checker, dashboard upgraded (subscriber hero + Gmail inbox monitor + farmland bg), all crons configured in vercel.json, all config editable in /docs markdown files |
-| Session 10 | Cookie banner (GDPR, localStorage, Accept/Decline, GA consent-gated); departures board font 20% bigger (text-6xl/text-7xl/text-9xl); /docs/farmai-pipeline.html, /docs/social-setup.md, /docs/press-release.md, /docs/future-ideas-monetization.md confirmed/created; CLONE.md repo root; herd register article written (awaiting approval); vercel.json crons confirmed correct; env vars confirmed documented; GitHub template repo = manual step |
+| Session 10 | **Completed:** Permanent Claude Code operating instructions added to master-context.md; 4-persona content review prompt at /docs/content-review-prompt.md; GA4 ID G-VQC7560BBN added to config/site.json; cookie banner built and deployed; crons confirmed in vercel.json; CLONE.md, press-release.md, social-setup.md committed; farmai-pipeline.html and future-ideas-monetization.md committed; departures board font +25%; UI polish pass (spacing, OfficialAdviceBanner). **Blocked → Session 11:** Automation pipeline not functional — env vars missing from Vercel production (RESEND_API_KEY, ANTHROPIC_API_KEY, GITHUB_TOKEN, GMAIL_* x3, MAILCHIMP_* x2, VERCEL_API_TOKEN, VERCEL_PROJECT_ID, AIRTABLE_KPI_TABLE_ID); hero centering and mobile 375px outstanding; GitHub template repo checkbox not done; social accounts not launched; three articles written but not committed pending automation test. |
 
 ---
 
@@ -244,19 +244,44 @@ This keeps the context document live and accurate for the next session opener.
 
 ## Session 11 — Next Actions (Priority Order)
 
+### Priority 1 — Wire up automation (must complete before any content work)
+
 | # | Action | Status |
 |---|--------|--------|
-| 1 | Configure Google OAuth2 — get GMAIL_CLIENT_ID, GMAIL_CLIENT_SECRET, GMAIL_REFRESH_TOKEN and add to Vercel | ❌ Manual — Google Cloud Console |
-| 2 | Run /api/gmail-setup once after setting Gmail env vars — creates Sponsorship, Media, Reader, Partnership, Complaint labels + filters | ❌ Manual (one-time) |
-| 3 | Add ANTHROPIC_API_KEY, UNSPLASH_ACCESS_KEY, GOOGLE_SHEETS_ID, GITHUB_TOKEN to Vercel | ❌ Manual |
-| 4 | Create Google Form → connected to Google Sheet for idea capture; set GOOGLE_SHEETS_ID | ❌ Manual |
-| 5 | Verify resend.com domain (farmaiireland.ie) and confirm RESEND_FROM_EMAIL | ❌ Manual |
-| 6 | Section spacing fix — py-12 → py-12 md:py-20 on article/guide pages | ❌ Code change needed |
-| 7 | Point farmai.ie at Vercel — add A record 76.76.21.21 in Hosting Ireland DNS panel | ❌ Manual |
-| 8 | Set up Cloudflare free account — proxy farmai.ie through Cloudflare after DNS is live | ❌ Manual |
-| 9 | Mobile 375px visual check on live site | ❌ Manual |
-| 10 | Flip farmai-ireland repo to GitHub template — Settings → Template repository → tick the box | ❌ Manual — GitHub UI only, cannot be done via API |
-| 11 | Approve herd register article → commit chatgpt-herd-register-icbf.md | ⏳ Awaiting approval |
+| 1 | Add env vars to Vercel in this order: `RESEND_API_KEY`, `ANTHROPIC_API_KEY`, `GITHUB_TOKEN`, `GMAIL_CLIENT_ID`, `GMAIL_CLIENT_SECRET`, `GMAIL_REFRESH_TOKEN`, `MAILCHIMP_API_KEY`, `MAILCHIMP_LIST_ID`, `VERCEL_API_TOKEN`, `VERCEL_PROJECT_ID`, `AIRTABLE_KPI_TABLE_ID` | ❌ Manual |
+| 2 | Redeploy to production after all vars are set | ❌ |
+| 3 | Trigger `/api/kpi-report` manually — confirm email arrives at hello@farmai.ie | ❌ |
+| 4 | Trigger `/api/content-pipeline` manually — confirm drafts generated and preview email sent | ❌ |
+| 5 | Trigger `/api/email-responder` manually — confirm Gmail OAuth works and labels are found | ❌ |
+| 6 | Only move to Priority 2 when all three endpoints return 200 and emails land | ❌ |
+
+### Priority 2 — Commit the three approved articles
+
+| # | Action | Status |
+|---|--------|--------|
+| 7 | Run `chatgpt-first-10-prompts-farmers.md` through /docs/content-review-prompt.md, then commit | ❌ |
+| 8 | Run `icbf-ai-ebi-explained.md` through /docs/content-review-prompt.md, then commit | ❌ |
+| 9 | Run `variable-rate-fertiliser-ireland.md` through /docs/content-review-prompt.md, then commit | ❌ |
+| 10 | `git commit -m "content: add three new articles"` | ❌ |
+
+### Priority 3 — UI polish
+
+| # | Action | Status |
+|---|--------|--------|
+| 11 | Hero vertical centering at 1080p desktop | ❌ |
+| 12 | Mobile 375px full pass | ❌ |
+| 13 | Ampersand rendering check | ❌ |
+| 14 | OfficialAdviceBanner audit on all guide pages | ❌ |
+
+### Priority 4 — Manual steps (no Claude Code needed)
+
+| # | Action | Status |
+|---|--------|--------|
+| 15 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
+| 16 | Social accounts: follow /docs/social-setup.md | ❌ Manual |
+| 17 | Press release: send same day social goes live | ❌ Manual |
+| 18 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ❌ Manual |
+| 19 | Set up Cloudflare after DNS is live | ❌ Manual |
 
 ---
 
