@@ -10,86 +10,73 @@ difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
 status: "draft"
-excerpt: "Use free AI tools to check your BISS entitlements are correct before the March deadline costs you money"
+excerpt: "Use AI tools to check your BISS entitlements are correct before the submission deadline costs you money"
 sources:
-  - url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/basic-income-support-for-sustainability-biss/"
+  - url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/biss/"
     label: "Teagasc BISS Guide"
-    description: "Teagasc overview of BISS eligibility, entitlements and payment conditions for Irish farmers"
+    description: "Teagasc overview of the Basic Income Support for Sustainability scheme and entitlement rules"
 ---
 
 ## How to Use AI to Audit Your BISS Entitlements Before the Deadline
 
-If you're claiming BISS this year, a small error on your entitlements — a parcel coded wrong, a land type misclassified, an area you forgot to declare — can knock hundreds of euro off your payment. AI tools won't file your application for you, but they can help you spot those mistakes before you hit submit. Think of it as a second pair of eyes that's available at 11pm when the kids are in bed.
+If your BISS entitlements are wrong — too few, wrong land parcels, or simply never updated after a lease or land change — you could be leaving several thousand euro on the table every single year. This guide shows you how to use a few straightforward AI tools to check your own figures before the Department of Agriculture deadline hits, without needing to be a tech wizard or spend a full day on it.
 
 ---
 
-### The Problem: Easy Mistakes That Cost Real Money
+### The Problem
 
-BISS replaced the Basic Payment Scheme in 2023, and with that came new rules around eligible hectares, activity requirements, and conditionality. According to Teagasc, your payment is calculated on the number of **entitlements you hold** versus the number of **eligible hectares you declare** — and the lower figure wins. That means if you're sitting on 60 entitlements but only declare 55 eligible hectares, you lose five entitlements for that year.
+Most farmers set up their BISS entitlements years ago and never looked sideways at them since. But things change — you take on a new block of land, a lease ends, parcels get merged, or the stocking situation shifts. Teagasc has flagged repeatedly that under-declared eligible hectares and mismatched entitlement numbers are among the most common reasons farmers receive lower payments than they're entitled to.
 
-Common issues farmers hit include:
-
-- Land parcels with the wrong land use code on LPIS
-- Scrubby corners or wet flushes included in the eligible area that shouldn't be
-- Parcels from a lease or conacre arrangement not properly declared
-- Entitlements inherited or transferred that haven't been formally registered
-
-The Department of Agriculture's BISS deadline is typically in mid-May, but corrections to your LPIS map need to go in well before that — so getting ahead of this in March or April matters.
+The BISS application window opens each spring on [agfood.ie](https://www.agfood.ie), and once the deadline passes, your options for correction are limited. An error now can follow you for years.
 
 ---
 
-### The Tool: An AI Assistant (Used the Right Way)
+### The Tool
 
-You don't need specialist software. A general-purpose AI assistant like ChatGPT or Google Gemini can help you work through your entitlements — as long as you know what to ask and what to double-check elsewhere.
+You don't need expensive software. A general-purpose AI assistant — ChatGPT, Google Gemini, or Microsoft Copilot — can act like a very patient advisor who reads every document you paste into it and helps you spot inconsistencies. None of these tools connect directly to the Department's systems, so your data stays with what you share. Think of it as a second pair of eyes on your paperwork.
 
-What AI is good for here:
-- Explaining BISS rules in plain English
-- Helping you build a checklist of what to verify
-- Cross-referencing the logic of your situation (e.g. "I have 68 entitlements, I'm farming 71 hectares, here's my breakdown — does this look right?")
-- Drafting a letter to the Department if you need to query a decision
-
-What AI cannot do:
-- Access your actual LPIS maps or Department records
-- Give you a legally binding answer
-- Replace your agricultural advisor or Teagasc planner
+For mapping specifically, the Department's own Land Parcel Identification System (LPIS) viewer on agfood.ie is your ground truth. The AI helps you make sense of what you're looking at.
 
 ---
 
-### Step-by-Step: Your Pre-Deadline Audit
+### Step-by-Step
 
-**Step 1 — Pull your figures together first**
+**Step 1 — Pull your documents together**
+Log into [agfood.ie](https://www.agfood.ie) and download your most recent BISS summary, your entitlement statement, and your land parcel map. Print or save them as PDFs. This takes about 15 minutes if you haven't done it before.
 
-Log in to [agfood.ie](https://www.agfood.ie) and download your entitlements statement and your parcel list. Have last year's BPS/BISS application handy if you can find it.
+**Step 2 — Open an AI chat tool**
+Go to [chat.openai.com](https://chat.openai.com) (free account works fine) or use Copilot if you're already on Microsoft. You won't upload the files — you'll type or paste the key numbers in.
 
-**Step 2 — Ask AI to explain any rules you're unsure about**
+**Step 3 — Enter your core figures**
+Type something like this into the chat:
 
-Type something like: *"Under Irish BISS rules in 2025, if I have more entitlements than eligible hectares declared, what happens to the extra entitlements?"* You'll get a clear answer in seconds. Cross-check anything that affects money against Teagasc or gov.ie.
+> *"I have 62 eligible hectares declared, 58 activated BISS entitlements, and my payment last year was €X. My farm is a suckler beef system in Roscommon. Can you help me check if these figures look consistent and what questions I should ask my adviser?"*
 
-**Step 3 — Build your checklist with AI**
+The AI will flag things like: why activated entitlements are lower than your eligible area, whether you may have unused entitlements expiring, or whether the eco-scheme calculations look off.
 
-Ask: *"Give me a 10-point checklist to audit my BISS application as a beef farmer with leased land in Ireland."* Use that list against your own paperwork.
+**Step 4 — Check your land parcels one by one**
+Go back to the LPIS map on agfood.ie. For any parcel you're unsure about, ask the AI:
 
-**Step 4 — Flag problem parcels**
+> *"This parcel is listed as 4.2 ha eligible but I think it's about 5 ha. What reasons might cause a reduction and what should I check?"*
 
-Go through your LPIS map on agfood.ie parcel by parcel. If anything looks off — a parcel you stopped farming, a boundary that doesn't match — note it down. Ask AI to help you understand what the correction process involves before you ring the Department.
+It'll walk you through common causes — buffer zones, ineligible scrub, water features — and tell you what to flag to your adviser or the Department.
 
-**Step 5 — Talk to a human before you submit**
-
-Bring your flagged issues to your Teagasc adviser, your farm consultant, or the BISS helpdesk at the Department of Agriculture (01 607 2000). AI gets you prepared; a qualified adviser gets you paid correctly.
+**Step 5 — Make a list and act on it**
+The AI isn't making the application for you. Its job is to help you arrive at your Teagasc adviser or your agricultural consultant with a clear list of questions, not a vague worry. Write down anything that doesn't add up and bring it to someone who can check it against the live system.
 
 ---
 
 ### What It Costs
 
-Using ChatGPT or Gemini for this kind of query is free. If you want more structured help, a Teagasc farm advisory service subscription costs in the region of €700–€900 per year and covers entitlement reviews as part of that. For a one-off check, a private farm consultant will typically charge €150–€300 for a BISS application review — money well spent if your payment runs to five figures.
+Nothing, if you use the free tier of ChatGPT or Microsoft Copilot. A Teagasc advisory visit to review your BISS application is covered under the Teagasc advisory service — check your current Teagasc membership level at [teagasc.ie](https://www.teagasc.ie). Private agricultural consultants typically charge €80–€150 per hour if you want a full entitlement audit done professionally.
 
 ---
 
 ### Where to Get Help
 
-- **Teagasc advisory offices** — find your local office at [teagasc.ie](https://www.teagasc.ie)
-- **Department of Agriculture BISS helpdesk** — 01 607 2000
-- **agfood.ie** — your LPIS maps and entitlements statement live here
-- **Citizens Information** — [citizensinformation.ie](https://www.citizensinformation.ie) has a plain-English breakdown of farm payment rights if you ever need to query a decision formally
+- **Teagasc advisers** — your first call for BISS queries: [teagasc.ie](https://www.teagasc.ie)
+- **Department of Agriculture helpline** — 057 867 4422 for agfood.ie application issues
+- **Citizens Information** — plain-English explanation of BISS at [citizensinformation.ie](https://www.citizensinformation.ie)
+- **ICBF** — if your suckler cow numbers affect your eco-scheme calculations: [icbf.com](https://www.icbf.com)
 
-Don't leave this until the last week of April. An hour now, going through your parcels with an AI checklist beside you, could easily be worth a few hundred euro come payment time.
+The AI does the donkey work of spotting gaps. A real adviser closes them. Use both.
