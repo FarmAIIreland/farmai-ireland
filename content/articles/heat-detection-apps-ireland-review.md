@@ -12,7 +12,7 @@ seo:
   keywords: ["heat detection cattle Ireland", "dairy cow heat detection app", "Moocall HEAT Ireland", "SenseHub Ireland", "cattle reproduction AI", "dairy herd management Ireland"]
 youtubeEmbed: ""
 featured: false
-officialAdviceBanner: false
+officialAdviceBanner: true
 sources:
   - label: "ICBF Reproductive Performance Data"
     url: "https://www.icbf.com/wp/research/"

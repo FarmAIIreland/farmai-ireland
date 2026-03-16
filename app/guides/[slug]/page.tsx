@@ -30,7 +30,7 @@ export default function GuidePage({ params }: Props) {
   });
 
   return (
-    <main className="py-12 px-4 bg-ui-bg min-h-screen">
+    <main className="py-12 md:py-20 px-4 bg-ui-bg min-h-screen">
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}
