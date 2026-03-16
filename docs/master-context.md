@@ -32,11 +32,11 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | GitHub org + repo (master only) | ✅ Done |
 | Vercel connected + auto-deploying | ✅ Done |
 | Mailchimp connected to newsletter form | ✅ Done — Session 5 |
-| Airtable base + env vars in Vercel | ✅ Done — Session 5 |
-| ArticleFeedback wired to Airtable | ✅ Done — Session 5 |
+| Airtable base + env vars in Vercel | ✅ Done — Session 5; table ID corrected Session 7 |
+| ArticleFeedback wired to Airtable | ✅ Done — Session 5; confirmed working Session 7 |
 | farmai.ie pointed at Vercel | ❌ Pending — DNS A record in Hosting Ireland (see instructions below) |
 | Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
-| Google Analytics ID added | ⏳ GA script wired in layout.tsx — replace G-XXXXXXXXXX in config/site.json with real ID |
+| Google Analytics ID added | ✅ Done — Session 7 (G-VQC756088N in config/site.json) |
 
 ---
 
@@ -55,6 +55,7 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | All 4 legal pages | ⏳ Confirm live on Vercel |
 | Hero centering + button border fix | ✅ Done Session 7 — border-2 border-white/75 |
 | Ampersand fix + OfficialAdviceBanner | ✅ Confirmed correct in code — verify on live site |
+| Section spacing — 80px desktop / 48px mobile | ⏳ py-12 → py-12 md:py-20 needed on article/guide pages + home sections |
 | Mobile 375px check | ⏳ Visual check needed on live site |
 | Cookie banner | ❌ Not yet |
 | sitemap.xml + robots.txt | ✅ Done Session 7 — app/sitemap.ts + public/robots.txt live |
@@ -131,7 +132,7 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | Session 4 | Site live on Vercel, departures board hero, warmth design, 10 articles live, routing built |
 | Session 5 | Mailchimp connected, Airtable created + wired, ArticleFeedback live, homepage reviewed — all 6 sections confirmed |
 | Session 6 | Outstanding items: DNS, Cloudflare, Analytics, polish pass, Unsplash images, 2 articles, sitemap/robots |
-| Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created (sitemap.xml now generating); GA script wired in layout.tsx (needs real ID in site.json); button border polished; CSP updated for GA; robots.txt confirmed live; Airtable API route confirmed correct — verify by thumbing article on live site; DNS/Cloudflare pending manual setup |
+| Session 7 | Docs migrated to /docs as .md files; 2 new articles moved to content/articles/ and live; app/sitemap.ts created; GA script wired in layout.tsx; button border polished; robots.txt confirmed live; Airtable feedback broken — diagnosed incorrect AIRTABLE_TABLE_ID in Vercel env vars, corrected to tbldrruA63sW4ieVj, redeployed, confirmed working; Google Analytics ID G-VQC756088N added to config/site.json; section spacing fix identified (not yet applied); DNS/Cloudflare pending manual setup |
 
 ---
 
@@ -153,13 +154,12 @@ This keeps the context document live and accurate for the next session opener.
 
 | # | Action | Status |
 |---|--------|--------|
-| 1 | Verify Airtable feedback — thumb article on live site, confirm row in base app53fvQL3Imcp2ao | ❌ Manual test needed |
+| 1 | Section spacing fix — py-12 → py-12 md:py-20 on article/guide pages; py-12 sm:py-20 on home sections + TopicPillars | ❌ Code change needed |
 | 2 | Point farmai.ie at Vercel — add A record 76.76.21.21 in Hosting Ireland DNS panel | ❌ Manual |
 | 3 | Set up Cloudflare free account — proxy farmai.ie through Cloudflare after DNS is live | ❌ Manual |
-| 4 | Replace G-XXXXXXXXXX in /config/site.json with real Google Analytics ID | ❌ Needs real GA ID |
-| 5 | Mobile 375px visual check on live site | ❌ Manual |
-| 6 | Cookie banner | ❌ Not started |
-| 7 | Draft PR outreach copy + create social accounts — soft launch prep | ❌ Not started |
+| 4 | Mobile 375px visual check on live site | ❌ Manual |
+| 5 | Cookie banner | ❌ Not started |
+| 6 | Draft PR outreach copy + create social accounts — soft launch prep | ❌ Not started |
 
 ---
 
