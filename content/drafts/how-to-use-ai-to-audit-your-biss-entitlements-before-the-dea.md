@@ -10,78 +10,77 @@ difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
 status: "draft"
-excerpt: "Use AI tools to check your BISS entitlements are correct before the application deadline catches you out"
+excerpt: "Use AI tools to check your BISS entitlements are correct before the annual deadline catches you out"
 sources:
-  - url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/basic-income-support-for-sustainability-biss/"
-    label: "Teagasc BISS Guide"
-    description: "Teagasc overview of BISS eligibility, entitlements, and payment conditions for Irish farmers"
+  - url: "https://www.teagasc.ie/rural-economy/farm-management/direct-payments/biss/"
+    label: "Teagasc BISS Guidance"
+    description: "Teagasc overview of the Basic Income Support for Sustainability scheme and eligibility requirements"
 ---
 
 ## How to Use AI to Audit Your BISS Entitlements Before the Deadline
 
-If you're farming 80 sucklers in Roscommon and relying on BISS payments to keep the year ticking over, a mistake on your entitlements can cost you thousands. AI tools can now help you cross-check your land parcels, entitlements, and eligibility conditions before you hit submit — catching errors that are easy to miss when you're pulled in six directions at once.
+If your BISS payment last year felt lower than expected, or you're not fully sure your entitlements are set up right on the Department's system, this guide is for you. In plain terms: AI tools can help you cross-check your land parcels, entitlement values, and declared hectares against what you're actually owed — before you hit submit on this year's application. Getting it wrong costs money. Getting it right takes about an hour.
 
 ---
 
-### The Problem: Small Mistakes, Big Consequences
+### The Problem
 
-BISS replaced the old Basic Payment Scheme in 2023, and the rules around eligible hectares, conditionality, and eco-scheme requirements have caught plenty of farmers out. According to Teagasc, your payment is calculated on whichever is lower — the number of eligible hectares you declare or the number of entitlements you hold. If those figures don't line up, you're leaving money on the table.
+BISS replaced BPS in 2023, and the shift brought new rules around active farmer status, convergence, and eligible hectare declarations. According to Teagasc, entitlement values are still moving toward a national average under convergence — meaning some farmers are gaining and some are losing ground each year. If you don't audit your own figures, you're relying on the Department of Agriculture's system to get it right on your behalf. That's a lot of trust to place in a spreadsheet you never see.
 
-The trouble is, most farmers don't have time to sit down and manually compare their LPIS parcel maps, their entitlement statements, and their previous year's declarations. Parcels change. Land gets bought, rented, or handed back. An AI tool won't file your application for you, but it can help you spot where something looks off before it becomes a problem.
+Common issues that catch farmers out:
 
----
-
-### The Tool: AI as a Second Set of Eyes
-
-Think of an AI assistant — something like ChatGPT, Microsoft Copilot, or a purpose-built agri tool — as a knowledgeable neighbour who has read every page of the Department of Agriculture's BISS documentation so you don't have to.
-
-You can use it to:
-
-- Ask plain-English questions about BISS rules and conditionality requirements
-- Upload or paste your entitlement statement and ask it to flag inconsistencies
-- Compare your declared hectares against your known parcel list
-- Check whether your eco-scheme activity selections match your farming system
-- Prepare a list of questions to bring to your advisor or Teagasc planner
-
-It won't access your gov.ie account or the LPIS system directly — you'll still need to do that yourself. But it can do the thinking work around what you give it.
+- Parcels mapped incorrectly on LPIS (the Land Parcel Identification System)
+- Entitlements not fully activated because declared hectares didn't match
+- Entitlements held in your name that you've forgotten about — or ones transferred to you that weren't registered properly
+- Missing eco-scheme points that would have topped up your payment
 
 ---
 
-### Step-by-Step: Running Your BISS Audit
+### The Tool
+
+You don't need specialist agricultural software here. A general-purpose AI assistant — like ChatGPT, Claude, or Microsoft Copilot — combined with your own farm documents can do the heavy lifting. These tools won't log into gov.ie on your behalf, but they are genuinely useful for:
+
+- Explaining what each line on your BISS statement actually means
+- Helping you build a checklist of what to verify
+- Doing the maths on convergence to estimate what your entitlements *should* be worth
+- Drafting a query letter to the Department if something looks off
+
+Think of it as having a very patient advisor sitting beside you who's read every piece of BISS documentation so you don't have to.
+
+---
+
+### Step-by-Step
 
 **Step 1 — Pull your documents together**
-Log into gov.ie and download your current entitlement statement and last year's BPS/BISS declaration. Have your parcel map from LPIS open in another tab.
+Log into the Agfood.ie portal and download your current entitlement statement, your previous year's BISS payment breakdown, and your LPIS maps. Have last year's BPS/BISS application form handy if you can find it.
 
-**Step 2 — Open your AI tool of choice**
-ChatGPT (free version works fine), Microsoft Copilot, or Google Gemini. No specialist software needed.
+**Step 2 — Ask the AI to explain your statement**
+Copy the text from your entitlement statement (no personal IDs needed) and paste it into your AI tool of choice. Ask: *"Can you explain what each of these figures means and flag anything that looks unusual for a beef farmer with 80 hectares?"*
 
-**Step 3 — Ask it to explain your situation**
-Type something like: *"I farm 78 hectares in Roscommon with 82 BISS entitlements. Can you explain how the lower of hectares or entitlements rule works and what I should check?"* The AI will walk you through it in plain terms.
+**Step 3 — Run a convergence check**
+Ask the AI: *"The national average BISS entitlement value in Ireland for 2025 is approximately €XXX. My current entitlement value is €YYY per hectare. Am I above or below average, and what does that mean for convergence in the next two years?"* It'll walk you through the direction your payments are heading.
 
-**Step 4 — Paste in your entitlement data**
-Copy the key figures from your statement — number of entitlements, unit value, eligible land declared last year — and ask the AI: *"Do these figures look consistent? What should I double-check before applying?"*
+**Step 4 — Check your eco-scheme eligibility**
+The eco-scheme is worth up to €66 per hectare if you hit the right practices. Ask the AI to list the current qualifying actions and compare them against what you're already doing on the farm. You may be leaving points on the table without knowing it.
 
-**Step 5 — Check your eco-scheme selections**
-Ask the AI to list the eco-scheme actions available to beef farmers and whether your current farming practices — such as low-emission slurry spreading or multi-species swards — would qualify. Cross-reference with the Teagasc BISS guide.
-
-**Step 6 — Write your questions down**
-Before you close the chat, ask the AI to summarise the three or four things you should verify with your agricultural consultant or Teagasc adviser before submitting.
+**Step 5 — Flag discrepancies and act**
+If the AI flags a mismatch — say, you hold 45 entitlements but only declared 42 eligible hectares last year — write it down and contact the Department of Agriculture's Direct Payments section or your local Teagasc advisor before the May application deadline.
 
 ---
 
 ### What It Costs
 
-The free versions of ChatGPT and Microsoft Copilot will handle everything described above at no cost. If you want to upload PDF documents directly, ChatGPT Plus costs around €20 per month — you could sign up for one month around deadline time and cancel after.
+The AI tools mentioned above are free to use at a basic level. ChatGPT and Copilot both have free tiers that will handle this kind of task without any subscription. If you want to store your farm data and run comparisons over time, a paid plan (around €20–€25/month) gives you more memory and document handling — useful come application season.
 
-Your time: roughly an hour to pull the documents and work through the steps. That's less than it takes to fix an underpayment after the fact.
+Your Teagasc advisor can validate anything the AI flags, and that's where the human expertise earns its keep.
 
 ---
 
 ### Where to Get Help
 
-- **Teagasc** — Your local Teagasc adviser can review your entitlements and confirm your eco-scheme eligibility. Find your local office at [teagasc.ie](https://www.teagasc.ie)
-- **Department of Agriculture BISS helpline** — 0818 211 224, open Monday to Friday
-- **gov.ie BISS section** — Your entitlement statement and parcel maps are all accessible through your Agfood.ie account at [agfood.ie](https://www.agfood.ie)
-- **Citizens Information** — For plain-English explanations of your rights around payment disputes: [citizensinformation.ie](https://www.citizensinformation.ie)
+- **Teagasc BISS guidance**: [teagasc.ie](https://www.teagasc.ie/rural-economy/farm-management/direct-payments/biss/) — plain-English breakdowns of scheme rules
+- **Department of Agriculture**: Direct Payments section via [gov.ie](https://www.gov.ie/en/organisation/department-of-agriculture-food-and-the-marine/) for entitlement queries
+- **Agfood.ie portal**: Where your entitlement statements and application history live
+- **Citizens Information**: [citizensinformation.ie](https://www.citizensinformation.ie) for broader CAP entitlement rights if you're in a dispute
 
-The deadline won't wait, but an hour with an AI tool now could save you a much longer conversation with the Department later.
+If your figures still don't add up after going through this yourself, get your Teagasc advisor or a registered farm consultant to look before you submit. An error on submission is fixable — a missed deadline is a different problem entirely.
