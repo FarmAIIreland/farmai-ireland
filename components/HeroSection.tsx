@@ -44,10 +44,10 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full flex items-center justify-center overflow-hidden bg-[#0a2018]"
+      className="relative w-full overflow-hidden bg-[#0a2018]"
       style={{ minHeight: 'calc(100svh - 64px)' }}
     >
-      {/* Background image — static, no autoplay */}
+      {/* Background image */}
       <Image
         src={PLACEHOLDER_IMAGE}
         alt="Irish farmland at sunrise"
@@ -60,14 +60,9 @@ export function HeroSection() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content */}
-      <div
-        className="relative z-10 text-center px-4 sm:px-5 max-w-3xl mx-auto w-full"
-        style={{
-          paddingTop:    'clamp(1.5rem, 5vh, 5rem)',
-          paddingBottom: 'clamp(2.5rem, 7vh, 6rem)',
-        }}
-      >
+      {/* Content — absolutely fills section so flex centering is reliable */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-5">
+        <div className="text-center max-w-3xl w-full py-16">
         {/* Badge */}
         <span className="inline-block mb-5 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider sm:tracking-widest rounded-full bg-brand-green/25 border border-brand-green/50 text-[#5DCAA5]">
           Built for Irish farmers
@@ -115,6 +110,7 @@ export function HeroSection() {
           >
             Start here if you&apos;re new
           </Link>
+        </div>
         </div>
       </div>
     </section>
