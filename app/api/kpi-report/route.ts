@@ -11,7 +11,12 @@ function fmt(n: number | null, suffix = ''): string {
   return `${n.toLocaleString('en-IE')}${suffix}`;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const cronSecret = process.env.CRON_SECRET;
+  if (cronSecret && request.headers.get('x-cron-secret') !== cronSecret) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
   try {
     const [kpi, broken] = await Promise.all([
       fetchKpis(),

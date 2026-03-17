@@ -66,7 +66,12 @@ function applyVars(template: string, vars: Record<string, string>): string {
 
 // ─── Route ───────────────────────────────────────────────────────────────────
 
-export async function GET() {
+export async function GET(request: Request) {
+  const cronSecret = process.env.CRON_SECRET;
+  if (cronSecret && request.headers.get('x-cron-secret') !== cronSecret) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
   const token = await getGoogleAccessToken();
   if (!token) {
     return NextResponse.json(

@@ -6,7 +6,12 @@ import { checkBrokenLinks }     from '@/lib/broken-links';
 export const dynamic = 'force-dynamic';
 export const maxDuration = 120;
 
-export async function GET() {
+export async function GET(request: Request) {
+  const cronSecret = process.env.CRON_SECRET;
+  if (cronSecret && request.headers.get('x-cron-secret') !== cronSecret) {
+    return new Response('Unauthorized', { status: 401 });
+  }
+
   try {
     const [drafts, broken] = await Promise.all([
       runContentPipeline(),
