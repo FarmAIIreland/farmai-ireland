@@ -209,6 +209,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 9 | Full automation build: content pipeline (Claude API → GitHub drafts → Resend preview), idea capture (Google Sheets), email responder (Gmail drafts from templates), Gmail filters setup, broken link checker, dashboard upgraded (subscriber hero + Gmail inbox monitor + farmland bg), all crons configured in vercel.json, all config editable in /docs markdown files |
 | Session 10 | **Completed:** Permanent Claude Code operating instructions added to master-context.md; 4-persona content review prompt at /docs/content-review-prompt.md; GA4 ID G-VQC7560BBN added to config/site.json; cookie banner built and deployed; crons confirmed in vercel.json; CLONE.md, press-release.md, social-setup.md committed; farmai-pipeline.html and future-ideas-monetization.md committed; departures board font +25%; UI polish pass (spacing, OfficialAdviceBanner). **Blocked → Session 11:** Automation pipeline not functional — env vars missing from Vercel production (RESEND_API_KEY, ANTHROPIC_API_KEY, GITHUB_TOKEN, GMAIL_* x3, MAILCHIMP_* x2, VERCEL_API_TOKEN, VERCEL_PROJECT_ID, AIRTABLE_KPI_TABLE_ID); hero centering and mobile 375px outstanding; GitHub template repo checkbox not done; social accounts not launched; three articles written but not committed pending automation test. |
 | Session 11 | **Completed:** All Vercel env vars set (RESEND, Anthropic, GitHub, Gmail OAuth x3, Mailchimp x2, Vercel API, Airtable KPI); Gmail OAuth confirmed working; Resend domain verified (farmai.ie); MX records added in Hosting Ireland DNS for Google Workspace; DMARC requirement added to CLONE.md; `/api/kpi-report` fully working — HTTP 200, email confirmed delivered to hello@farmai.ie; fixed build failure caused by API routes missing `force-dynamic` export; all Resend from addresses corrected from farmaiireland.ie → farmai.ie; 21 broken source links diagnosed and fixed across 11 content files (gov.ie restructure, Teagasc restructure, ICBF path changes, Merck/SenseHub brand change); `/docs/link-exceptions.md` created; source URL validation rule added to operating instructions and memory; 3 new articles written, persona-reviewed, and committed (chatgpt-first-10-prompts-farmers, icbf-ai-ebi-explained, variable-rate-fertiliser-ireland) — 16 articles total. **Deferred → Session 12:** `/api/content-pipeline` test; `/api/email-responder` test; UI polish; social launch; press release. |
+| Session 12 | **Completed:** Vercel cron blocker fixed — removed `crons` from vercel.json, created `docs/cron-setup.md` for manual cron-job.org setup; full UI polish sprint: Header (16px nav, Subscribe CTA, 72px height), Hero (clamp font sizing), ArticleCard full redesign (3px pillar bar, monospace tag, payoff line, verdict badge, hover lift), NewsletterForm shared component + `/api/newsletter` route (no Mailchimp redirect, inline confirm), site.json pillars restructured to 4 editorial categories, pillarImages added, FAQ expanded to 8 questions, Facebook removed, TopicPillars 4-tile grid, /read filter tabs + image dedup, /guides image dedup, About page 3-section redesign, Tools page clean placeholder, typography tightened (H1 clamp). Build clean, deployed. **Deferred → Session 13:** `/api/content-pipeline` end-to-end test; `/api/email-responder` test; review 3 existing drafts in /content/drafts/; mobile 375px visual check on live site; social launch; press release; cron-job.org manual setup. |
 
 ---
 
@@ -246,45 +247,40 @@ This keeps the context document live and accurate for the next session opener.
 
 ## Session 12 — Next Actions (Priority Order)
 
-### Priority 0 — Vercel cron blocker (fix first)
+## Session 13 — Next Actions (Priority Order)
+
+### Priority 1 — Automation testing
 
 | # | Action | Status |
 |---|--------|--------|
-| 0 | **Vercel "Exceeded Free Resources" — 3 crons configured, free tier allows 2.** Fix options: (A) upgrade to Vercel Pro $20/month, (B) move cron triggers to cron-job.org (free, unlimited) and remove `crons` block from vercel.json entirely — Vercel still runs the functions, external service triggers them. Recommended: option B to keep costs at €0. | ❌ |
+| 1 | Set up cron-job.org — 3 jobs per `docs/cron-setup.md` | ❌ Manual |
+| 2 | Trigger `/api/content-pipeline` — confirm drafts generated, GitHub commit, preview email sent | ❌ |
+| 3 | Trigger `/api/email-responder` — confirm Gmail OAuth works, labels found, draft replies created | ❌ |
+| 4 | Review 3 existing drafts in `/content/drafts/` — persona review → approve → move to articles/ | ❌ |
 
-### Priority 1 — Complete automation testing
-
-| # | Action | Status |
-|---|--------|--------|
-| 1 | Trigger `/api/content-pipeline` — confirm drafts generated, GitHub commit, preview email sent | ❌ |
-| 2 | Trigger `/api/email-responder` — confirm Gmail OAuth works, labels found, draft replies created | ❌ |
-| 3 | Only move to Priority 2 when both endpoints confirmed working | ❌ |
-
-### Priority 2 — UI polish
+### Priority 2 — Visual QA
 
 | # | Action | Status |
 |---|--------|--------|
-| 4 | Hero vertical centering at 1080p desktop | ❌ |
-| 5 | Mobile 375px full pass | ❌ |
-| 6 | Ampersand rendering check | ❌ |
-| 7 | OfficialAdviceBanner audit on all guide pages | ❌ |
+| 5 | Mobile 375px visual check on live site after UI sprint deploy | ❌ |
+| 6 | Confirm Lora font loading on live Vercel | ❌ |
 
 ### Priority 3 — Content
 
 | # | Action | Status |
 |---|--------|--------|
-| 8 | Write: "ChatGPT, Claude or Gemini — which one should an Irish farmer use?" — beginner, getting-started pillar, ~600 words, three tools max, one use case each, clear recommendation | ❌ |
-| 9 | Update existing glossary (`ai-glossary-plain-english-farmers.md`) — add LLM, prompt, AI model, token definitions | ❌ |
+| 7 | Write: "ChatGPT, Claude or Gemini — which one should an Irish farmer use?" — getting-started pillar, ~600 words | ❌ |
+| 8 | Update glossary (`ai-glossary-plain-english-farmers.md`) — add LLM, prompt, AI model, token | ❌ |
 
-### Priority 4 — Manual steps (no Claude Code needed)
+### Priority 4 — Manual steps
 
 | # | Action | Status |
 |---|--------|--------|
-| 10 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
-| 11 | Social accounts: follow /docs/social-setup.md | ❌ Manual |
-| 12 | Press release: send same day social goes live | ❌ Manual |
-| 13 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ❌ Manual |
-| 14 | Set up Cloudflare after DNS is live | ❌ Manual |
+| 9  | Social accounts: follow /docs/social-setup.md | ❌ Manual |
+| 10 | Press release: send same day social goes live | ❌ Manual |
+| 11 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ❌ Manual |
+| 12 | Set up Cloudflare after DNS is live | ❌ Manual |
+| 13 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
 
 ---
 
