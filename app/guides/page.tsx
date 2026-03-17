@@ -1,5 +1,6 @@
 import { ArticleCard } from '@/components/ArticleCard';
 import { getGuides }   from '@/lib/getContent';
+import siteConfig       from '@/config/site.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,12 +11,25 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   const guides = getGuides();
 
+  const pillarImages = (siteConfig.content as Record<string, unknown>).pillarImages as Record<string, string> | undefined;
+  const usedPillarImages = new Set<string>();
+
+  function resolveImage(pillar: string, articleImage?: string): string | undefined {
+    if (articleImage) return articleImage;
+    if (!pillarImages) return undefined;
+    const fallback = pillarImages[pillar];
+    if (!fallback) return undefined;
+    if (usedPillarImages.has(fallback)) return undefined;
+    usedPillarImages.add(fallback);
+    return fallback;
+  }
+
   return (
     <main className="py-12 sm:py-16 px-4 bg-ui-bg min-h-screen">
       <div className="max-w-site mx-auto">
         <div className="mb-10">
-          <h1 className="text-3xl sm:text-4xl font-semibold text-ui-text mb-2">Guides</h1>
-          <p className="text-ui-muted">Step-by-step practical guides for Irish farmers</p>
+          <h1 className="text-[26px] font-semibold text-ui-text mb-1" style={{ letterSpacing: '-0.01em' }}>Guides</h1>
+          <p className="text-ui-muted text-sm">Step-by-step practical guides for Irish farmers</p>
         </div>
 
         {guides.length > 0 ? (
@@ -29,7 +43,9 @@ export default function GuidesPage() {
                 date={guide.date}
                 readTime={guide.readTime}
                 excerpt={guide.excerpt}
-                image={guide.image}
+                payoff={guide.payoff}
+                verdict={guide.verdict}
+                image={resolveImage(guide.pillar, guide.image)}
                 basePath="guides"
               />
             ))}

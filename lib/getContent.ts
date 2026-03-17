@@ -9,7 +9,11 @@ export interface ArticleMeta {
   date:                 string;
   readTime:             number;
   excerpt?:             string;
+  // payoff: optional one-liner displayed on article cards (max 100 chars). Falls back to excerpt.
+  payoff?:              string;
   image?:               string;
+  // verdict: optional honest-review verdict badge. Only render on does-this-work pillar articles.
+  verdict?:             'pass' | 'fail' | 'mixed';
   featured?:            boolean;
   officialAdviceBanner?: boolean;
   sources?:             { label: string; url: string; description: string }[];

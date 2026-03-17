@@ -7,11 +7,12 @@ import siteConfig from '@/config/site.json';
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+  const subscribeHref = pathname === '/' ? '#newsletter' : '/#newsletter';
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-ui-border shadow-sm">
       <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-[72px]">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
@@ -27,7 +28,7 @@ export function Header() {
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-green ${
+                className={`text-base font-medium transition-colors hover:text-brand-green ${
                   pathname === item.path ? 'text-brand-green' : 'text-ui-muted'
                 }`}
               >
@@ -39,10 +40,10 @@ export function Header() {
           {/* Desktop CTA */}
           <div className="hidden md:block">
             <Link
-              href="/read"
+              href={subscribeHref}
               className="inline-block bg-brand-green text-white text-sm font-semibold px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors"
             >
-              Get Started
+              Subscribe
             </Link>
           </div>
 
@@ -74,7 +75,7 @@ export function Header() {
                 key={item.path}
                 href={item.path}
                 onClick={() => setMenuOpen(false)}
-                className={`py-2.5 text-sm font-medium border-b border-ui-border last:border-0 transition-colors hover:text-brand-green ${
+                className={`py-2.5 text-base font-medium border-b border-ui-border last:border-0 transition-colors hover:text-brand-green ${
                   pathname === item.path ? 'text-brand-green' : 'text-ui-text'
                 }`}
               >
@@ -83,11 +84,11 @@ export function Header() {
             ))}
           </nav>
           <Link
-            href="/read"
+            href={subscribeHref}
             onClick={() => setMenuOpen(false)}
             className="mt-4 block w-full text-center bg-brand-green text-white text-sm font-semibold px-4 py-3 rounded-button hover:bg-opacity-90 transition-colors"
           >
-            Get Started
+            Subscribe
           </Link>
         </div>
       )}

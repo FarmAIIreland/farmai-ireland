@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import siteConfig from '@/config/site.json';
+import { NewsletterForm } from './NewsletterForm';
 
 export function Footer() {
   return (
@@ -42,26 +43,15 @@ export function Footer() {
           </div>
 
           {/* Column 3 — Connect */}
-          <div>
+          <div id="footer-newsletter">
             <h3 className="text-xs font-semibold uppercase tracking-widest text-[#5DCAA5] mb-4">Connect</h3>
             <p className="text-sm text-[#9FE1CB] mb-3">FarmAI Monthly — one email a month.</p>
-            <form className="flex flex-col sm:flex-row gap-2 mb-4" onSubmit={e => e.preventDefault()}>
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="flex-1 min-w-0 px-3 py-2 text-sm rounded-button bg-[#0a3d2e] border border-[#1D9E75] text-white placeholder:text-[#5DCAA5] focus:outline-none focus:border-brand-green"
-              />
-              <button
-                type="submit"
-                className="px-3 py-2 text-sm font-semibold bg-brand-green text-white rounded-button hover:bg-opacity-90 transition-colors flex-shrink-0"
-              >
-                Sign up
-              </button>
-            </form>
+            <div className="mb-4">
+              <NewsletterForm variant="dark" />
+            </div>
             <div className="flex gap-4">
-              <a href={siteConfig.social.youtube}  target="_blank" rel="noopener noreferrer" className="text-[#9FE1CB] hover:text-white transition-colors text-sm">YouTube</a>
-              <a href={siteConfig.social.twitter}  target="_blank" rel="noopener noreferrer" className="text-[#9FE1CB] hover:text-white transition-colors text-sm">Twitter</a>
-              <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="text-[#9FE1CB] hover:text-white transition-colors text-sm">Facebook</a>
+              <a href={siteConfig.social.youtube} target="_blank" rel="noopener noreferrer" className="text-[#9FE1CB] hover:text-white transition-colors text-sm">YouTube</a>
+              <a href={siteConfig.social.twitter} target="_blank" rel="noopener noreferrer" className="text-[#9FE1CB] hover:text-white transition-colors text-sm">Twitter</a>
             </div>
           </div>
         </div>

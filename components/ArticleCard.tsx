@@ -1,17 +1,46 @@
 import Link  from 'next/link';
 import Image from 'next/image';
-import { formatPillar } from '@/lib/formatPillar';
 
-const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80';
+// Pillar colour map
+function getPillarStyle(pillar: string): { bar: string; tagBg: string; tagText: string } {
+  if (pillar === 'grants-subsidies') {
+    return { bar: '#E8A020', tagBg: '#FEF3DC', tagText: '#7A4F00' };
+  }
+  if (pillar === 'does-this-work') {
+    return { bar: '#E24B4A', tagBg: '#FDEAEA', tagText: '#7A1010' };
+  }
+  return { bar: '#1D9E75', tagBg: '#E8F5EF', tagText: '#0A5C3F' };
+}
+
+// Monospace tag label from pillar slug
+function getPillarTag(pillar: string): string {
+  const map: Record<string, string> = {
+    'grants-subsidies': 'GRANTS & SCHEMES',
+    'does-this-work':   'HONEST REVIEW',
+    'getting-started':  'GETTING STARTED',
+    'save-time':        'TIME SAVER',
+    'tools-explained':  'TOOLS EXPLAINED',
+    'whats-changing':   "WHAT'S CHANGING",
+    'dairy':            'PRACTICAL GUIDE',
+    'beef-sheep':       'PRACTICAL GUIDE',
+    'tillage':          'PRACTICAL GUIDE',
+    'livestock':        'PRACTICAL GUIDE',
+    'machinery':        'PRACTICAL GUIDE',
+    'tech':             'PRACTICAL GUIDE',
+  };
+  return map[pillar] ?? pillar.replace(/-/g, ' ').toUpperCase();
+}
 
 interface ArticleCardProps {
   title:     string;
   slug:      string;
   pillar:    string;
-  date:      string;
+  date?:     string;
   readTime:  number;
   excerpt?:  string;
+  payoff?:   string;
   image?:    string;
+  verdict?:  'pass' | 'fail' | 'mixed';
   basePath?: 'read' | 'guides';
 }
 
@@ -19,60 +48,131 @@ export function ArticleCard({
   title,
   slug,
   pillar,
-  date,
   readTime,
   excerpt,
+  payoff,
   image,
+  verdict,
   basePath = 'read',
 }: ArticleCardProps) {
-  const href   = `/${basePath}/${slug}`;
-  const imgSrc = image ?? DEFAULT_IMAGE;
+  const href  = `/${basePath}/${slug}`;
+  const style = getPillarStyle(pillar);
+  const tag   = getPillarTag(pillar);
 
-  const formattedDate = new Date(date).toLocaleDateString('en-IE', {
-    day:   'numeric',
-    month: 'long',
-    year:  'numeric',
-  });
+  // Payoff line: prefer payoff, fall back to excerpt truncated at 100 chars
+  const payoffText = payoff
+    ? payoff
+    : excerpt
+      ? (excerpt.length > 100 ? excerpt.slice(0, 97) + '…' : excerpt)
+      : null;
+
+  const verdictConfig = verdict ? {
+    pass:  { label: '✓ works',    bg: '#E8F5EF', text: '#0A5C3F' },
+    fail:  { label: '✗ skip it',  bg: '#FDEAEA', text: '#7A1010' },
+    mixed: { label: '~ mixed bag', bg: '#FEF3DC', text: '#7A4F00' },
+  }[verdict] : null;
 
   return (
     <Link
       href={href}
-      className="group flex flex-col bg-white rounded-[16px] border border-ui-border shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+      className="group flex flex-col bg-white overflow-hidden rounded-[12px] border border-ui-border shadow-sm hover:-translate-y-[3px] hover:border-[#D1D5DB] hover:shadow-md transition-all duration-200"
     >
-      {/* Cover image */}
-      <div className="relative aspect-[16/9] overflow-hidden">
-        <Image
-          src={imgSrc}
-          alt=""
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
-        />
-      </div>
+      {/* 3px pillar colour bar */}
+      <div style={{ height: '3px', background: style.bar, flexShrink: 0 }} />
+
+      {/* Optional image / pillar-colour header */}
+      {image ? (
+        <div className="relative w-full" style={{ aspectRatio: '16/7', overflow: 'hidden' }}>
+          <Image
+            src={image}
+            alt=""
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover"
+          />
+        </div>
+      ) : null}
 
       <div className="flex flex-col flex-1 p-5">
-        {/* Pillar tag */}
-        <span className="inline-block mb-2 text-[11px] font-semibold uppercase tracking-wide text-brand-green">
-          {formatPillar(pillar)}
+
+        {/* Monospace tag */}
+        <span
+          style={{
+            fontFamily:    'monospace',
+            fontSize:      '10px',
+            letterSpacing: '0.13em',
+            textTransform: 'uppercase',
+            background:    style.tagBg,
+            color:         style.tagText,
+            display:       'inline-block',
+            padding:       '2px 7px',
+            borderRadius:  '4px',
+            marginBottom:  '10px',
+            alignSelf:     'flex-start',
+          }}
+        >
+          {tag}
         </span>
 
         {/* Title */}
-        <h3 className="font-semibold text-ui-text text-base leading-snug mb-2 group-hover:text-brand-green transition-colors">
+        <h3
+          style={{
+            fontSize:      '17px',
+            fontWeight:    500,
+            lineHeight:    1.25,
+            letterSpacing: '-0.01em',
+            color:         '#1A1A1A',
+            marginBottom:  payoffText ? '8px' : '12px',
+          }}
+          className="group-hover:text-brand-green transition-colors"
+        >
           {title}
         </h3>
 
-        {/* Excerpt */}
-        {excerpt && (
-          <p className="text-sm text-ui-muted leading-relaxed mb-3 line-clamp-2 flex-1">
-            {excerpt}
+        {/* Italic payoff line */}
+        {payoffText && (
+          <p
+            style={{
+              fontSize:     '13px',
+              fontStyle:    'italic',
+              color:        '#6B7280',
+              borderLeft:   `2px solid ${style.bar}`,
+              paddingLeft:  '10px',
+              marginBottom: '12px',
+              flex:         1,
+            }}
+          >
+            {payoffText}
           </p>
         )}
 
-        {/* Meta */}
-        <div className="flex items-center gap-2 text-xs text-ui-muted mt-auto pt-2 border-t border-ui-border">
-          <time dateTime={date}>{formattedDate}</time>
-          <span>·</span>
-          <span>{readTime} min read</span>
+        {/* Footer row */}
+        <div className="flex items-center justify-between mt-auto pt-3 border-t border-ui-border">
+          <span style={{ fontFamily: 'monospace', fontSize: '11px', color: '#6B7280' }}>
+            {readTime} min read
+          </span>
+          <div className="flex items-center gap-2">
+            {verdictConfig && (
+              <span
+                style={{
+                  fontSize:      '11px',
+                  fontWeight:    600,
+                  background:    verdictConfig.bg,
+                  color:         verdictConfig.text,
+                  padding:       '2px 7px',
+                  borderRadius:  '4px',
+                }}
+              >
+                {verdictConfig.label}
+              </span>
+            )}
+            <svg
+              className="w-4 h-4 text-brand-green group-hover:translate-x-1 transition-transform"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
         </div>
       </div>
     </Link>

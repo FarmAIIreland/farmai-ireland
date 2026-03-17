@@ -44,8 +44,11 @@ export default function ArticlePage({ params }: Props) {
           <span className="text-ui-muted text-xs">{article.readTime} min read</span>
         </div>
 
-        {/* Title — weight 600 */}
-        <h1 className="font-serif text-3xl sm:text-4xl font-semibold text-ui-text leading-snug mb-6">
+        {/* Title */}
+        <h1
+          className="font-serif font-semibold text-ui-text mb-6"
+          style={{ fontSize: 'clamp(28px, 4vw, 42px)', letterSpacing: '-0.02em', lineHeight: 1.1 }}
+        >
           {article.title}
         </h1>
 

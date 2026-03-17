@@ -59,57 +59,59 @@ export function HeroSection() {
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50" />
 
-      {/* Content — absolutely fills section so flex centering is reliable */}
+      {/* Content */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-5">
-        <div className="text-center max-w-3xl w-full">
-        {/* Badge */}
-        <span className="inline-block mb-3 px-3 py-1 text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider sm:tracking-widest rounded-full bg-brand-green/25 border border-brand-green/50 text-[#5DCAA5]">
-          Built for Irish farmers
-        </span>
+        <div className="text-center max-w-4xl w-full">
 
-        {/* Line 1 — static, weight 700 */}
-        <p className="text-white font-bold text-xl sm:text-2xl md:text-3xl leading-tight mb-2 tracking-tight">
-          {siteConfig.hero.line1}
-        </p>
+          {/* Badge */}
+          <span className="inline-block mb-3 px-3 py-1 text-xs sm:text-[13px] font-semibold uppercase tracking-wider sm:tracking-widest rounded-full bg-brand-green/25 border border-brand-green/50 text-[#5DCAA5]">
+            Built for Irish farmers
+          </span>
 
-        {/* Line 2 — departures board flip, weight 700 */}
-        <div
-          className="overflow-hidden"
-          style={{ perspective: '700px' }}
-          aria-live="polite"
-          aria-atomic="true"
-        >
-          <p
-            className="font-bold text-6xl sm:text-7xl md:text-9xl leading-tight inline-block"
-            style={{
-              color:           '#1D9E75',
-              transform,
-              transformOrigin: 'center center',
-              transition:      applyTransition
-                ? `transform ${FLIP_MS}ms ${easing}`
-                : 'none',
-              willChange: 'transform',
-            }}
-          >
-            {phrases[index]}
+          {/* Line 1 — static, subordinate */}
+          <p className="text-white font-bold text-2xl sm:text-3xl md:text-4xl leading-tight mb-1 tracking-tight">
+            {siteConfig.hero.line1}
           </p>
-        </div>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5 sm:mt-6">
-          <Link
-            href="/read"
-            className="inline-block bg-brand-green text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-opacity-90 transition-colors text-sm"
+          {/* Line 2 — departures board flip, dominant */}
+          <div
+            className="overflow-hidden"
+            style={{ perspective: '700px' }}
+            aria-live="polite"
+            aria-atomic="true"
           >
-            Browse articles
-          </Link>
-          <Link
-            href="/guides"
-            className="inline-block border-2 border-white/75 text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-white/10 transition-colors text-sm"
-          >
-            Start here if you&apos;re new
-          </Link>
-        </div>
+            <p
+              className="font-bold leading-none inline-block"
+              style={{
+                fontSize:        'clamp(3.5rem, 11vw, 9rem)',
+                color:           '#1D9E75',
+                transform,
+                transformOrigin: 'center center',
+                transition:      applyTransition
+                  ? `transform ${FLIP_MS}ms ${easing}`
+                  : 'none',
+                willChange: 'transform',
+              }}
+            >
+              {phrases[index]}
+            </p>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5 sm:mt-6">
+            <Link
+              href="/read"
+              className="inline-block bg-brand-green text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-opacity-90 transition-colors text-sm"
+            >
+              Browse articles
+            </Link>
+            <Link
+              href="/guides"
+              className="inline-block border-2 border-white/75 text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-white/10 transition-colors text-sm"
+            >
+              Start here if you&apos;re new
+            </Link>
+          </div>
         </div>
       </div>
     </section>

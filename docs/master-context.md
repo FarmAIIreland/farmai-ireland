@@ -246,6 +246,12 @@ This keeps the context document live and accurate for the next session opener.
 
 ## Session 12 — Next Actions (Priority Order)
 
+### Priority 0 — Vercel cron blocker (fix first)
+
+| # | Action | Status |
+|---|--------|--------|
+| 0 | **Vercel "Exceeded Free Resources" — 3 crons configured, free tier allows 2.** Fix options: (A) upgrade to Vercel Pro $20/month, (B) move cron triggers to cron-job.org (free, unlimited) and remove `crons` block from vercel.json entirely — Vercel still runs the functions, external service triggers them. Recommended: option B to keep costs at €0. | ❌ |
+
 ### Priority 1 — Complete automation testing
 
 | # | Action | Status |

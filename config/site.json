@@ -3,51 +3,24 @@
     "name": "FarmAI Ireland",
     "tagline": "Practical AI knowledge, built for Irish farming",
     "description": "FarmAI Ireland helps Irish farmers understand and use AI tools — plain English, no hype, just what works on the ground.",
-    "url": "https://farmaiireland.ie",
-    "email": "hello@farmaiireland.ie",
+    "url": "https://farmai.ie",
+    "email": "hello@farmai.ie",
     "language": "en-IE",
     "country": "Ireland"
   },
   "navigation": {
     "main": [
-      {
-        "label": "Home",
-        "path": "/"
-      },
-      {
-        "label": "Read",
-        "path": "/read"
-      },
-      {
-        "label": "Guides",
-        "path": "/guides"
-      },
-      {
-        "label": "Tools",
-        "path": "/tools"
-      },
-      {
-        "label": "About",
-        "path": "/about"
-      }
+      { "label": "Home",   "path": "/" },
+      { "label": "Read",   "path": "/read" },
+      { "label": "Guides", "path": "/guides" },
+      { "label": "Tools",  "path": "/tools" },
+      { "label": "About",  "path": "/about" }
     ],
     "footer": [
-      {
-        "label": "Privacy Policy",
-        "path": "/legal/privacy"
-      },
-      {
-        "label": "Terms of Use",
-        "path": "/legal/terms"
-      },
-      {
-        "label": "Cookie Policy",
-        "path": "/legal/cookies"
-      },
-      {
-        "label": "Disclaimer",
-        "path": "/legal/disclaimer"
-      }
+      { "label": "Privacy Policy", "path": "/legal/privacy" },
+      { "label": "Terms of Use",   "path": "/legal/terms" },
+      { "label": "Cookie Policy",  "path": "/legal/cookies" },
+      { "label": "Disclaimer",     "path": "/legal/disclaimer" }
     ]
   },
   "seo": {
@@ -67,24 +40,42 @@
     "featuredArticlesOnHome": 3,
     "pillars": [
       {
-        "slug": "dairy",
-        "label": "Dairy",
-        "description": "AI tools and insights for Irish dairy farmers — from herd management to milk recording.",
-        "tag": "Dairy"
+        "slug": "save-time",
+        "label": "Save Time",
+        "description": "Paperwork, applications, and admin — done faster with AI.",
+        "tag": "TIME SAVERS",
+        "accent": "#1D9E75"
       },
       {
-        "slug": "beef-sheep",
-        "label": "Beef & Sheep",
-        "description": "Practical AI for beef and sheep farmers — weighing, health monitoring, and more.",
-        "tag": "Beef & Sheep"
+        "slug": "tools-explained",
+        "label": "Understand Your Options",
+        "description": "Plain-English breakdowns of AI tools built for farming.",
+        "tag": "TOOLS EXPLAINED",
+        "accent": "#1D9E75"
       },
       {
-        "slug": "tillage",
-        "label": "Tillage",
-        "description": "How AI is helping tillage farmers with crop planning, weather, and yield forecasting.",
-        "tag": "Tillage"
+        "slug": "whats-changing",
+        "label": "Know What's Coming",
+        "description": "Policy, tech, and market shifts — translated for Irish farms.",
+        "tag": "WHAT'S CHANGING",
+        "accent": "#1D9E75"
+      },
+      {
+        "slug": "does-this-work",
+        "label": "Does This Actually Work?",
+        "description": "We test the tools. You get the verdict. No affiliate deals.",
+        "tag": "HONEST REVIEWS",
+        "accent": "#E24B4A"
       }
     ],
+    "pillarImages": {
+      "save-time":        "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80",
+      "tools-explained":  "https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?auto=format&fit=crop&w=800&q=80",
+      "whats-changing":   "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80",
+      "does-this-work":   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80",
+      "grants-subsidies": "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=800&q=80",
+      "getting-started":  "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=800&q=80"
+    },
     "officialAdviceBanner": "This guide is a starting point. For decisions about grants, animal health, or significant farm investments, always check with your Teagasc advisor or relevant authority.",
     "faq": [
       {
@@ -102,6 +93,22 @@
       {
         "question": "Can I trust the information on FarmAI Ireland?",
         "answer": "Every article and guide draws from publicly available information from Teagasc, gov.ie, ICBF, Bord Bia, and other trusted Irish agricultural bodies. We cite our sources in every piece. We're not affiliated with any government body or agri-business."
+      },
+      {
+        "question": "How do I know the information on FarmAI Ireland is accurate?",
+        "answer": "Every claim is grounded in Teagasc, gov.ie, ICBF, or Bord Bia publications. We cite sources at the bottom of every article. We update articles when official guidance changes. We're not affiliated with any government body or agri-business — our only interest is getting the information right."
+      },
+      {
+        "question": "Is FarmAI Ireland free?",
+        "answer": "Yes, always. We don't sell anything. The site is funded by occasional sponsorship, which is disclosed clearly in any article where it applies. If it's not disclosed, there's no commercial relationship."
+      },
+      {
+        "question": "Will AI replace farmers?",
+        "answer": "Short answer: no. Longer answer: that's exactly the kind of question we exist to answer clearly — without the hype and without the fear-mongering. AI handles pattern recognition and data analysis. The judgment calls, the knowledge of your land, the relationships with your animals — that stays with you."
+      },
+      {
+        "question": "How often is new content published?",
+        "answer": "New articles and guides are published regularly throughout the month. The FarmAI Monthly newsletter rounds up everything once a month — sign up below and you won't miss anything."
       }
     ]
   },
@@ -114,8 +121,7 @@
   },
   "social": {
     "youtube": "https://www.youtube.com/@FarmAIIreland",
-    "twitter": "https://twitter.com/FarmAIIreland",
-    "facebook": "https://www.facebook.com/FarmAIIreland"
+    "twitter": "https://twitter.com/FarmAIIreland"
   },
   "hero": {
     "line1": "FarmAI Ireland —",
