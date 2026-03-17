@@ -3,8 +3,8 @@ title: "Using AI to Track ACRES Compliance Across Multiple Parcels"
 slug: "using-ai-to-track-acres-compliance-across-multiple-parcels"
 image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80"
 type: "article"
-pillar: "grants-subsidies"
-date: "2026-03-16"
+pillar: "getting-started"
+date: "2026-03-17"
 readTime: 5
 difficulty: "beginner"
 featured: false
@@ -12,72 +12,70 @@ officialAdviceBanner: true
 status: "draft"
 excerpt: "How AI tools can help you stay on top of ACRES rules across every parcel without the paperwork headache"
 sources:
-  - url: "https://www.teagasc.ie/rural-economy/farm-management/agri-environment/acres/"
+  - url: "https://www.teagasc.ie/rural-economy/rural-development/agri-environment/acres/"
     label: "Teagasc ACRES Overview"
-    description: "Teagasc guidance on ACRES scheme requirements, actions, and payment structures for Irish farmers"
+    description: "Teagasc guidance on ACRES scheme requirements, actions and payment structures for Irish farmers"
 ---
 
-## What Does This Mean for My Farm?
+## Using AI to Track ACRES Compliance Across Multiple Parcels
 
-If you're in ACRES and farming across several parcels — maybe a mix of owned land, rented ground, and commonage — keeping track of what action applies to which field can eat up serious time. Miss a requirement on one parcel and you're looking at a penalty that wipes out a chunk of your payment. AI tools won't fill in your forms for you, but they can act like a second pair of eyes across every field, flagging what's due, what's overdue, and what needs a photo before the inspector calls.
+If you're in ACRES with land spread across several parcels, keeping track of which field needs what action — and when — can eat up time you don't have. AI tools won't do the work for you, but they can tell you what needs doing, on which parcel, before you miss a deadline or fail a check.
 
 ---
 
 ## The Problem
 
-ACRES (the Agri-Climate Rural Environment Scheme) is more flexible than GLAS was, but that flexibility cuts both ways. You choose your actions, which sounds grand — until you're trying to remember whether the riparian margin on the Cloonbeg parcel needed topping before July or after, and whether you photographed the hedgerow on the Rathcroghan road before trimming season closed.
+ACRES (Agri-Climate Rural Environment Scheme) pays well, but it asks a lot. Between low-input grassland, riparian buffers, hedgerow maintenance, and species-rich areas, a farmer with eight or ten parcels in the scheme can quickly lose track of what's compliant and what isn't.
 
-Multiply that across eight or ten parcels with different action mixes and different deadlines, and it becomes genuinely hard to manage in your head or on a notebook. A missed action isn't just a paperwork problem — according to Teagasc, non-compliance with selected actions can trigger proportional penalty reductions on your overall ACRES payment.
+Most farmers manage this with a folder of maps, a few sticky notes, and memory. That works — until it doesn't. A missed topping deadline on one parcel, or a hedge cut done in the wrong month, and you're looking at a penalty that wipes out weeks of payment.
+
+Teagasc advisors are the proper first port of call for scheme-specific questions, but between farm visits they're busy, and you're on your own with the day-to-day.
 
 ---
 
 ## The Tool
 
-AI-assisted farm management platforms — some built into mapping tools, others standalone apps — can pull your parcel data together in one place and apply rules-based alerts on top. Think of it less like a robot and more like a very organised neighbour who never forgets a deadline.
+AI farm management assistants — including tools built into platforms like Agrinet, or general-purpose AI like FarmAI — can take your parcel data and ACRES action plan and turn it into a live compliance checklist.
 
-Tools worth looking at in the Irish context:
-
-- **Agricapture / AgriNet-style platforms** — some now offer ACRES action tracking layered onto your land parcel maps
-- **Farmbench (Teagasc)** — useful for financial benchmarking alongside compliance tracking
-- **DAFM's Agfood.ie portal** — your official parcel and payment records live here; some AI tools can sync with this data
+You're not replacing your Teagasc advisor or your ACRES planner. You're giving yourself a second pair of eyes that doesn't forget anything and doesn't take a day off.
 
 ---
 
-## Step-by-Step: Getting Set Up
+## Step-by-Step: Setting It Up
 
-**Step 1 — List every parcel and its ACRES actions**
-Pull your ACRES agreement from Agfood.ie (gov.ie login required). Write down each parcel, the actions you selected, and the deadline windows. Even one session with a cup of tea getting this on paper first makes everything else easier.
+**1. Pull your ACRES action plan**
+Log into your gov.ie farmer portal or ask your advisor for a copy of your approved action plan. This lists every parcel, every required action, and the eligible dates for each. You'll need this as your starting document.
 
-**Step 2 — Enter parcel data into your chosen tool**
-Most platforms let you import from your LPIS map or drop a pin manually. Name each parcel something you'll actually recognise — "Cloonbeg meadow" is more useful than "Parcel 7."
+**2. List your parcels with GPS boundaries**
+If you're already on the Basic Payment Scheme or BISS, your parcel maps are in the Department of Agriculture's Land Parcel Identification System (LPIS). Export or screenshot these. Many AI tools can read a simple table — parcel ID, area, action type is enough to start.
 
-**Step 3 — Tag each action to the right parcel**
-Assign the specific ACRES actions to each field. Good tools will then prompt you with deadline reminders — for example, low-input grassland or wild bird cover actions often have narrow windows.
+**3. Feed the information to your AI tool**
+In FarmAI (or a similar tool), create a farm profile and enter each parcel with its required ACRES actions. Good AI tools will ask you: what action is required, what are the permitted dates, and has it been completed this year?
 
-**Step 4 — Set up photo reminders**
-Many ACRES actions require photographic evidence. Set your tool to remind you to take dated photos before and after each action. Store them in a single folder labelled by parcel and date — your advisor or inspector will thank you.
+**4. Set up your compliance calendar**
+Once the data is in, the AI should generate a calendar showing upcoming action windows — for example, "Parcel 6 – low-input grassland, no fertiliser from 1 Nov to 31 Jan" or "Parcel 3 – hedgerow, cutting window closes 31 August." Set alerts for two weeks before each deadline.
 
-**Step 5 — Check the dashboard weekly during key periods**
-Spring and late summer are the busiest compliance windows. A five-minute weekly check of your AI dashboard during March–August will catch problems before they become penalties.
+**5. Log actions as you do them**
+Every time you complete an action — topping a parcel, putting up a fence along a watercourse, planting a new hedgerow — log it in the tool with the date. This creates a simple record you can show an inspector without scrambling through notebooks.
 
-**Step 6 — Share access with your advisor**
-If you're working with a Teagasc advisor or a private ACRES planner, give them view access. Two sets of eyes on the dashboard before the compliance year closes is well worth it.
+**6. Run a monthly compliance check**
+Ask the AI: "Which parcels have outstanding actions this month?" It should give you a plain list. If anything is at risk, you'll know before the Department does.
 
 ---
 
 ## What It Costs
 
-Basic ACRES tracking features are included in some farm apps at no extra cost. More comprehensive AI platforms with automated alerts and photo management typically run **€100–€300 per year** for a farm your size. Set that against an average ACRES payment of €5,000–€7,000 and the maths makes sense.
+Most AI farm tools are subscription-based. Expect to pay somewhere between €10 and €30 a month for a basic plan that handles compliance tracking. Some platforms offer a free tier that covers a handful of parcels — worth trying before you commit.
 
-Some platforms offer free trials — worth running one through a quieter month to see if it suits how you work.
+Compare that to an ACRES penalty. Under the current scheme rules, a serious breach on even one parcel can result in a proportional reduction across your whole payment. If you're drawing €5,000–€8,000 a year from ACRES, a €20 monthly tool paying for itself once is decent value.
 
 ---
 
 ## Where to Get Help
 
-- **Teagasc advisor** — your first call for any ACRES query; find your local office at [teagasc.ie](https://www.teagasc.ie)
-- **Agfood.ie** — your official DAFM portal for parcel maps and payment history
-- **ACRES support helpline** — listed on gov.ie under Department of Agriculture supports
-- **Citizens Information** — useful plain-English summary of ACRES eligibility and payment structures at [citizensinformation.ie](https://www.citizensinformation.ie)
+- **Your Teagasc advisor** is your main point of contact for what the scheme actually requires. Don't rely on any AI tool to interpret scheme rules — use it to track and remind, not to advise.
+- **Teagasc ACRES guidance** at teagasc.ie has plain-English breakdowns of each action type.
+- **The Department of Agriculture** portal at gov.ie holds your official action plan and parcel maps.
+- **Citizens Information** (citizensinformation.ie) has a straightforward overview of ACRES if you want to check eligibility rules or payment rates without wading through official documents.
 
-No AI tool replaces your ACRES planner or advisor — but used alongside them, it takes the memory work off your plate so you can get on with the farming.
+The tool does the remembering. You still do the farming.
