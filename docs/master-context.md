@@ -34,13 +34,14 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | Mailchimp connected to newsletter form | ✅ Done — Session 5 |
 | Airtable base + env vars in Vercel | ✅ Done — Session 5; table ID corrected Session 7 |
 | ArticleFeedback wired to Airtable | ✅ Done — Session 5; confirmed working Session 7 |
-| farmai.ie pointed at Vercel | ❌ Pending — DNS A record in Hosting Ireland (see instructions below) |
+| farmai.ie pointed at Vercel | ✅ Done — Session 12 — confirmed live (HTTP 200) |
 | Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
 | Google Analytics ID added | ✅ Done — Session 7 (G-VQC7560BBN in config/site.json) |
 | KPI dashboard (/dashboard) | ✅ Done — Session 8/9 — password-protected, WoW deltas, farmland hero |
-| Monday KPI email + broken link check | ✅ Done — Session 8/9 — /api/kpi-report + Vercel Cron Mon 8am UTC — **email delivery confirmed Session 11** |
-| Sunday content pipeline | ✅ Done — Session 9 — /api/content-pipeline + Vercel Cron Sun 8pm UTC — drafts confirmed generating, email delivery untested |
-| Daily email responder drafts | ✅ Done — Session 9 — /api/email-responder + Vercel Cron daily 8am UTC — untested end-to-end |
+| Monday KPI email + broken link check | ✅ Done — Session 8/9 — cron-job.org scheduled Mon 8am UTC — email delivery confirmed Session 11 |
+| Sunday content pipeline | ✅ Done — Session 9 — cron-job.org scheduled Sun 8pm UTC — end-to-end untested |
+| Daily email responder drafts | ✅ Done — Session 9 — cron-job.org scheduled daily 8am UTC — end-to-end untested |
+| Cron jobs moved to cron-job.org | ✅ Done — Session 12 — CRON_SECRET secured, 3 jobs live at farmai.ie URLs |
 | Gmail labels + filters setup | ✅ Done — Session 9 — /api/gmail-setup one-time route |
 | Gmail unread inbox monitor on dashboard | ✅ Done — Session 9 — Sponsorship + Media label counts |
 
@@ -253,7 +254,7 @@ This keeps the context document live and accurate for the next session opener.
 
 | # | Action | Status |
 |---|--------|--------|
-| 1 | Set up cron-job.org — 3 jobs per `docs/cron-setup.md` | ❌ Manual |
+| 1 | Set up cron-job.org — 3 jobs per `docs/cron-setup.md` | ✅ Done — Session 12 |
 | 2 | Trigger `/api/content-pipeline` — confirm drafts generated, GitHub commit, preview email sent | ❌ |
 | 3 | Trigger `/api/email-responder` — confirm Gmail OAuth works, labels found, draft replies created | ❌ |
 | 4 | Review 3 existing drafts in `/content/drafts/` — persona review → approve → move to articles/ | ❌ |
@@ -278,7 +279,7 @@ This keeps the context document live and accurate for the next session opener.
 |---|--------|--------|
 | 9  | Social accounts: follow /docs/social-setup.md | ❌ Manual |
 | 10 | Press release: send same day social goes live | ❌ Manual |
-| 11 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ❌ Manual |
+| 11 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ✅ Done — Session 12 |
 | 12 | Set up Cloudflare after DNS is live | ❌ Manual |
 | 13 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
 
