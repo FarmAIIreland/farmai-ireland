@@ -37,6 +37,7 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | farmai.ie pointed at Vercel | ✅ Done — Session 12 — confirmed live (HTTP 200) |
 | Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
 | Google Analytics ID added | ✅ Done — Session 7 (G-VQC7560BBN in config/site.json) |
+| Google Search Console | ❌ Pending — verify farmai.ie at https://search.google.com/search-console (DNS TXT record method via Hosting Ireland) |
 | KPI dashboard (/dashboard) | ✅ Done — Session 8/9 — password-protected, WoW deltas, farmland hero |
 | Monday KPI email + broken link check | ✅ Done — Session 8/9 — cron-job.org scheduled Mon 8am UTC — email delivery confirmed Session 11 |
 | Sunday content pipeline | ✅ Done — Session 9 — cron-job.org scheduled Sun 8pm UTC — end-to-end untested |
@@ -257,7 +258,7 @@ This keeps the context document live and accurate for the next session opener.
 | 1 | Set up cron-job.org — 3 jobs per `docs/cron-setup.md` | ✅ Done — Session 12 |
 | 2 | Trigger `/api/content-pipeline` — confirm drafts generated, GitHub commit, preview email sent | ❌ |
 | 3 | Trigger `/api/email-responder` — confirm Gmail OAuth works, labels found, draft replies created | ❌ |
-| 4 | Review 3 existing drafts in `/content/drafts/` — persona review → approve → move to articles/ | ❌ |
+| 4 | Review 3 existing drafts in `/content/drafts/` — persona review → approve → move to articles/ | ✅ Done — Session 14 — all 3 drafts identical to published articles, deleted as stale duplicates |
 
 ### Priority 2 — Visual QA
 
@@ -270,8 +271,8 @@ This keeps the context document live and accurate for the next session opener.
 
 | # | Action | Status |
 |---|--------|--------|
-| 7 | Write: "ChatGPT, Claude or Gemini — which one should an Irish farmer use?" — getting-started pillar, ~600 words | ❌ |
-| 8 | Update glossary (`ai-glossary-plain-english-farmers.md`) — add LLM, prompt, AI model, token | ❌ |
+| 7 | Write: "ChatGPT, Claude or Gemini — which one should an Irish farmer use?" — does-this-work pillar, ~700 words | ✅ Done — Session 14 |
+| 8 | Update glossary (`ai-glossary-plain-english-farmers.md`) — add LLM, prompt, AI model, token, computer vision | ✅ Done — Session 14 |
 
 ### Priority 4 — Manual steps
 
@@ -282,6 +283,14 @@ This keeps the context document live and accurate for the next session opener.
 | 11 | Point farmai.ie at Vercel — A record 76.76.21.21 in Hosting Ireland DNS | ✅ Done — Session 12 |
 | 12 | Set up Cloudflare after DNS is live | ❌ Manual |
 | 13 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
+
+### Priority 5 — SEO (added Session 14)
+
+| # | Action | Status |
+|---|--------|--------|
+| 14 | Verify farmai.ie in Google Search Console (DNS TXT record method) | ❌ Manual |
+| 15 | Link Search Console to GA4 property | ❌ Manual |
+| 16 | Monthly SEO review: top keywords, article performance, pillar distribution | ❌ Recurring |
 
 ---
 

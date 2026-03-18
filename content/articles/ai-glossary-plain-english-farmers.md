@@ -5,7 +5,7 @@ image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80
 type: "explainer"
 pillar: "tools-explained"
 date: "2026-04-30"
-readTime: 5
+readTime: 8
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: false
@@ -68,6 +68,30 @@ This is what makes text-based AI tools good at drafting, summarising, and explai
 
 **Matters for your farm now:** Only if you want to understand why ChatGPT is good at some things and hopeless at others.
 
+## Prompt
+
+The instruction you type into ChatGPT, Claude, or any AI tool. The better your prompt, the better the answer. "Help me with my farm" is a bad prompt. "I have 80 suckler cows in Roscommon and need to draft a farm description for my ACRES application — include habitat types and land use" is a good one.
+
+Writing good prompts is the single most useful AI skill a farmer can learn. It's not technical — it's just being specific about what you need.
+
+**Matters for your farm now:** Yes. This is the skill that makes every AI tool work better.
+
+## AI Model
+
+The trained system that powers an AI tool. ChatGPT runs on a model called GPT-4. Claude runs on a model called Claude. Gemini runs on Google's Gemini model. You don't need to know the model names — but knowing that different models have different strengths is useful.
+
+Some models are better at writing. Some are better at analysing data. Some can search the web. When a tool updates its model, the quality of responses can change — sometimes dramatically.
+
+**Matters for your farm now:** Only if you're choosing between tools. See our [ChatGPT vs Claude vs Gemini comparison](/read/chatgpt-claude-gemini-which-for-farmers).
+
+## Token
+
+The unit AI tools use to measure text. Roughly, one token equals about four characters or three-quarters of a word. When a free tier says "limited to 4,000 tokens," that's roughly 3,000 words — enough for most farming tasks.
+
+Tokens matter because they determine how much text you can input and how long the AI's response can be. If you're pasting a long Teagasc document and asking for a summary, you might hit the limit on free plans.
+
+**Matters for your farm now:** Only if you're hitting limits on free plans. Paid plans have much higher token limits.
+
 ## Precision Agriculture
 
 Using data and technology to apply inputs more precisely — fertiliser, spray, water — based on what each part of a field actually needs, rather than treating everything the same.
@@ -75,6 +99,14 @@ Using data and technology to apply inputs more precisely — fertiliser, spray, 
 GPS-guided spreading, variable rate fertiliser application, and satellite field mapping are the most common precision ag tools on Irish farms today. Some require significant equipment investment. Some — like free satellite NDVI mapping — require only a smartphone.
 
 **Matters for your farm now:** Depends on your scale and enterprise. Tillage and larger dairy operations see the clearest return. Smaller suckler operations less so right now.
+
+## Computer Vision
+
+AI that analyses images or video to extract information. This is the technology behind body condition scoring cameras, lameness detection, and drone-based field analysis. It works by comparing what it sees against thousands of training images.
+
+On farms, computer vision is used in heat detection systems (monitoring movement patterns), livestock counting (drone surveys), and crop health assessment (satellite imagery analysis).
+
+**Matters for your farm now:** Increasingly yes — if you use any camera-based monitoring tool, you're using computer vision.
 
 ---
 
