@@ -1,7 +1,7 @@
 ---
 title: "Using your phone camera for body condition scoring — the apps tested"
 slug: "body-condition-scoring-apps-tested"
-pillar: "livestock"
+pillar: "does-this-work"
 date: "2026-03-20"
 readTime: 7
 difficulty: "intermediate"

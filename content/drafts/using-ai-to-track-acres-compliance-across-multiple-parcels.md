@@ -3,7 +3,7 @@ title: "Using AI to Track ACRES Compliance Across Multiple Parcels"
 slug: "using-ai-to-track-acres-compliance-across-multiple-parcels"
 image: ""
 type: "article"
-pillar: "getting-started"
+pillar: "save-time"
 date: "2026-03-17"
 readTime: 5
 difficulty: "beginner"

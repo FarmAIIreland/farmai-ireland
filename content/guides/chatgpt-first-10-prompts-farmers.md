@@ -3,7 +3,7 @@ title: "Your first 10 ChatGPT prompts as an Irish farmer — copy, paste, done"
 slug: "chatgpt-first-10-prompts-farmers"
 image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80"
 type: "guide"
-pillar: "getting-started"
+pillar: "tools-explained"
 date: "2026-05-07"
 readTime: 6
 difficulty: "beginner"

@@ -15,9 +15,28 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
   if (!article) return {};
+  const url = `${siteConfig.site.url}/read/${article.slug}`;
   return {
-    title:       `${article.title} | FarmAI Ireland`,
-    description: article.excerpt,
+    title:       article.seo?.title ?? `${article.title} | FarmAI Ireland`,
+    description: article.seo?.description ?? article.excerpt ?? siteConfig.seo.defaultDescription,
+    keywords:    article.seo?.keywords,
+    alternates:  { canonical: url },
+    openGraph: {
+      title:       article.seo?.title ?? article.title,
+      description: article.seo?.description ?? article.excerpt,
+      url,
+      type:        'article',
+      siteName:    siteConfig.site.name,
+      locale:      'en_IE',
+      images:      article.image ? [{ url: article.image, width: 1200, height: 630, alt: article.title }] : [],
+      publishedTime: article.date,
+    },
+    twitter: {
+      card:        'summary_large_image',
+      title:       article.seo?.title ?? article.title,
+      description: article.seo?.description ?? article.excerpt,
+      images:      article.image ? [article.image] : [],
+    },
   };
 }
 
@@ -29,8 +48,29 @@ export default function ArticlePage({ params }: Props) {
     day: 'numeric', month: 'long', year: 'numeric',
   });
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.seo?.description ?? article.excerpt,
+    image: article.image,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: { '@type': 'Organization', name: 'FarmAI Ireland', url: siteConfig.site.url },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FarmAI Ireland',
+      url: siteConfig.site.url,
+      logo: { '@type': 'ImageObject', url: `${siteConfig.site.url}/images/farmai-og.jpg` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteConfig.site.url}/read/${article.slug}` },
+    keywords: article.seo?.keywords?.join(', '),
+    inLanguage: 'en-IE',
+  };
+
   return (
     <main className="py-12 md:py-20 px-4 bg-ui-bg min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}

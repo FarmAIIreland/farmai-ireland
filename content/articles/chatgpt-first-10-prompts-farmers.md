@@ -1,7 +1,7 @@
 ---
 title: "ChatGPT for Farmers: Your First 10 Prompts"
 slug: "chatgpt-first-10-prompts-farmers"
-pillar: "getting-started"
+pillar: "tools-explained"
 date: "2026-03-16"
 readTime: 6
 difficulty: "beginner"

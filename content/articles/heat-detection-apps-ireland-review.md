@@ -1,7 +1,7 @@
 ---
 title: "Heat Detection Apps in Ireland: The Honest Review"
 slug: "heat-detection-apps-ireland-review"
-pillar: "livestock"
+pillar: "does-this-work"
 date: "2026-03-16"
 readTime: 8
 difficulty: "intermediate"

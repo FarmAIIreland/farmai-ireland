@@ -1,7 +1,7 @@
 ---
 title: "Variable Rate Fertiliser in Ireland: What You Need, What It Costs, Whether It Stacks Up"
 slug: "variable-rate-fertiliser-ireland"
-pillar: "machinery"
+pillar: "does-this-work"
 date: "2026-03-16"
 readTime: 8
 difficulty: "intermediate"

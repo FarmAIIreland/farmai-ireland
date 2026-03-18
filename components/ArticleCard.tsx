@@ -15,18 +15,20 @@ function getPillarStyle(pillar: string): { bar: string; tagBg: string; tagText: 
 // Monospace tag label from pillar slug
 function getPillarTag(pillar: string): string {
   const map: Record<string, string> = {
-    'grants-subsidies': 'GRANTS & SCHEMES',
-    'does-this-work':   'HONEST REVIEW',
-    'getting-started':  'GETTING STARTED',
     'save-time':        'TIME SAVER',
     'tools-explained':  'TOOLS EXPLAINED',
     'whats-changing':   "WHAT'S CHANGING",
-    'dairy':            'PRACTICAL GUIDE',
-    'beef-sheep':       'PRACTICAL GUIDE',
-    'tillage':          'PRACTICAL GUIDE',
-    'livestock':        'PRACTICAL GUIDE',
-    'machinery':        'PRACTICAL GUIDE',
-    'tech':             'PRACTICAL GUIDE',
+    'does-this-work':   'HONEST REVIEW',
+    // Legacy fallbacks
+    'grants-subsidies': 'TIME SAVER',
+    'getting-started':  'TOOLS EXPLAINED',
+    'livestock':        'HONEST REVIEW',
+    'dairy':            'TOOLS EXPLAINED',
+    'beef-sheep':       'HONEST REVIEW',
+    'tillage':          'TOOLS EXPLAINED',
+    'machinery':        'HONEST REVIEW',
+    'tech':             'TOOLS EXPLAINED',
+    'policy':           "WHAT'S CHANGING",
   };
   return map[pillar] ?? pillar.replace(/-/g, ' ').toUpperCase();
 }

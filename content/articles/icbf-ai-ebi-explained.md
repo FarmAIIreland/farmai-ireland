@@ -1,7 +1,7 @@
 ---
 title: "How ICBF Uses AI and What It Means for Your EBI"
 slug: "icbf-ai-ebi-explained"
-pillar: "livestock"
+pillar: "tools-explained"
 date: "2026-03-16"
 readTime: 7
 difficulty: "intermediate"

@@ -1,7 +1,7 @@
 ---
 title: "Sheep scanning and AI: what the new tools can and can't do"
 slug: "sheep-scanning-ai-tools"
-pillar: "livestock"
+pillar: "does-this-work"
 date: "2026-03-22"
 readTime: 7
 difficulty: "beginner"

@@ -34,10 +34,26 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'FarmAI Ireland',
+  url: siteConfig.site.url,
+  logo: `${siteConfig.site.url}/images/farmai-og.jpg`,
+  description: siteConfig.site.description,
+  email: siteConfig.site.email,
+  sameAs: [
+    siteConfig.social.twitter,
+    siteConfig.social.youtube,
+  ],
+  areaServed: { '@type': 'Country', name: 'Ireland' },
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-IE" className={lora.variable}>
       <body className="flex flex-col min-h-screen font-sans">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

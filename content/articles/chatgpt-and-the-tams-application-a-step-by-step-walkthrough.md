@@ -3,7 +3,7 @@ title: "ChatGPT and the TAMS Application — a Step-by-Step Walkthrough"
 slug: "chatgpt-and-the-tams-application-a-step-by-step-walkthrough"
 image: ""
 type: "article"
-pillar: "grants-subsidies"
+pillar: "save-time"
 date: "2026-03-17"
 readTime: 5
 difficulty: "beginner"

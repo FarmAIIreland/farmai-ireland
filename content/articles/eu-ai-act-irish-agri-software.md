@@ -1,7 +1,7 @@
 ---
 title: "What the EU AI Act means for Irish agri software in plain English"
 slug: "eu-ai-act-irish-agri-software"
-pillar: "policy"
+pillar: "whats-changing"
 date: "2026-03-26"
 readTime: 6
 difficulty: "beginner"

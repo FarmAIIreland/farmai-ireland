@@ -1,7 +1,7 @@
 ---
 title: "How AI is helping Irish dairy farmers detect lameness earlier"
 slug: "ai-lameness-detection-dairy"
-pillar: "dairy"
+pillar: "tools-explained"
 date: "2026-03-10"
 readTime: 5
 excerpt: "Lameness costs Irish dairy farmers thousands each year. New AI-powered camera systems can flag it days before a farmer would normally notice. Here's what's available and what it costs."

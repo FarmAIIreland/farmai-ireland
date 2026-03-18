@@ -14,8 +14,6 @@ const PILLAR_LABELS: Record<string, string> = {
   'tools-explained': 'Tools Explained',
   'whats-changing':  "What's Changing",
   'does-this-work':  'Honest Reviews',
-  'grants-subsidies':'Grants & Schemes',
-  'getting-started': 'Getting Started',
 };
 
 interface Props {

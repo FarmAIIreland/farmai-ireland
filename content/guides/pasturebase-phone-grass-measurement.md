@@ -3,7 +3,7 @@ title: "PastureBase and your phone: measure grass without walking every field"
 slug: "pasturebase-phone-grass-measurement"
 image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80"
 type: "guide"
-pillar: "dairy"
+pillar: "tools-explained"
 date: "2026-04-02"
 readTime: 5
 difficulty: "beginner"

@@ -1,7 +1,7 @@
 ---
 title: "AI-assisted nitrates action programme compliance checklist"
 slug: "ai-nitrates-compliance-checklist"
-pillar: "grants-subsidies"
+pillar: "save-time"
 date: "2026-03-18"
 readTime: 7
 difficulty: "beginner"

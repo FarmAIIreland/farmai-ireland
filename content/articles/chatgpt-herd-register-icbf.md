@@ -1,7 +1,7 @@
 ---
 title: "How Irish Suckler Farmers Are Using AI to Cut Time on Herd Register Submissions"
 slug: "chatgpt-herd-register-icbf"
-pillar: "livestock"
+pillar: "save-time"
 date: "2026-03-16"
 readTime: 6
 difficulty: "beginner"

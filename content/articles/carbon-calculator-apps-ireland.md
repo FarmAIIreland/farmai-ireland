@@ -1,7 +1,7 @@
 ---
 title: "The carbon calculator apps and what Irish farmers need to know about them"
 slug: "carbon-calculator-apps-ireland"
-pillar: "policy"
+pillar: "whats-changing"
 date: "2026-03-24"
 readTime: 7
 difficulty: "beginner"

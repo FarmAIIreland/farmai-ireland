@@ -1,7 +1,7 @@
 ---
 title: "How to Use AI for Your ACRES Scheme Paperwork"
 slug: "ai-acres-scheme-paperwork"
-pillar: "grants-subsidies"
+pillar: "save-time"
 date: "2026-03-16"
 readTime: 7
 difficulty: "beginner"

@@ -3,7 +3,7 @@ title: "Does AI actually replace your Teagasc advisor? We looked at the evidence
 slug: "does-ai-replace-teagasc-advisor"
 image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=80"
 type: "review"
-pillar: "getting-started"
+pillar: "tools-explained"
 date: "2026-05-21"
 readTime: 7
 difficulty: "beginner"

@@ -126,7 +126,11 @@ Brand voice rules — strictly enforced:
 Article format: Problem → Tool → Step-by-step → What it costs → Where to get help
 Length: 600–900 words
 
-Available pillars: dairy, beef-sheep, tillage, getting-started, grants-subsidies, livestock, machinery, tech
+Available pillars (choose the BEST fit):
+- save-time: Paperwork, grants, admin, compliance — anything that saves the farmer time
+- tools-explained: Plain-English breakdowns of AI tools, glossaries, getting started guides
+- whats-changing: Policy, regulation, market shifts, industry trends
+- does-this-work: Honest reviews, tool testing, cost-benefit verdicts
 
 Return ONLY this exact YAML frontmatter + markdown body — nothing else before or after:
 
@@ -135,7 +139,7 @@ title: "..."
 slug: "..."
 image: "${imageUrl}"
 type: "article"
-pillar: "getting-started"
+pillar: "save-time"
 date: "${today}"
 readTime: 5
 difficulty: "beginner"
@@ -143,6 +147,10 @@ featured: false
 officialAdviceBanner: false
 status: "draft"
 excerpt: "One sentence, 15–20 words, no full stop at end"
+seo:
+  title: "SEO-optimised title under 60 chars | FarmAI Ireland"
+  description: "Compelling meta description, 150-160 chars, includes primary keyword"
+  keywords: ["primary keyword", "secondary keyword", "Irish farming + topic"]
 sources:
   - url: "https://..."
     label: "Source Name"

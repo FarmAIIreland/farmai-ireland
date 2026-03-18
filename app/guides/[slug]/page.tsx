@@ -15,9 +15,28 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuideBySlug(params.slug);
   if (!guide) return {};
+  const url = `${siteConfig.site.url}/guides/${guide.slug}`;
   return {
-    title:       `${guide.title} | FarmAI Ireland`,
-    description: guide.excerpt,
+    title:       guide.seo?.title ?? `${guide.title} | FarmAI Ireland`,
+    description: guide.seo?.description ?? guide.excerpt ?? siteConfig.seo.defaultDescription,
+    keywords:    guide.seo?.keywords,
+    alternates:  { canonical: url },
+    openGraph: {
+      title:       guide.seo?.title ?? guide.title,
+      description: guide.seo?.description ?? guide.excerpt,
+      url,
+      type:        'article',
+      siteName:    siteConfig.site.name,
+      locale:      'en_IE',
+      images:      guide.image ? [{ url: guide.image, width: 1200, height: 630, alt: guide.title }] : [],
+      publishedTime: guide.date,
+    },
+    twitter: {
+      card:        'summary_large_image',
+      title:       guide.seo?.title ?? guide.title,
+      description: guide.seo?.description ?? guide.excerpt,
+      images:      guide.image ? [guide.image] : [],
+    },
   };
 }
 
@@ -29,8 +48,29 @@ export default function GuidePage({ params }: Props) {
     day: 'numeric', month: 'long', year: 'numeric',
   });
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.seo?.description ?? guide.excerpt,
+    image: guide.image,
+    datePublished: guide.date,
+    dateModified: guide.date,
+    author: { '@type': 'Organization', name: 'FarmAI Ireland', url: siteConfig.site.url },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FarmAI Ireland',
+      url: siteConfig.site.url,
+      logo: { '@type': 'ImageObject', url: `${siteConfig.site.url}/images/farmai-og.jpg` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteConfig.site.url}/guides/${guide.slug}` },
+    keywords: guide.seo?.keywords?.join(', '),
+    inLanguage: 'en-IE',
+  };
+
   return (
     <main className="py-12 md:py-20 px-4 bg-ui-bg min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}
