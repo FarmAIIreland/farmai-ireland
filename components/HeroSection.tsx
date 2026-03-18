@@ -74,14 +74,15 @@ export function HeroSection() {
           </p>
 
           {/* Line 2 — departures board flip, dominant */}
+          {/* Fixed height prevents CTA buttons from bouncing when phrase length varies */}
           <div
             className="overflow-hidden"
-            style={{ perspective: '700px' }}
+            style={{ perspective: '700px', height: 'clamp(3.5rem, 11vw, 9rem)' }}
             aria-live="polite"
             aria-atomic="true"
           >
             <p
-              className="font-bold leading-none inline-block"
+              className="font-bold leading-none inline-block whitespace-nowrap"
               style={{
                 fontSize:        'clamp(3.5rem, 11vw, 9rem)',
                 color:           '#1D9E75',
