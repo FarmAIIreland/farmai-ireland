@@ -2,6 +2,7 @@ import { notFound }        from 'next/navigation';
 import { MDXRemote }       from 'next-mdx-remote/rsc';
 import { getGuideBySlug, getGuideSlugs } from '@/lib/getContent';
 import { formatPillar }    from '@/lib/formatPillar';
+import { getOgImageUrl }   from '@/lib/ogImage';
 import { ArticleFeedback } from '@/components/ArticleFeedback';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
@@ -15,7 +16,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuideBySlug(params.slug);
   if (!guide) return {};
-  const url = `${siteConfig.site.url}/guides/${guide.slug}`;
+  const url     = `${siteConfig.site.url}/guides/${guide.slug}`;
+  const ogImage = getOgImageUrl({ title: guide.title, pillar: guide.pillar, readTime: guide.readTime });
   return {
     title:       guide.seo?.title ?? `${guide.title} | FarmAI Ireland`,
     description: guide.seo?.description ?? guide.excerpt ?? siteConfig.seo.defaultDescription,
@@ -28,14 +30,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type:        'article',
       siteName:    siteConfig.site.name,
       locale:      'en_IE',
-      images:      guide.image ? [{ url: guide.image, width: 1200, height: 630, alt: guide.title }] : [],
+      images:      [{ url: ogImage, width: 1200, height: 630, alt: guide.title }],
       publishedTime: guide.date,
     },
     twitter: {
       card:        'summary_large_image',
       title:       guide.seo?.title ?? guide.title,
       description: guide.seo?.description ?? guide.excerpt,
-      images:      guide.image ? [guide.image] : [],
+      images:      [ogImage],
     },
   };
 }

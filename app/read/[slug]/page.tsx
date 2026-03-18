@@ -2,6 +2,7 @@ import { notFound }        from 'next/navigation';
 import { MDXRemote }       from 'next-mdx-remote/rsc';
 import { getArticleBySlug, getArticleSlugs } from '@/lib/getContent';
 import { formatPillar }    from '@/lib/formatPillar';
+import { getOgImageUrl }   from '@/lib/ogImage';
 import { ArticleFeedback } from '@/components/ArticleFeedback';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
@@ -15,7 +16,8 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
   if (!article) return {};
-  const url = `${siteConfig.site.url}/read/${article.slug}`;
+  const url     = `${siteConfig.site.url}/read/${article.slug}`;
+  const ogImage = getOgImageUrl({ title: article.title, pillar: article.pillar, readTime: article.readTime });
   return {
     title:       article.seo?.title ?? `${article.title} | FarmAI Ireland`,
     description: article.seo?.description ?? article.excerpt ?? siteConfig.seo.defaultDescription,
@@ -28,14 +30,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type:        'article',
       siteName:    siteConfig.site.name,
       locale:      'en_IE',
-      images:      article.image ? [{ url: article.image, width: 1200, height: 630, alt: article.title }] : [],
+      images:      [{ url: ogImage, width: 1200, height: 630, alt: article.title }],
       publishedTime: article.date,
     },
     twitter: {
       card:        'summary_large_image',
       title:       article.seo?.title ?? article.title,
       description: article.seo?.description ?? article.excerpt,
-      images:      article.image ? [article.image] : [],
+      images:      [ogImage],
     },
   };
 }
