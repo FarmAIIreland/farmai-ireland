@@ -8,7 +8,6 @@ readTime: 8
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: false
-status: "draft"
 readNext: "chatgpt-first-10-prompts-farmers"
 seo:
   title: "AI Jargon Decoded for Farmers — Plain English | FarmAI Ireland"

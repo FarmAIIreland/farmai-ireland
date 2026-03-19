@@ -8,7 +8,6 @@ readTime: 6
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: false
-status: "draft"
 readNext: "pasturebase-phone-grass-measurement"
 seo:
   title: "Spot Bad Fields From Your Phone — NDVI Maps Explained | FarmAI Ireland"

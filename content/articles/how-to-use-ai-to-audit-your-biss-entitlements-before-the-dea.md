@@ -8,7 +8,6 @@ readTime: 5
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
-status: "draft"
 excerpt: "Use free AI tools to check your BISS entitlements are correct before the application deadline arrives"
 sources:
   - url: "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/services/basic-income-support-for-sustainability-biss-scheme/"

@@ -8,7 +8,6 @@ readTime: 3
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: false
-status: "draft"
 readNext: "save-time-calving-apps"
 seo:
   title: "Farm AI Weekly Roundup — March 23 | FarmAI Ireland"

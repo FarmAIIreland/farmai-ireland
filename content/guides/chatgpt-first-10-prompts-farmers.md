@@ -8,7 +8,6 @@ readTime: 6
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: false
-status: "draft"
 readNext: "ai-glossary-plain-english-farmers"
 seo:
   title: "10 ChatGPT Prompts for Irish Farmers — Copy and Paste | FarmAI Ireland"

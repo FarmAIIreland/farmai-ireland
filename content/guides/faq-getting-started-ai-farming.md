@@ -8,7 +8,6 @@ readTime: 4
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: false
-status: "draft"
 readNext: "ai-glossary"
 seo:
   title: "AI on the Farm FAQ — Every Question Answered | FarmAI Ireland"

@@ -8,7 +8,6 @@ readTime: 7
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: true
-status: "draft"
 readNext: "chatgpt-first-10-prompts-farmers"
 seo:
   title: "Don't Cancel Your Teagasc Advisor — What AI Does Instead | FarmAI Ireland"

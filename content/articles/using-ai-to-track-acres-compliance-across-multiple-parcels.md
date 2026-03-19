@@ -9,7 +9,6 @@ readTime: 5
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
-status: "draft"
 excerpt: "How AI tools can help you stay on top of ACRES rules across every parcel without the paperwork headache"
 sources:
   - url: "https://teagasc.ie/rural-economy/rural-development/equine/grants-and-schemes/agri-climate-rural-environment-scheme/"
