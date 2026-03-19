@@ -317,8 +317,8 @@ Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
 
 | # | Action | Status |
 |---|--------|--------|
-| 8  | Social accounts: follow /docs/social-setup.md | ❌ Manual (John) |
-| 9  | Press release: send same day social goes live | ❌ Manual (John) |
+| 8  | Social accounts: X ✅ created; YouTube ⏳ blocked (can't sign into hello@farmai.ie Google account — check Google Workspace admin); LinkedIn 🤔 considering; FB/Insta/TikTok ❌ not doing | ⏳ In progress |
+| 9  | Press release: send once YouTube + social sorted | ❌ Manual (John) |
 
 ### Tier 4 — Nice to have (carry forward)
 

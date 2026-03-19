@@ -6,14 +6,14 @@
 
 ## Handles
 
-| Platform | Handle | URL (once created) |
-|----------|--------|-------------------|
-| X (Twitter) | @FarmAIIreland | x.com/FarmAIIreland |
-| Facebook Page | FarmAI Ireland | facebook.com/FarmAIIreland |
-| LinkedIn Page | FarmAI Ireland | linkedin.com/company/farmai-ireland |
-| YouTube Channel | FarmAI Ireland | youtube.com/@FarmAIIreland |
-| Instagram | @farmai.ireland | instagram.com/farmai.ireland |
-| TikTok | Deferred to Month 6 | — |
+| Platform | Handle | Status |
+|----------|--------|--------|
+| X (Twitter) | @FarmAIIreland | ✅ Created |
+| YouTube Channel | FarmAI Ireland | ⏳ Blocked — can't sign into hello@farmai.ie Google account |
+| LinkedIn Page | FarmAI Ireland | 🤔 Considering — create from John's personal LinkedIn |
+| Facebook Page | — | ❌ Not doing |
+| Instagram | — | ❌ Not doing |
+| TikTok | — | ❌ Not doing |
 
 All accounts use the brand name, not any personal name.
 
