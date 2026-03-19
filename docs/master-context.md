@@ -37,7 +37,7 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | farmai.ie pointed at Vercel | ✅ Done — Session 12 — confirmed live (HTTP 200) |
 | Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
 | Google Analytics ID added | ✅ Done — Session 7 (G-VQC7560BBN in config/site.json) |
-| Google Search Console | ❌ Pending — verify farmai.ie at https://search.google.com/search-console (DNS TXT record method via Hosting Ireland) |
+| Google Search Console | ⏳ Property created — DNS TXT verification pending (John to add TXT record via Hosting Ireland support) |
 | KPI dashboard (/dashboard) | ✅ Done — Session 8/9 — password-protected, WoW deltas, farmland hero |
 | Monday KPI email + broken link check | ✅ Done — Session 8/9 — cron-job.org scheduled Mon 8am UTC — email delivery confirmed Session 11 |
 | Sunday content pipeline | ✅ Done — Session 9 — cron-job.org scheduled Sun 8pm UTC — end-to-end untested |
@@ -309,9 +309,9 @@ Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
 
 | # | Action | Status |
 |---|--------|--------|
-| 5 | Verify farmai.ie in Google Search Console — DNS TXT record via Hosting Ireland | ❌ Manual (John) |
-| 6 | Link Search Console to GA4 property (G-VQC7560BBN) | ❌ Manual (John) |
-| 7 | Submit sitemap.xml to Search Console — gets 34 pages into Google's index queue | ❌ Manual (John) |
+| 5 | Verify farmai.ie in Google Search Console — DNS TXT record via Hosting Ireland | ⏳ Started — DNS TXT record needs to be added via Hosting Ireland panel (John to contact Hosting Ireland support if Zone Editor not visible) |
+| 6 | Link Search Console to GA4 property (G-VQC7560BBN) | ⏳ Blocked by Step 5 verification |
+| 7 | Submit sitemap.xml to Search Console — gets 34 pages into Google's index queue | ⏳ Sitemap valid (41 URLs confirmed) — resubmit after Step 5 clears |
 
 ### Tier 3 — Launch presence
 
