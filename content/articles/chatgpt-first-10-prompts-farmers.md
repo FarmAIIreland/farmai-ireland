@@ -1,11 +1,10 @@
 ---
 title: "ChatGPT for Farmers: Your First 10 Prompts"
 slug: "chatgpt-first-10-prompts-farmers"
-pillar: "getting-started"
+pillar: "tools-explained"
 date: "2026-03-16"
 readTime: 6
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80"
 seo:
   title: "ChatGPT for Irish Farmers: 10 Prompts to Start With"
   description: "Ten specific ChatGPT prompts tested on real Irish farming tasks — from grant paperwork to vet call prep. Start here if you've never used it before."

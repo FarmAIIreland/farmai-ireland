@@ -1,9 +1,8 @@
 ---
 title: "How to Use AI to Audit Your BISS Entitlements Before the Deadline"
 slug: "how-to-use-ai-to-audit-your-biss-entitlements-before-the-dea"
-image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=80"
 type: "article"
-pillar: "grants-subsidies"
+pillar: "save-time"
 date: "2026-03-17"
 readTime: 5
 difficulty: "beginner"

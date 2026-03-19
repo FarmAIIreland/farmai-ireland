@@ -1,6 +1,5 @@
 import { ArticleCard } from '@/components/ArticleCard';
 import { getGuides }   from '@/lib/getContent';
-import siteConfig       from '@/config/site.json';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,19 +9,6 @@ export const metadata: Metadata = {
 
 export default function GuidesPage() {
   const guides = getGuides();
-
-  const pillarImages = (siteConfig.content as Record<string, unknown>).pillarImages as Record<string, string> | undefined;
-  const usedPillarImages = new Set<string>();
-
-  function resolveImage(pillar: string, articleImage?: string): string | undefined {
-    if (articleImage) return articleImage;
-    if (!pillarImages) return undefined;
-    const fallback = pillarImages[pillar];
-    if (!fallback) return undefined;
-    if (usedPillarImages.has(fallback)) return undefined;
-    usedPillarImages.add(fallback);
-    return fallback;
-  }
 
   return (
     <main className="py-12 sm:py-16 px-4 bg-ui-bg min-h-screen">
@@ -45,7 +31,6 @@ export default function GuidesPage() {
                 excerpt={guide.excerpt}
                 payoff={guide.payoff}
                 verdict={guide.verdict}
-                image={resolveImage(guide.pillar, guide.image)}
                 basePath="guides"
               />
             ))}

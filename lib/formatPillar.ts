@@ -1,12 +1,18 @@
 const PILLAR_LABELS: Record<string, string> = {
+  'save-time':        'Save Time',
+  'tools-explained':  'Tools Explained',
+  'whats-changing':   "What's Changing",
+  'does-this-work':   'Does This Work?',
+  // Legacy fallbacks — remove once all content is migrated
   'getting-started':  'Getting Started',
   'grants-subsidies': 'Grants & Subsidies',
-  'beef-sheep':       'Beef & Sheep',
-  'dairy':            'Dairy',
   'livestock':        'Livestock',
+  'dairy':            'Dairy',
+  'beef-sheep':       'Beef & Sheep',
   'tillage':          'Tillage',
   'machinery':        'Machinery',
   'tech':             'Tech',
+  'policy':           'Policy',
 };
 
 export function formatPillar(slug: string): string {

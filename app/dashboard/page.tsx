@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import { fetchKpis, fetchPreviousSnapshot, fetchGmailUnread } from '@/lib/kpi';
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80';
-
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 function fmt(n: number | null, suffix = ''): string {
@@ -79,7 +76,7 @@ export default async function DashboardPage() {
       {/* Header with farmland background */}
       <div
         className="relative px-4 py-12 overflow-hidden"
-        style={{ backgroundImage: `url('${HERO_IMAGE}')`, backgroundSize: 'cover', backgroundPosition: 'center 60%' }}
+        style={{ background: 'linear-gradient(135deg, #062A1E 0%, #0B4D3B 40%, #0A3D2E 70%, #041F16 100%)' }}
       >
         <div className="absolute inset-0 bg-black/60" />
         <div className="relative z-10 max-w-site mx-auto">

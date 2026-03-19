@@ -1,7 +1,7 @@
 ---
 title: "AI weather tools for Irish farming: what's actually worth using?"
 slug: "ai-weather-tools-irish-farming"
-pillar: "tillage"
+pillar: "does-this-work"
 date: "2026-03-05"
 readTime: 6
 excerpt: "Beyond Met Éireann, a new generation of hyperlocal AI weather tools is emerging. We tested three of them against real Irish farm conditions. Here's what we found."

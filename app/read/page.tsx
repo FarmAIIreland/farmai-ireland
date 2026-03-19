@@ -14,8 +14,6 @@ const PILLAR_LABELS: Record<string, string> = {
   'tools-explained': 'Tools Explained',
   'whats-changing':  "What's Changing",
   'does-this-work':  'Honest Reviews',
-  'grants-subsidies':'Grants & Schemes',
-  'getting-started': 'Getting Started',
 };
 
 interface Props {
@@ -26,20 +24,6 @@ export default function ReadPage({ searchParams }: Props) {
   const all      = getArticles();
   const active   = searchParams.pillar ?? '';
   const articles = active ? all.filter(a => a.pillar === active) : all;
-
-  // Image dedup: track which pillar-default images have been used
-  const pillarImages = (siteConfig.content as Record<string, unknown>).pillarImages as Record<string, string> | undefined;
-  const usedPillarImages = new Set<string>();
-
-  function resolveImage(pillar: string, articleImage?: string): string | undefined {
-    if (articleImage) return articleImage;
-    if (!pillarImages) return undefined;
-    const fallback = pillarImages[pillar];
-    if (!fallback) return undefined;
-    if (usedPillarImages.has(fallback)) return undefined;
-    usedPillarImages.add(fallback);
-    return fallback;
-  }
 
   const pillars = siteConfig.content.pillars;
 
@@ -92,7 +76,6 @@ export default function ReadPage({ searchParams }: Props) {
                 excerpt={article.excerpt}
                 payoff={article.payoff}
                 verdict={article.verdict}
-                image={resolveImage(article.pillar, article.image)}
                 basePath="read"
               />
             ))}

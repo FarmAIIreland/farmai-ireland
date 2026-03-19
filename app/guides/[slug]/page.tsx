@@ -2,7 +2,9 @@ import { notFound }        from 'next/navigation';
 import { MDXRemote }       from 'next-mdx-remote/rsc';
 import { getGuideBySlug, getGuideSlugs } from '@/lib/getContent';
 import { formatPillar }    from '@/lib/formatPillar';
+import { getOgImageUrl }   from '@/lib/ogImage';
 import { ArticleFeedback } from '@/components/ArticleFeedback';
+import { PillarIllustration } from '@/components/PillarIllustration';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
 
@@ -15,9 +17,29 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const guide = getGuideBySlug(params.slug);
   if (!guide) return {};
+  const url     = `${siteConfig.site.url}/guides/${guide.slug}`;
+  const ogImage = getOgImageUrl({ title: guide.title, pillar: guide.pillar, readTime: guide.readTime });
   return {
-    title:       `${guide.title} | FarmAI Ireland`,
-    description: guide.excerpt,
+    title:       guide.seo?.title ?? `${guide.title} | FarmAI Ireland`,
+    description: guide.seo?.description ?? guide.excerpt ?? siteConfig.seo.defaultDescription,
+    keywords:    guide.seo?.keywords,
+    alternates:  { canonical: url },
+    openGraph: {
+      title:       guide.seo?.title ?? guide.title,
+      description: guide.seo?.description ?? guide.excerpt,
+      url,
+      type:        'article',
+      siteName:    siteConfig.site.name,
+      locale:      'en_IE',
+      images:      [{ url: ogImage, width: 1200, height: 630, alt: guide.title }],
+      publishedTime: guide.date,
+    },
+    twitter: {
+      card:        'summary_large_image',
+      title:       guide.seo?.title ?? guide.title,
+      description: guide.seo?.description ?? guide.excerpt,
+      images:      [ogImage],
+    },
   };
 }
 
@@ -29,8 +51,36 @@ export default function GuidePage({ params }: Props) {
     day: 'numeric', month: 'long', year: 'numeric',
   });
 
+  const ogImage = getOgImageUrl({ title: guide.title, pillar: guide.pillar, readTime: guide.readTime });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: guide.title,
+    description: guide.seo?.description ?? guide.excerpt,
+    image: ogImage,
+    datePublished: guide.date,
+    dateModified: guide.date,
+    author: { '@type': 'Organization', name: 'FarmAI Ireland', url: siteConfig.site.url },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FarmAI Ireland',
+      url: siteConfig.site.url,
+      logo: { '@type': 'ImageObject', url: `${siteConfig.site.url}/images/farmai-og.jpg` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteConfig.site.url}/guides/${guide.slug}` },
+    keywords: guide.seo?.keywords?.join(', '),
+    inLanguage: 'en-IE',
+  };
+
   return (
     <main className="py-12 md:py-20 px-4 bg-ui-bg min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* Hero illustration — desktop only */}
+      <div className="hidden md:block max-w-reading mx-auto mb-8 rounded-[12px] overflow-hidden">
+        <PillarIllustration pillar={guide.pillar} title={guide.title} variant="hero" />
+      </div>
+
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}

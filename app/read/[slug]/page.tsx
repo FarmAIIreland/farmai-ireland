@@ -2,7 +2,9 @@ import { notFound }        from 'next/navigation';
 import { MDXRemote }       from 'next-mdx-remote/rsc';
 import { getArticleBySlug, getArticleSlugs } from '@/lib/getContent';
 import { formatPillar }    from '@/lib/formatPillar';
+import { getOgImageUrl }   from '@/lib/ogImage';
 import { ArticleFeedback } from '@/components/ArticleFeedback';
+import { PillarIllustration } from '@/components/PillarIllustration';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
 
@@ -15,9 +17,29 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const article = getArticleBySlug(params.slug);
   if (!article) return {};
+  const url     = `${siteConfig.site.url}/read/${article.slug}`;
+  const ogImage = getOgImageUrl({ title: article.title, pillar: article.pillar, readTime: article.readTime });
   return {
-    title:       `${article.title} | FarmAI Ireland`,
-    description: article.excerpt,
+    title:       article.seo?.title ?? `${article.title} | FarmAI Ireland`,
+    description: article.seo?.description ?? article.excerpt ?? siteConfig.seo.defaultDescription,
+    keywords:    article.seo?.keywords,
+    alternates:  { canonical: url },
+    openGraph: {
+      title:       article.seo?.title ?? article.title,
+      description: article.seo?.description ?? article.excerpt,
+      url,
+      type:        'article',
+      siteName:    siteConfig.site.name,
+      locale:      'en_IE',
+      images:      [{ url: ogImage, width: 1200, height: 630, alt: article.title }],
+      publishedTime: article.date,
+    },
+    twitter: {
+      card:        'summary_large_image',
+      title:       article.seo?.title ?? article.title,
+      description: article.seo?.description ?? article.excerpt,
+      images:      [ogImage],
+    },
   };
 }
 
@@ -29,8 +51,36 @@ export default function ArticlePage({ params }: Props) {
     day: 'numeric', month: 'long', year: 'numeric',
   });
 
+  const ogImage = getOgImageUrl({ title: article.title, pillar: article.pillar, readTime: article.readTime });
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.seo?.description ?? article.excerpt,
+    image: ogImage,
+    datePublished: article.date,
+    dateModified: article.date,
+    author: { '@type': 'Organization', name: 'FarmAI Ireland', url: siteConfig.site.url },
+    publisher: {
+      '@type': 'Organization',
+      name: 'FarmAI Ireland',
+      url: siteConfig.site.url,
+      logo: { '@type': 'ImageObject', url: `${siteConfig.site.url}/images/farmai-og.jpg` },
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${siteConfig.site.url}/read/${article.slug}` },
+    keywords: article.seo?.keywords?.join(', '),
+    inLanguage: 'en-IE',
+  };
+
   return (
     <main className="py-12 md:py-20 px-4 bg-ui-bg min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* Hero illustration — desktop only */}
+      <div className="hidden md:block max-w-reading mx-auto mb-8 rounded-[12px] overflow-hidden">
+        <PillarIllustration pillar={article.pillar} title={article.title} variant="hero" />
+      </div>
+
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}

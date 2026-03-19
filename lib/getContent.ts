@@ -2,6 +2,12 @@ import fs   from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+export interface ArticleSeo {
+  title?:       string;
+  description?: string;
+  keywords?:    string[];
+}
+
 export interface ArticleMeta {
   title:                string;
   slug:                 string;
@@ -17,6 +23,8 @@ export interface ArticleMeta {
   featured?:            boolean;
   officialAdviceBanner?: boolean;
   sources?:             { label: string; url: string; description: string }[];
+  seo?:                 ArticleSeo;
+  readNext?:            string;
 }
 
 export interface ArticleData extends ArticleMeta {

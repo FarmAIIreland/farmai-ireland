@@ -1,11 +1,10 @@
 ---
 title: "How Irish Suckler Farmers Are Using AI to Cut Time on Herd Register Submissions"
 slug: "chatgpt-herd-register-icbf"
-pillar: "livestock"
+pillar: "save-time"
 date: "2026-03-16"
 readTime: 6
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1200&q=80"
 seo:
   title: "Using AI for Herd Register Submissions — ICBF Guide for Irish Suckler Farmers"
   description: "How Irish suckler farmers are using ChatGPT and AI tools to reduce the time spent on ICBF herd register submissions and DAFM cattle movement paperwork."

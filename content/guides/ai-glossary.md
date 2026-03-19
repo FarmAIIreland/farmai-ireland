@@ -1,9 +1,8 @@
 ---
 title: "The Plain English AI Glossary for Irish Farmers"
 slug: "ai-glossary"
-image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80"
 type: "glossary"
-pillar: "getting-started"
+pillar: "tools-explained"
 date: "2026-03-21"
 readTime: 8
 difficulty: "beginner"

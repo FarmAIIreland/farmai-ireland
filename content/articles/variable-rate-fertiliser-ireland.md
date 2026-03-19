@@ -1,11 +1,10 @@
 ---
 title: "Variable Rate Fertiliser in Ireland: What You Need, What It Costs, Whether It Stacks Up"
 slug: "variable-rate-fertiliser-ireland"
-pillar: "machinery"
+pillar: "does-this-work"
 date: "2026-03-16"
 readTime: 8
 difficulty: "intermediate"
-image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&q=80"
 seo:
   title: "Variable Rate Fertiliser Ireland — Costs, Equipment and Honest Verdict"
   description: "Variable rate application promises to cut fertiliser costs by spreading only what each part of the field needs. Here's what it takes to do it on an Irish farm and whether the numbers stack up."
