@@ -1,7 +1,6 @@
 ---
 title: "FAQ: Getting started with AI on your farm — the questions we get asked most"
 slug: "faq-getting-started-ai-farming"
-image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=80"
 type: "faq"
 pillar: "tools-explained"
 date: "2026-03-21"

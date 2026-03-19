@@ -5,7 +5,6 @@ pillar: "whats-changing"
 date: "2026-04-01"
 readTime: 6
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=1200&q=80"
 seo:
   title: "Are Irish Co-ops Using AI for Milk Prices? | FarmAI Ireland"
   description: "AI is changing how dairy processors forecast demand and manage supply. Here's what Irish co-ops are actually doing with AI and whether it affects the price you get at the tank."

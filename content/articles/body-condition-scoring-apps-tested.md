@@ -5,7 +5,6 @@ pillar: "does-this-work"
 date: "2026-03-20"
 readTime: 7
 difficulty: "intermediate"
-image: "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?w=1200&q=80"
 seo:
   title: "Body Condition Scoring Apps Tested — Irish Cattle Farmers | FarmAI Ireland"
   description: "Can your phone camera replace a trained eye for body condition scoring? We looked at the apps available to Irish farmers and tested what they actually deliver."

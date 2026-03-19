@@ -5,7 +5,6 @@ pillar: "does-this-work"
 date: "2026-03-22"
 readTime: 7
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1484557985045-edf2a0e75503?w=1200&q=80"
 seo:
   title: "Sheep Scanning and AI Tools — What Irish Farmers Need to Know | FarmAI Ireland"
   description: "AI is making headlines in cattle farming, but what about sheep? We looked at the tools available for Irish sheep farmers — from EID readers to flock management apps — and what's actually worth your time."

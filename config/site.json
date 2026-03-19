@@ -78,12 +78,6 @@
         "accent": "#E24B4A"
       }
     ],
-    "pillarImages": {
-      "save-time":        "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?auto=format&fit=crop&w=800&q=80",
-      "tools-explained":  "https://images.unsplash.com/photo-1624913503273-5f9c4e980dba?auto=format&fit=crop&w=800&q=80",
-      "whats-changing":   "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&w=800&q=80",
-      "does-this-work":   "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80"
-    },
     "officialAdviceBanner": "This guide is a starting point. For decisions about grants, animal health, or significant farm investments, always check with your Teagasc advisor or relevant authority.",
     "faq": [
       {

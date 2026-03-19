@@ -5,7 +5,6 @@ pillar: "save-time"
 date: "2026-03-16"
 readTime: 7
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80"
 seo:
   title: "Using AI for ACRES Scheme Paperwork | FarmAI Ireland"
   description: "ACRES forms are genuinely painful. Here's how Irish farmers are using AI tools to cut the prep time and avoid the most common mistakes — without compromising their application."

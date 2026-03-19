@@ -1,7 +1,6 @@
 ---
 title: "Save 3 hours at calving with these two free apps"
 slug: "save-time-calving-apps"
-image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1200&q=80"
 pillar: "save-time"
 date: "2026-03-21"
 readTime: 6

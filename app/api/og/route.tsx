@@ -3,12 +3,42 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
-// Pillar colour and tag mapping — mirrors ArticleCard.tsx
-const PILLAR_CONFIG: Record<string, { bar: string; tag: string; bg: string }> = {
-  'save-time':       { bar: '#1D9E75', tag: 'TIME SAVER',      bg: '#E8F5EF' },
-  'tools-explained': { bar: '#1D9E75', tag: 'TOOLS EXPLAINED', bg: '#E8F5EF' },
-  'whats-changing':  { bar: '#1D9E75', tag: "WHAT'S CHANGING",  bg: '#E8F5EF' },
-  'does-this-work':  { bar: '#E24B4A', tag: 'HONEST REVIEW',   bg: '#FDEAEA' },
+// Pillar visual config — mirrors PillarIllustration.tsx
+const PILLAR_CONFIG: Record<string, {
+  bg: string;
+  accent: string;
+  accentLight: string;
+  tag: string;
+  icon: string;
+}> = {
+  'save-time': {
+    bg: '#0B4D3B',
+    accent: '#1D9E75',
+    accentLight: '#2CC98F',
+    tag: 'TIME SAVER',
+    icon: '⏱',
+  },
+  'tools-explained': {
+    bg: '#0A3D5C',
+    accent: '#1D9E75',
+    accentLight: '#4DB89A',
+    tag: 'TOOLS EXPLAINED',
+    icon: '🔧',
+  },
+  'whats-changing': {
+    bg: '#1A3A2F',
+    accent: '#1D9E75',
+    accentLight: '#5EC4A0',
+    tag: "WHAT'S CHANGING",
+    icon: '📡',
+  },
+  'does-this-work': {
+    bg: '#4A1515',
+    accent: '#E24B4A',
+    accentLight: '#F07070',
+    tag: 'HONEST REVIEW',
+    icon: '🧪',
+  },
 };
 
 export async function GET(req: NextRequest) {
@@ -27,26 +57,65 @@ export async function GET(req: NextRequest) {
           height: '630px',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#F7F5F0',
+          backgroundColor: config.bg,
           fontFamily: 'Georgia, serif',
           position: 'relative',
           overflow: 'hidden',
         }}
       >
-        {/* Top pillar colour bar */}
-        <div style={{ height: '8px', backgroundColor: config.bar, width: '100%', flexShrink: 0 }} />
+        {/* Top accent bar */}
+        <div style={{ height: '6px', backgroundColor: config.accent, width: '100%', flexShrink: 0 }} />
 
-        {/* Subtle diagonal accent */}
+        {/* Background geometric pattern (simplified for @vercel/og) */}
+        {/* Diagonal lines */}
         <div
           style={{
             position: 'absolute',
-            top: '-200px',
-            right: '-100px',
-            width: '500px',
-            height: '800px',
-            backgroundColor: config.bar,
-            opacity: 0.04,
-            transform: 'rotate(15deg)',
+            top: '-100px',
+            right: '100px',
+            width: '3px',
+            height: '900px',
+            backgroundColor: config.accentLight,
+            opacity: 0.08,
+            transform: 'rotate(25deg)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '-100px',
+            right: '250px',
+            width: '2px',
+            height: '900px',
+            backgroundColor: config.accentLight,
+            opacity: 0.06,
+            transform: 'rotate(25deg)',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            top: '-100px',
+            right: '400px',
+            width: '2px',
+            height: '900px',
+            backgroundColor: config.accentLight,
+            opacity: 0.05,
+            transform: 'rotate(25deg)',
+          }}
+        />
+
+        {/* Large circle accent */}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '-120px',
+            right: '-80px',
+            width: '350px',
+            height: '350px',
+            borderRadius: '50%',
+            border: `3px solid ${config.accentLight}`,
+            opacity: 0.08,
           }}
         />
 
@@ -56,40 +125,44 @@ export async function GET(req: NextRequest) {
             display: 'flex',
             flexDirection: 'column',
             flex: 1,
-            padding: '60px 72px 48px 72px',
+            padding: '56px 72px 48px 72px',
             justifyContent: 'space-between',
           }}
         >
-          {/* Pillar tag */}
+          {/* Top row: pillar tag + icon */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '16px',
+              justifyContent: 'space-between',
             }}
           >
-            <div
-              style={{
-                fontSize: '16px',
-                fontFamily: 'monospace',
-                letterSpacing: '0.15em',
-                backgroundColor: config.bg,
-                color: config.bar,
-                padding: '6px 16px',
-                borderRadius: '6px',
-                fontWeight: 700,
-              }}
-            >
-              {config.tag}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontFamily: 'monospace',
+                  letterSpacing: '0.15em',
+                  color: config.accentLight,
+                  fontWeight: 700,
+                  opacity: 0.9,
+                }}
+              >
+                {config.tag}
+              </div>
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontFamily: 'monospace',
+                  color: config.accentLight,
+                  opacity: 0.5,
+                }}
+              >
+                {readTime} min read
+              </div>
             </div>
-            <div
-              style={{
-                fontSize: '16px',
-                fontFamily: 'monospace',
-                color: '#6B7280',
-              }}
-            >
-              {readTime} min read
+            <div style={{ fontSize: '36px', opacity: 0.4 }}>
+              {config.icon}
             </div>
           </div>
 
@@ -105,12 +178,13 @@ export async function GET(req: NextRequest) {
           >
             <div
               style={{
-                fontSize: title.length > 60 ? '48px' : title.length > 40 ? '56px' : '64px',
+                fontSize: title.length > 60 ? '46px' : title.length > 40 ? '54px' : '62px',
                 fontWeight: 600,
-                color: '#1A1A1A',
+                color: '#FFFFFF',
                 lineHeight: 1.15,
                 letterSpacing: '-0.02em',
-                maxWidth: '900px',
+                maxWidth: '950px',
+                opacity: 0.95,
               }}
             >
               {title}
@@ -123,7 +197,7 @@ export async function GET(req: NextRequest) {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              borderTop: '2px solid #E5E7EB',
+              borderTop: `2px solid ${config.accentLight}20`,
               paddingTop: '24px',
             }}
           >
@@ -133,7 +207,7 @@ export async function GET(req: NextRequest) {
                 style={{
                   width: '36px',
                   height: '36px',
-                  backgroundColor: '#1D9E75',
+                  backgroundColor: config.accent,
                   borderRadius: '8px',
                   display: 'flex',
                   alignItems: 'center',
@@ -149,8 +223,9 @@ export async function GET(req: NextRequest) {
                 style={{
                   fontSize: '22px',
                   fontWeight: 600,
-                  color: '#1A1A1A',
+                  color: '#FFFFFF',
                   letterSpacing: '-0.01em',
+                  opacity: 0.9,
                 }}
               >
                 FarmAI Ireland
@@ -159,8 +234,9 @@ export async function GET(req: NextRequest) {
             <div
               style={{
                 fontSize: '18px',
-                color: '#6B7280',
+                color: config.accentLight,
                 fontFamily: 'monospace',
+                opacity: 0.5,
               }}
             >
               farmai.ie

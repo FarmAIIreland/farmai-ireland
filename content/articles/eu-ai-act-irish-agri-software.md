@@ -5,7 +5,6 @@ pillar: "whats-changing"
 date: "2026-03-26"
 readTime: 6
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80"
 seo:
   title: "EU AI Act and Irish Agriculture — Plain English Explainer | FarmAI Ireland"
   description: "The EU AI Act is the world's first major AI regulation. Here's what it actually means for the apps, tools, and software already on your phone — explained without the jargon."

@@ -5,7 +5,6 @@ pillar: "whats-changing"
 date: "2026-03-30"
 readTime: 6
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=1200&q=80"
 seo:
   title: "How Teagasc Is Using AI — What's Coming for Irish Farmers | FarmAI Ireland"
   description: "Teagasc is quietly building AI into its research, advisory tools, and farmer-facing services. Here's what's happening now and what it means for the next advisory visit."

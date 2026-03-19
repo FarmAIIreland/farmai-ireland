@@ -1,7 +1,6 @@
 ---
 title: "ChatGPT, AI, machine learning — what these words actually mean for your farm"
 slug: "ai-glossary-plain-english-farmers"
-image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80"
 type: "explainer"
 pillar: "tools-explained"
 date: "2026-04-30"

@@ -5,7 +5,6 @@ pillar: "whats-changing"
 date: "2026-03-24"
 readTime: 7
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=1200&q=80"
 seo:
   title: "Carbon Calculator Apps for Irish Farmers — What You Need to Know | FarmAI Ireland"
   description: "Carbon calculators are turning up everywhere — from co-ops to scheme applications. Here's what they actually measure, which ones are used in Ireland, and what your results mean for your farm."

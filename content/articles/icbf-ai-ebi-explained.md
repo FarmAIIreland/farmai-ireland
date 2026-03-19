@@ -5,7 +5,6 @@ pillar: "tools-explained"
 date: "2026-03-16"
 readTime: 7
 difficulty: "intermediate"
-image: "https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=1200&q=80"
 seo:
   title: "How ICBF Uses AI to Calculate EBI — Explained for Irish Farmers"
   description: "ICBF uses machine learning to calculate Expected Breeding Index (EBI) across the national dairy herd. Here's what that actually means for your breeding decisions."

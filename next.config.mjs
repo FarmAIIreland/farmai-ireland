@@ -1,13 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
-  },
   async headers() {
     return [
       {
@@ -23,7 +15,7 @@ const nextConfig = {
               "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob: https://www.google-analytics.com https://images.unsplash.com",
+              "img-src 'self' data: blob: https://www.google-analytics.com",
               "connect-src 'self' https://www.google-analytics.com https://analytics.google.com",
               "frame-src 'none'",
             ].join('; '),

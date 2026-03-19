@@ -44,47 +44,8 @@ export function getPublishedTitles(): string[] {
   return titles;
 }
 
-// ─── Unsplash ─────────────────────────────────────────────────────────────────
-
-const FALLBACK_IMAGES: Record<string, string> = {
-  cattle:    'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1200&q=80',
-  grass:     'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80',
-  tillage:   'https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1200&q=80',
-  tech:      'https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80',
-  general:   'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=80',
-  landscape: 'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=1200&q=80',
-};
-
-function fallbackForTopic(topic: string): string {
-  const q = topic.toLowerCase();
-  if (/cattle|cow|calv|herd|livestock|sheep|lamb/.test(q))   return FALLBACK_IMAGES.cattle;
-  if (/grass|pasture|graz|silage/.test(q))                   return FALLBACK_IMAGES.grass;
-  if (/tillage|crop|grain|harvest|tractor|drone/.test(q))    return FALLBACK_IMAGES.tillage;
-  if (/app|phone|software|ai|chatgpt|digital|sensor/.test(q)) return FALLBACK_IMAGES.tech;
-  return FALLBACK_IMAGES.general;
-}
-
-export async function fetchUnsplashImage(topic: string): Promise<string> {
-  const key = process.env.UNSPLASH_ACCESS_KEY;
-  if (!key) return fallbackForTopic(topic);
-
-  try {
-    const query = encodeURIComponent(`${topic} farm ireland`);
-    const res   = await fetch(
-      `https://api.unsplash.com/search/photos?query=${query}&per_page=1&orientation=landscape`,
-      { headers: { Authorization: `Client-ID ${key}` } },
-    );
-    if (!res.ok) return fallbackForTopic(topic);
-
-    const data  = await res.json();
-    const photo = data.results?.[0];
-    if (!photo) return fallbackForTopic(topic);
-
-    return `${photo.urls.regular}&q=80`;
-  } catch {
-    return fallbackForTopic(topic);
-  }
-}
+// ─── Image generation ─────────────────────────────────────────────────────────
+// OG images are now generated dynamically via /api/og — no external image deps.
 
 // ─── Article generation via Claude ────────────────────────────────────────────
 
@@ -99,8 +60,7 @@ function slugify(title: string): string {
 }
 
 export async function generateArticle(
-  topic:    string,
-  imageUrl: string,
+  topic: string,
 ): Promise<{ slug: string; content: string; title: string } | null> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
@@ -137,7 +97,6 @@ Return ONLY this exact YAML frontmatter + markdown body — nothing else before 
 ---
 title: "..."
 slug: "..."
-image: "${imageUrl}"
 type: "article"
 pillar: "save-time"
 date: "${today}"
@@ -230,8 +189,7 @@ export async function runContentPipeline(): Promise<DraftResult[]> {
   // 4. Generate each article sequentially
   for (const topic of selected) {
     try {
-      const imageUrl  = await fetchUnsplashImage(topic);
-      const article   = await generateArticle(topic, imageUrl);
+      const article   = await generateArticle(topic);
       if (!article) continue;
 
       const filePath  = `content/drafts/${article.slug}.md`;

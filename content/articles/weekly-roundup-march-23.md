@@ -1,7 +1,6 @@
 ---
 title: "This week in farm AI: what's actually worth your attention"
 slug: "weekly-roundup-march-23"
-image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1200&q=80"
 type: "roundup"
 pillar: "whats-changing"
 date: "2026-03-23"

@@ -5,7 +5,6 @@ pillar: "does-this-work"
 date: "2026-03-16"
 readTime: 8
 difficulty: "intermediate"
-image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=1200&q=80"
 seo:
   title: "Heat Detection Apps for Irish Dairy Farmers — Honest Review 2026"
   description: "We looked at the main heat detection systems available to Irish dairy farmers — what they cost, how they work, and whether the numbers stack up on a typical Irish herd."

@@ -5,7 +5,6 @@ pillar: "save-time"
 date: "2026-03-18"
 readTime: 7
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&q=80"
 seo:
   title: "AI-Assisted Nitrates Compliance Checklist | FarmAI Ireland"
   description: "Nitrates rules are complicated and the penalties are real. Here's how to use AI tools to build a compliance checklist that actually matches your farm — before the inspector arrives."

@@ -1,7 +1,6 @@
 ---
 title: "Cut 2 hours off your BISS application with ChatGPT — here's exactly how"
 slug: "chatgpt-biss-application-guide"
-image: "https://images.unsplash.com/photo-1586771107445-d3ca888129ff?w=1200&q=80"
 type: "guide"
 pillar: "save-time"
 date: "2026-04-09"

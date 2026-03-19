@@ -4,6 +4,7 @@ import { getGuideBySlug, getGuideSlugs } from '@/lib/getContent';
 import { formatPillar }    from '@/lib/formatPillar';
 import { getOgImageUrl }   from '@/lib/ogImage';
 import { ArticleFeedback } from '@/components/ArticleFeedback';
+import { PillarIllustration } from '@/components/PillarIllustration';
 import siteConfig          from '@/config/site.json';
 import type { Metadata }   from 'next';
 
@@ -50,12 +51,14 @@ export default function GuidePage({ params }: Props) {
     day: 'numeric', month: 'long', year: 'numeric',
   });
 
+  const ogImage = getOgImageUrl({ title: guide.title, pillar: guide.pillar, readTime: guide.readTime });
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: guide.title,
     description: guide.seo?.description ?? guide.excerpt,
-    image: guide.image,
+    image: ogImage,
     datePublished: guide.date,
     dateModified: guide.date,
     author: { '@type': 'Organization', name: 'FarmAI Ireland', url: siteConfig.site.url },
@@ -73,6 +76,11 @@ export default function GuidePage({ params }: Props) {
   return (
     <main className="py-12 md:py-20 px-4 bg-ui-bg min-h-screen">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      {/* Hero illustration — desktop only */}
+      <div className="hidden md:block max-w-reading mx-auto mb-8 rounded-[12px] overflow-hidden">
+        <PillarIllustration pillar={guide.pillar} title={guide.title} variant="hero" />
+      </div>
+
       <article className="max-w-reading mx-auto">
 
         {/* Pillar + meta */}

@@ -5,7 +5,6 @@ pillar: "does-this-work"
 date: "2026-03-28"
 readTime: 7
 difficulty: "beginner"
-image: "https://images.unsplash.com/photo-1531746790095-e6cbd0b1dc0a?w=1200&q=80"
 seo:
   title: "ChatGPT vs Claude vs Gemini for Farmers — Honest Comparison | FarmAI Ireland"
   description: "Three AI tools, three very different experiences. We tested ChatGPT, Claude and Gemini on real Irish farming tasks and scored them on what actually matters."

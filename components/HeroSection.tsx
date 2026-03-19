@@ -1,12 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import siteConfig from '@/config/site.json';
-
-const PLACEHOLDER_IMAGE =
-  'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1800&q=80';
 
 type FlipPhase = 'idle' | 'exit' | 'enter';
 
@@ -44,20 +40,33 @@ export function HeroSection() {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-[#0a2018] h-[40vh] sm:h-[50vh]"
+      className="relative w-full overflow-hidden h-[40vh] sm:h-[50vh]"
+      style={{
+        background: 'linear-gradient(135deg, #062A1E 0%, #0B4D3B 40%, #0A3D2E 70%, #041F16 100%)',
+      }}
     >
-      {/* Background image */}
-      <Image
-        src={PLACEHOLDER_IMAGE}
-        alt="Irish farmland at sunrise"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-center"
-      />
+      {/* Subtle geometric pattern overlay */}
+      <svg
+        className="absolute inset-0 w-full h-full opacity-[0.04]"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      >
+        <defs>
+          <pattern id="hero-grid" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="60" y2="60" stroke="#1D9E75" strokeWidth="0.5" />
+            <line x1="60" y1="0" x2="0" y2="60" stroke="#1D9E75" strokeWidth="0.5" />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#hero-grid)" />
+      </svg>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Radial glow behind text */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse 60% 50% at 50% 50%, rgba(29,158,117,0.08) 0%, transparent 70%)',
+        }}
+      />
 
       {/* Content */}
       <div className="absolute inset-0 z-10 flex items-center justify-center px-4 sm:px-5">
