@@ -114,7 +114,7 @@ export default function AboutPage() {
                 What we are
               </h3>
               <ul className="space-y-3 text-sm text-ui-muted">
-                <li className="flex gap-2"><span className="text-brand-green mt-0.5">→</span>Honest advocates for Irish farmers in a period of rapid change</li>
+                <li className="flex gap-2"><span className="text-brand-green mt-0.5">→</span>Ambassadors and enablers for Irish farmers in a period of rapid change</li>
                 <li className="flex gap-2"><span className="text-brand-green mt-0.5">→</span>Curious — we test tools, share what worked and what didn&apos;t</li>
                 <li className="flex gap-2"><span className="text-brand-green mt-0.5">→</span>Grounded in Teagasc, gov.ie, and verifiable Irish farming data</li>
                 <li className="flex gap-2"><span className="text-brand-green mt-0.5">→</span>Useful — every piece ends with a clear action you can take</li>
@@ -130,7 +130,7 @@ export default function AboutPage() {
               <ul className="space-y-3 text-sm text-ui-muted">
                 <li className="flex gap-2"><span className="mt-0.5">→</span>Not affiliated with Teagasc, DAFM, or any government body</li>
                 <li className="flex gap-2"><span className="mt-0.5">→</span>Not a product review site paid to recommend tools</li>
-                <li className="flex gap-2"><span className="mt-0.5">→</span>Not farmers — advocates. There&apos;s a difference and we own it</li>
+                <li className="flex gap-2"><span className="mt-0.5">→</span>Not farmers — ambassadors and enablers. There&apos;s a difference and we own it</li>
                 <li className="flex gap-2"><span className="mt-0.5">→</span>Not here to tell you AI will save your farm — that&apos;s your call</li>
               </ul>
             </div>

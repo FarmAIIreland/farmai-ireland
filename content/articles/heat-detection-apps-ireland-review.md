@@ -1,12 +1,12 @@
 ---
-title: "Heat Detection Apps in Ireland: The Honest Review"
+title: "Heat detection apps tested: which ones are worth the money on an Irish farm?"
 slug: "heat-detection-apps-ireland-review"
 pillar: "does-this-work"
 date: "2026-03-16"
 readTime: 8
 difficulty: "intermediate"
 seo:
-  title: "Heat Detection Apps for Irish Dairy Farmers — Honest Review 2026"
+  title: "Heat Detection Apps Worth the Money — Irish Farm Review | FarmAI Ireland"
   description: "We looked at the main heat detection systems available to Irish dairy farmers — what they cost, how they work, and whether the numbers stack up on a typical Irish herd."
   keywords: ["heat detection cattle Ireland", "dairy cow heat detection app", "Moocall HEAT Ireland", "SenseHub Ireland", "cattle reproduction AI", "dairy herd management Ireland"]
 youtubeEmbed: ""

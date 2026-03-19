@@ -1,5 +1,5 @@
 ---
-title: "Using AI to Track ACRES Compliance Across Multiple Parcels"
+title: "Stop tracking ACRES deadlines in your head — let AI do it across every parcel"
 slug: "using-ai-to-track-acres-compliance-across-multiple-parcels"
 image: ""
 type: "article"

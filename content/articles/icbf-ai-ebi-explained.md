@@ -1,12 +1,12 @@
 ---
-title: "How ICBF Uses AI and What It Means for Your EBI"
+title: "Your EBI is built by AI — here's what that means for your next bull purchase"
 slug: "icbf-ai-ebi-explained"
 pillar: "tools-explained"
 date: "2026-03-16"
 readTime: 7
 difficulty: "intermediate"
 seo:
-  title: "How ICBF Uses AI to Calculate EBI — Explained for Irish Farmers"
+  title: "Your EBI Is Built by AI — What It Means for Bull Buying | FarmAI Ireland"
   description: "ICBF uses machine learning to calculate Expected Breeding Index (EBI) across the national dairy herd. Here's what that actually means for your breeding decisions."
   keywords: ["ICBF AI EBI Ireland", "Expected Breeding Index explained", "ICBF machine learning", "Irish dairy breeding index", "ICBF genomics AI", "EBI calculation Ireland"]
 youtubeEmbed: ""

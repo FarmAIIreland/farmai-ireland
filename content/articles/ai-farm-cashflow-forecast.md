@@ -1,5 +1,5 @@
 ---
-title: "AI for farm cashflow: how to build a 12-month forecast without a spreadsheet"
+title: "Build a 12-month cashflow forecast from a conversation — no spreadsheet needed"
 slug: "ai-farm-cashflow-forecast"
 pillar: "save-time"
 date: "2026-04-03"
@@ -11,7 +11,7 @@ officialAdviceBanner: false
 excerpt: "A cashflow forecast from a conversation, not a formula"
 payoff: "A cashflow forecast from a conversation, not a formula."
 seo:
-  title: "AI Farm Cashflow Forecast — No Spreadsheet Needed | FarmAI Ireland"
+  title: "12-Month Farm Cashflow Forecast Without a Spreadsheet | FarmAI Ireland"
   description: "Build a 12-month farm cashflow forecast using ChatGPT or Claude. No spreadsheet formulas — just a conversation with your real numbers."
   keywords: ["farm cashflow forecast Ireland", "AI cashflow farming", "ChatGPT farm finance", "farm financial planning", "cashflow management farming Ireland"]
 sources:

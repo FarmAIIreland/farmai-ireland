@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT, AI, machine learning — what these words actually mean for your farm"
+title: "AI jargon decoded: what these words actually mean for your farm"
 slug: "ai-glossary-plain-english-farmers"
 type: "explainer"
 pillar: "tools-explained"
@@ -11,7 +11,7 @@ officialAdviceBanner: false
 status: "draft"
 readNext: "chatgpt-first-10-prompts-farmers"
 seo:
-  title: "AI Terms Explained for Farmers — Plain English | FarmAI Ireland"
+  title: "AI Jargon Decoded for Farmers — Plain English | FarmAI Ireland"
   description: "ChatGPT, AI, algorithms, machine learning — here's what each one actually means and whether any of it matters for your farm right now."
   keywords: ["AI explained farmers Ireland", "what is ChatGPT farming", "AI glossary Ireland", "machine learning plain English", "AI terms explained"]
 sponsorship:

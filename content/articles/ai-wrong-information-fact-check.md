@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT gave me wrong information — how to spot it and fix it"
+title: "ChatGPT got it wrong — how to catch bad AI advice before it costs you"
 slug: "ai-wrong-information-fact-check"
 pillar: "does-this-work"
 date: "2026-03-29"
@@ -12,7 +12,7 @@ verdict: "mixed"
 excerpt: "AI gets things wrong — here's how to catch it every time"
 payoff: "AI gets things wrong. Here's how to catch it every time."
 seo:
-  title: "ChatGPT Wrong Information — How to Fact-Check AI | FarmAI Ireland"
+  title: "Catch Bad AI Advice Before It Costs You | FarmAI Ireland"
   description: "Real examples of AI getting Irish farming facts wrong, and a simple method to catch errors before they cost you. The 3-source rule for farmers."
   keywords: ["ChatGPT wrong information", "AI fact check farming", "ChatGPT hallucination", "AI accuracy farming Ireland", "fact check AI tools"]
 sources:

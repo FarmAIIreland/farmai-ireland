@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT and the TAMS Application — a Step-by-Step Walkthrough"
+title: "Get your TAMS application done faster — a step-by-step AI walkthrough"
 slug: "chatgpt-and-the-tams-application-a-step-by-step-walkthrough"
 image: ""
 type: "article"

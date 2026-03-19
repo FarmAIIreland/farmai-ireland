@@ -1,5 +1,5 @@
 ---
-title: "Using AI to write a farm business plan your bank will actually read"
+title: "Write a farm business plan your bank will read — in 30 minutes, not 3 days"
 slug: "ai-farm-business-plan-bank"
 pillar: "save-time"
 date: "2026-03-25"
@@ -11,7 +11,7 @@ officialAdviceBanner: true
 excerpt: "A working business plan draft in 30 minutes — not 3 days"
 payoff: "A working business plan draft in 30 minutes — not 3 days."
 seo:
-  title: "AI Farm Business Plan for Bank Lending | FarmAI Ireland"
+  title: "Farm Business Plan in 30 Minutes With AI | FarmAI Ireland"
   description: "How to use ChatGPT or Claude to draft a farm business plan your bank manager will take seriously. Step-by-step prompts tested on real Irish farm scenarios."
   keywords: ["farm business plan Ireland", "AI business plan farming", "ChatGPT farm loan", "bank lending farm Ireland", "farm finance AI"]
 sources:

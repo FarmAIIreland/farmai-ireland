@@ -1,12 +1,12 @@
 ---
-title: "Variable Rate Fertiliser in Ireland: What You Need, What It Costs, Whether It Stacks Up"
+title: "Variable rate fertiliser: will it actually save you money on an Irish farm?"
 slug: "variable-rate-fertiliser-ireland"
 pillar: "does-this-work"
 date: "2026-03-16"
 readTime: 8
 difficulty: "intermediate"
 seo:
-  title: "Variable Rate Fertiliser Ireland — Costs, Equipment and Honest Verdict"
+  title: "Variable Rate Fertiliser — Will It Save You Money? | FarmAI Ireland"
   description: "Variable rate application promises to cut fertiliser costs by spreading only what each part of the field needs. Here's what it takes to do it on an Irish farm and whether the numbers stack up."
   keywords: ["variable rate fertiliser Ireland", "precision fertiliser application Ireland", "VRA farming Ireland", "soil sampling precision ag Ireland", "variable rate spreading costs", "precision agriculture Irish farm"]
 youtubeEmbed: ""

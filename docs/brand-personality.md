@@ -5,7 +5,15 @@
 
 ## The One-Line Brand Truth
 
-We're not farmers. We're advocates — people who moved to rural Ireland, watched what farmers deal with every day, and got frustrated that nobody was explaining AI to them properly. So we built this.
+We're not farmers. We're ambassadors and enablers — people who moved to rural Ireland, watched what farmers deal with every day, and got frustrated that nobody was explaining AI to them properly. So we built this.
+
+---
+
+## The Core Filter
+
+Everything on this site exists to save Irish farmers time, money, or headache. If a piece of content doesn't clearly do one of those three things, it doesn't belong here.
+
+This isn't a tagline. It's the editorial test every title, every paragraph, and every recommendation must pass.
 
 ---
 
@@ -17,13 +25,13 @@ We're not tilling fields. We're not calving heifers at 3am. But we are paying at
 
 Our presenter is an AI avatar. That's deliberate. We're a platform about AI, built using AI, explaining AI. We're not hiding that — we think it's kind of the point.
 
-What we are is honest advocates for Irish farmers in a period of enormous change. Scared of the pace of it. Excited by the possibility of it. Determined to make sure farmers aren't the last to know.
+What we are is honest ambassadors for Irish farmers in a period of enormous change. Scared of the pace of it. Excited by the possibility of it. Determined to make sure farmers aren't the last to know.
 
 ---
 
 ## Brand Personality
 
-FarmAI Ireland is the straight-talking advocate who went deep on AI and came back to share what's actually worth your time — and what isn't. Learning out loud. Occasionally frustrated. Never pretending to have all the answers.
+FarmAI Ireland is the straight-talking ambassador who went deep on AI and came back to share what's actually worth your time — and what isn't. Learning out loud. Occasionally frustrated. Never pretending to have all the answers.
 
 Think Clarkson's Farm energy — but for AI, and honest about not owning the farm.
 
@@ -139,13 +147,16 @@ Every piece of content must leave the reader knowing what to do next. Before pub
 **6. Farmer-first framing**
 Always start from the farmer's problem, not the technology. Not "here's what ChatGPT can do" but "you spend four hours on grant applications — here's how to cut that to forty minutes."
 
+**7. State the value upfront**
+Every title and first paragraph must tell the reader what they save — time, money, or headache. Not implied. Stated. "How to use AI for ACRES paperwork" becomes "Cut your ACRES paperwork in half with one free tool." The reason to read comes before the method.
+
 ---
 
 ## Identity & Anonymity
 
 **For now**: FarmAI Ireland operates as a brand. No individual named. "We" throughout. Credibility comes from sources cited and quality of content, not personal authority.
 
-**When media asks**: Be honest. We're not farmers. We're advocates living in rural Ireland who got frustrated watching AI move faster than farming communities could keep up with. We built this to close that gap.
+**When media asks**: Be honest. We're not farmers. We're ambassadors and enablers living in rural Ireland who got frustrated watching AI move faster than farming communities could keep up with. We built this to close that gap.
 
 **The avatar angle**: Our AI presenter is deliberate — we're a platform about AI, built using AI, explaining AI. That's not a weakness, it's the story. A journalist will find it interesting. A farmer will find it honest.
 
@@ -185,7 +196,7 @@ We're scared of the pace of change. We're excited by the possibility. We don't a
 - Not affiliated with Teagasc, the Department of Agriculture, or any government body
 - Not a product review site paid to recommend tools
 - Not a news service competing with the Farmers Journal
-- Not farmers. Advocates. There's a difference — and we own it.
+- Not farmers. Ambassadors and enablers. There's a difference — and we own it.
 - Not here to tell you AI will save your farm. That's your call, not ours.
 
 ---

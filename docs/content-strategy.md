@@ -12,11 +12,21 @@ Teagasc tells farmers what to do. The Farmers Journal tells them what's happenin
 
 ---
 
+## 0. The Core Filter
+
+> Everything on this site exists to save Irish farmers time, money, or headache. If it doesn't do one of those three things, it doesn't belong here.
+
+Every article title must explicitly state what the farmer saves. Not "How to use X" — but "Save Y by using X" or "Stop wasting Z with X." The reason to read comes before the method.
+
+We are ambassadors and enablers. We don't own the farm. We can't test tools in the field ourselves. But we can read everything, filter the noise, and translate what matters — so the farmer doesn't have to.
+
+---
+
 ## 1. Editorial Position
 
 FarmAI Ireland exists in a gap that nobody else is filling. Mainstream agri media covers news, prices, and policy. Teagasc covers best practice. Nobody is sitting beside the farmer and saying: here's this AI thing you've been hearing about — here's what it actually does, here's whether it's worth your time, and here's exactly how to use it on your farm.
 
-That's our job. We are the translator, not the authority.
+That's our job. We are ambassadors and enablers — translators, not authorities.
 
 ### The Three Editorial Lanes
 
@@ -211,4 +221,5 @@ Before every article is published, run it through this checklist. If it fails mo
 | The source test | At least one real source cited (Teagasc, gov.ie, ICBF, etc.) |
 | The advice test | OfficialAdviceBanner present on any grants/livestock health content |
 | The slop test | No AI-sounding phrases: "in conclusion", "it's worth noting", "in today's rapidly evolving landscape" |
+| The value test | Title and first 100 words explicitly state what the reader saves (time, money, or headache) |
 | The length test | No padding. If it's under 500 words and covers the topic, that's fine. |

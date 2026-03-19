@@ -1,5 +1,5 @@
 ---
-title: "What is NDVI and can it actually help on your farm? A plain English explanation"
+title: "Spot your worst-performing fields from your phone — NDVI maps explained"
 slug: "ndvi-satellite-maps-irish-farms"
 type: "guide"
 pillar: "tools-explained"
@@ -11,7 +11,7 @@ officialAdviceBanner: false
 status: "draft"
 readNext: "pasturebase-phone-grass-measurement"
 seo:
-  title: "NDVI Satellite Maps for Irish Farmers — Plain English Guide | FarmAI Ireland"
+  title: "Spot Bad Fields From Your Phone — NDVI Maps Explained | FarmAI Ireland"
   description: "NDVI maps show you which fields are underperforming before you can see it from the ground. Here's what they are, which free tools give you access, and what to do with the information."
   keywords: ["NDVI Ireland farming", "satellite field maps Ireland", "free farm mapping tools Ireland", "precision ag Ireland beginner"]
 sponsorship:

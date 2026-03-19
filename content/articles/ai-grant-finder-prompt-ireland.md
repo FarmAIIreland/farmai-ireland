@@ -1,5 +1,5 @@
 ---
-title: "The Grant Finder prompt: how to ask ChatGPT what you're entitled to"
+title: "One prompt to find every grant you might be missing"
 slug: "ai-grant-finder-prompt-ireland"
 pillar: "save-time"
 date: "2026-03-27"
@@ -11,7 +11,7 @@ officialAdviceBanner: true
 excerpt: "One prompt to surface every grant you might be missing"
 payoff: "One prompt. Every grant you might be missing."
 seo:
-  title: "AI Grant Finder for Irish Farmers — ChatGPT Prompt | FarmAI Ireland"
+  title: "One Prompt to Find Every Farm Grant You're Missing | FarmAI Ireland"
   description: "Use this ChatGPT prompt to find grants and schemes you might be missing. Covers DAFM, TAMS, Leader, and local authority supports for Irish farmers."
   keywords: ["farm grants Ireland", "ChatGPT grant finder", "TAMS grant AI", "Irish farming grants 2026", "DAFM schemes list", "farm subsidies Ireland"]
 sources:

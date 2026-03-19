@@ -1,5 +1,5 @@
 ---
-title: "How to Use AI to Audit Your BISS Entitlements Before the Deadline"
+title: "Catch BISS errors before the deadline — how AI spots what you miss"
 slug: "how-to-use-ai-to-audit-your-biss-entitlements-before-the-dea"
 type: "article"
 pillar: "save-time"

@@ -83,6 +83,16 @@ Brand voice rules — strictly enforced:
 - Must cite at least one real Irish agricultural source
 - Add officialAdviceBanner: true if the topic involves grants, subsidies, or animal health
 
+Core editorial filter — non-negotiable:
+- The title MUST explicitly state what the farmer saves (time, money, or headache avoided)
+- Not "How to use AI for X" — instead "Cut X time in half with AI" or "Stop overpaying for X"
+- Title patterns that work:
+  * "Save [time] on [task] with [tool]" (save-time pillar)
+  * "[Tool] tested: is it worth €[cost] for your [farm type]?" (does-this-work pillar)
+  * "Stop [pain point] — here's what [change] actually means for your farm" (whats-changing pillar)
+  * "[Outcome] in [timeframe] — the [tool] guide for farmers who haven't started yet" (tools-explained pillar)
+- We are ambassadors and enablers, not farmers. Write from that position.
+
 Article format: Problem → Tool → Step-by-step → What it costs → Where to get help
 Length: 600–900 words
 
