@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 19, 2026 · Session 16*
+*Last updated: March 19, 2026 · Session 16 (continued)*
 
 ---
 
@@ -143,6 +143,10 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | `docs/content-strategy.md` | 50-topic backlog — pipeline picks unpublished topics from here |
 | `docs/content-review-prompt.md` | 4-persona quality gate (Síle, Declan, Aoife, Pádraic) — run on every article before commit |
 | `docs/link-exceptions.md` | Sites that return false-positive 403s in link checker (moocall, chat.openai.com, pasturebase.ie) — do not flag as broken |
+| `docs/twitter-follow-list.md` | 5-tier follow strategy for @FarmAI_Ireland — agri media, industry bodies, agri tech, farmers, journalists |
+| `docs/twitter-queue.md` | Copy-paste tweet queue — pipeline auto-appends, John copies to X |
+| `docs/CHANGELOG.md` | One-line session summaries — auto-appended when master-context is updated |
+| `docs/session-briefs/` | Archive of strategy briefs dragged from Claude.ai — permanent record of decisions |
 
 ---
 
@@ -236,7 +240,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 12 | **Completed:** Vercel cron blocker fixed — removed `crons` from vercel.json, created `docs/cron-setup.md` for manual cron-job.org setup; full UI polish sprint: Header (16px nav, Subscribe CTA, 72px height), Hero (clamp font sizing), ArticleCard full redesign (3px pillar bar, monospace tag, payoff line, verdict badge, hover lift), NewsletterForm shared component + `/api/newsletter` route (no Mailchimp redirect, inline confirm), site.json pillars restructured to 4 editorial categories, pillarImages added, FAQ expanded to 8 questions, Facebook removed, TopicPillars 4-tile grid, /read filter tabs + image dedup, /guides image dedup, About page 3-section redesign, Tools page clean placeholder, typography tightened (H1 clamp). Build clean, deployed. **Deferred → Session 13:** `/api/content-pipeline` end-to-end test; `/api/email-responder` test; review 3 existing drafts in /content/drafts/; mobile 375px visual check on live site; social launch; press release; cron-job.org manual setup. |
 | Session 14 | **Completed:** Content expansion — 8 new articles written (nitrates compliance, BCS apps, sheep scanning AI, carbon calculators, EU AI Act, ChatGPT vs Claude vs Gemini, Teagasc AI internally, co-ops AI milk prices); AI glossary expanded with 5 new terms (Prompt, AI Model, Token, Computer Vision, updated LLM); 3 stale duplicate drafts deleted. **SEO overhaul:** all 30 content files migrated from topic pillars to 4 editorial pillars (save-time, tools-explained, whats-changing, does-this-work); SEO frontmatter (seo.title, seo.description, seo.keywords) wired into generateMetadata; canonical URLs on all articles/guides; JSON-LD Article schema on every content page + Organization schema in root layout; site keywords expanded from 4 to 14; content-pipeline.ts updated for new pillars + SEO frontmatter. **Image system:** /api/og edge route built with @vercel/og for branded article images (pillar colour bar, title, FarmAI logo); ArticleCard redesigned with CSS pillar headers replacing duplicate Unsplash photos; OG images wired into social sharing metadata; image dedup logic removed. **Housekeeping:** Google Search Console added to infrastructure list; master-context updated with full content inventory and pillar distribution. All 4 pillars at 5+ target (save-time: 8, tools-explained: 9, does-this-work: 5, whats-changing: 5). 27 total articles/guides. |
 | Session 15 | **Completed:** Hero departures board bounce fixed on mobile (`df8933f`); Unsplash stock photos replaced with branded editorial illustrations + PillarIllustration component; 7 new articles written (farm business plan, cashflow forecast, insurance policy review, farming topics to never trust AI on, grant finder prompt, wrong information fact-check, ChatGPT not working fixes); Tools page built out with curated tool directory replacing placeholder; Core tenet codified — "save farmers time, money, or headache" added as Core Filter to brand-personality.md, content-strategy.md, content-review-prompt.md; identity evolved from "advocates" to "ambassadors and enablers" across all docs + About page; "value test" added as 8th quality check; content-pipeline.ts updated with value-first title guidance; all 27 article/guide titles rewritten to explicitly state what the farmer saves. 34 total articles/guides. **Deferred → Session 16:** Automation end-to-end testing (carried since Session 13); master-context update; Google Search Console; social launch; mobile 375px QA. |
-| Session 16 | **In progress:** Master-context updated to Session 16; automation testing; discovery setup. |
+| Session 16 | **Completed:** Twitter strategy fully implemented from Claude.ai Session 15 brief — @FarmAI_Ireland handle confirmed, `/docs/twitter-follow-list.md` (5-tier follow strategy), `/docs/twitter-queue.md` (copy-paste tweet queue), tweet auto-generation added to content pipeline (`lib/content-pipeline.ts`), Aoife + Pádraic persona filters applied to tweets. **Ways of working:** `/docs/session-briefs/` created for archiving Claude.ai briefs, `/docs/CHANGELOG.md` for session-level audit trail, `npm run context` script added. **Social decisions:** No Facebook, No Instagram, LinkedIn under consideration, YouTube blocked on Google Workspace sign-in. **Standing protocols codified:** session start/during/end rules, handoff rule ("if it wasn't committed, it doesn't exist"), master-context update is non-negotiable at session end. X handle updated from @FarmAIIreland to @FarmAI_Ireland in site.json + social-setup.md. |
 
 ---
 
@@ -258,17 +262,40 @@ Select "Yes, and don't ask again" for every pattern that appears. This clears th
 
 ---
 
-## Standing Instruction — End of Every Session
+## Standing Protocols — Claude Code Must Follow in Every Session
 
-At the end of every Claude Code session, do the following before closing:
+### At Session START
+- Read `master-context.md` in full before doing anything else
+- If the file is more than 7 days old based on its last-updated date, flag this to John before proceeding
+- If John pastes or drags in a brief from Claude.ai, treat it as the highest-priority work item for the session
+- Run `npm run context` equivalent: review master-context.md state
 
-1. Update `/docs/master-context.md` — add session entry to Session Log, update all status tables to reflect what was done
-2. Update any other `/docs` files if their content changed
-3. `git add docs/ content/`
-4. `git commit -m "docs: update master context after Session N"`
-5. `git push`
+### During Session
+- Any strategic decision confirmed in a brief or conversation gets written to a `/docs/` file immediately — do not leave it only in chat
+- If a decision contradicts something in master-context.md, flag it and ask John to confirm before proceeding
+- If a task requires a decision that should have come from Claude.ai strategy work, say so rather than guessing
+- When John drags a Claude.ai brief, save it to `/docs/session-briefs/session-[N]-[topic].md` before implementing
 
-This keeps the context document live and accurate for the next session opener.
+### At Session END — Non-Negotiable
+1. Update `/docs/master-context.md` — add session entry to Session Log, update all status tables
+2. Append one-line summary to `/docs/CHANGELOG.md`
+3. Include: date, session number, what was built, what is pending, any new env vars or files
+4. Write a pre-formatted session opener under `## Next Session Opener` heading
+5. Update any other `/docs` files if their content changed
+6. `git add docs/ content/ lib/ app/ config/`
+7. `git commit -m "docs: master-context update session [N]"`
+8. `git push`
+9. Confirm to John that the commit is done before closing
+
+### The Handoff Rule
+If it wasn't committed to the repo, it doesn't exist. Claude.ai conversations are ephemeral. The repo is the record.
+
+### Monetisation Awareness
+- Sponsor outreach begins Month 3 when traffic data is available
+- Newsletter (Mailchimp) is more valuable than Twitter followers — every tweet should path to newsletter signup
+- Tier 1 sponsor targets (FBD, AIB Agri, BOI Agri, Tiirlán, Glanbia, Dovea, ICOS) — maintain editorial independence but avoid burning commercial relationships
+- When followers reach ~1,000 and newsletter ~500 subscribers, flag to John that sponsor outreach timing should be reviewed
+- Sponsored content is always clearly labelled — non-negotiable for editorial credibility
 
 ---
 
@@ -317,7 +344,7 @@ Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
 
 | # | Action | Status |
 |---|--------|--------|
-| 8  | Social accounts: X ✅ created; YouTube ⏳ blocked (can't sign into hello@farmai.ie Google account — check Google Workspace admin); LinkedIn 🤔 considering; FB/Insta/TikTok ❌ not doing | ⏳ In progress |
+| 8  | Social: X @FarmAI_Ireland ✅ live + strategy implemented (follow list, tweet queue, pipeline integration); YouTube ⏳ blocked (Google Workspace admin); LinkedIn 🤔 considering; FB/Insta/TikTok ❌ not doing | ✅ X done, others pending |
 | 9  | Press release: send once YouTube + social sorted | ❌ Manual (John) |
 
 ### Tier 4 — Nice to have (carry forward)
@@ -335,6 +362,14 @@ Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
 |---|--------|---------|
 | 14 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
 | 15 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
+
+---
+
+## Next Session Opener
+
+Paste this at the start of the next Claude Code session:
+
+> Session 17. Read /docs/master-context.md first. Last session (16) implemented Twitter strategy: @FarmAI_Ireland live, follow list at /docs/twitter-follow-list.md, tweet queue at /docs/twitter-queue.md, pipeline auto-generates tweets. Ways of working protocols now in master-context. Priorities for this session: (1) automation end-to-end testing — /api/kpi-report, /api/content-pipeline, /api/email-responder (carried since Session 13), (2) Google Search Console DNS verification, (3) YouTube Google Workspace sign-in fix, (4) mobile 375px QA. Check CHANGELOG.md for session history.
 
 ---
 

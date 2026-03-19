@@ -158,11 +158,90 @@ sources:
 
 // ─── Main pipeline ────────────────────────────────────────────────────────────
 
+// ─── Tweet generation ─────────────────────────────────────────────────────────
+
+export async function generateTweet(
+  title: string,
+  slug: string,
+  pillar: string,
+  excerpt: string,
+  date: string,
+): Promise<string | null> {
+  const apiKey = process.env.ANTHROPIC_API_KEY;
+  if (!apiKey) return null;
+
+  const schemeHashtags: Record<string, string> = {
+    biss: '#BISS', acres: '#ACRES', tams: '#TAMS', nitrates: '#Nitrates',
+    organic: '#OrganicFarming', dairy: '#DairyFarming', beef: '#BeefFarming',
+    sheep: '#SheepFarming', tillage: '#Tillage', carbon: '#CarbonCredits',
+  };
+
+  const topicTag = Object.entries(schemeHashtags).find(
+    ([key]) => title.toLowerCase().includes(key) || slug.includes(key),
+  )?.[1] ?? `#${pillar.replace(/-/g, '').replace(/^\w/, c => c.toUpperCase())}`;
+
+  const prompt = `Generate a single tweet for FarmAI Ireland (@FarmAI_Ireland) about this article.
+
+Article title: "${title}"
+Article excerpt: "${excerpt}"
+Article URL: https://farmai.ie/read/${slug}
+
+Rules — strictly enforced:
+- NEVER start with "Discover", "Unlock", "Exciting", "We're thrilled", or any hype language
+- NEVER use emojis
+- Plain English, sceptical, practical tone — Eoin the Roscommon beef farmer voice
+- Hook line first (max 15 words): why does a time-poor Irish farmer care right now?
+- One sentence expanding the hook — what's the actual farm benefit
+- Then the article URL on its own line
+- Then hashtags on own line: #IrishFarming #FarmAI ${topicTag}
+- Total tweet MUST be under 257 characters (URLs count as 23 chars on X)
+- The hook must answer: "why does a time-poor Irish farmer care about this right now?"
+
+Return ONLY the tweet text. Nothing else — no quotes, no explanation.`;
+
+  try {
+    const client = new Anthropic({ apiKey });
+    const message = await client.messages.create({
+      model: 'claude-sonnet-4-6',
+      max_tokens: 256,
+      messages: [{ role: 'user', content: prompt }],
+    });
+
+    const tweet = message.content[0].type === 'text' ? message.content[0].text.trim() : '';
+    if (!tweet) return null;
+
+    return tweet;
+  } catch (err) {
+    console.error('generateTweet error:', err);
+    return null;
+  }
+}
+
+function formatTweetQueueEntry(
+  date: string,
+  title: string,
+  slug: string,
+  tweet: string,
+): string {
+  return `
+---
+
+**DATE:** ${date}
+**ARTICLE:** ${title}
+**URL:** https://farmai.ie/read/${slug}
+**STATUS:** PENDING
+
+**TWEET:**
+${tweet}
+`;
+}
+
 export interface DraftResult {
   title:     string;
   slug:      string;
   githubUrl: string | null;
   excerpt:   string;
+  tweet:     string | null;
 }
 
 export async function runContentPipeline(): Promise<DraftResult[]> {
@@ -196,7 +275,9 @@ export async function runContentPipeline(): Promise<DraftResult[]> {
     return results;
   }
 
-  // 4. Generate each article sequentially
+  // 4. Generate each article sequentially + tweet for each
+  const tweetEntries: string[] = [];
+
   for (const topic of selected) {
     try {
       const article   = await generateArticle(topic);
@@ -210,16 +291,65 @@ export async function runContentPipeline(): Promise<DraftResult[]> {
       );
 
       const excerptMatch = article.content.match(/^excerpt:\s*"([^"]+)"/m);
+      const pillarMatch  = article.content.match(/^pillar:\s*"([^"]+)"/m);
+      const excerpt      = excerptMatch?.[1] ?? '';
+      const pillar       = pillarMatch?.[1] ?? 'tools-explained';
+      const today        = new Date().toISOString().split('T')[0];
+
+      // Generate tweet for this article
+      const tweet = await generateTweet(article.title, article.slug, pillar, excerpt, today);
+      if (tweet) {
+        tweetEntries.push(formatTweetQueueEntry(today, article.title, article.slug, tweet));
+      }
+
       results.push({
         title:     article.title,
         slug:      article.slug,
         githubUrl,
-        excerpt:   excerptMatch?.[1] ?? '',
+        excerpt,
+        tweet,
       });
 
       console.log(`Generated draft: ${article.title}`);
     } catch (err) {
       console.error(`Failed topic "${topic}":`, err);
+    }
+  }
+
+  // 5. Append tweets to queue file via GitHub commit
+  if (tweetEntries.length > 0) {
+    try {
+      const queuePath = 'docs/twitter-queue.md';
+
+      // Read existing queue content from GitHub
+      const token = process.env.GITHUB_TOKEN;
+      const repo  = process.env.GITHUB_REPO ?? 'FarmAIIreland/farmai-ireland';
+      let existingContent = '';
+
+      if (token) {
+        try {
+          const res = await fetch(
+            `https://api.github.com/repos/${repo}/contents/${queuePath}`,
+            { headers: { Authorization: `token ${token}`, Accept: 'application/vnd.github.v3+json' } },
+          );
+          if (res.ok) {
+            const data = await res.json();
+            existingContent = Buffer.from(data.content, 'base64').toString('utf8');
+          }
+        } catch {
+          // File may not exist yet — that's fine
+        }
+
+        const updatedContent = existingContent + tweetEntries.join('');
+        await commitFileToGitHub(
+          queuePath,
+          updatedContent,
+          `tweets: ${tweetEntries.length} new tweet(s) queued`,
+        );
+        console.log(`Appended ${tweetEntries.length} tweet(s) to queue`);
+      }
+    } catch (err) {
+      console.error('Failed to update tweet queue:', err);
     }
   }
 

@@ -31,8 +31,14 @@ export async function GET(request: Request) {
           d.githubUrl
             ? `   Review: ${d.githubUrl}`
             : '   (GitHub commit failed — check function logs)',
+          d.tweet ? `   Tweet queued: ✓` : '   Tweet: not generated',
         ].filter(Boolean).join('\n')).join('\n\n')
       : 'No drafts generated — check Vercel function logs for errors.';
+
+    const tweetCount = drafts.filter(d => d.tweet).length;
+    const tweetSection = tweetCount > 0
+      ? `\n${line}\nTweets: ${tweetCount} queued in docs/twitter-queue.md\nCopy-paste to X when ready.`
+      : '';
 
     const brokenSection = broken.length > 0
       ? [
@@ -53,10 +59,13 @@ export async function GET(request: Request) {
       '',
       draftLines,
       brokenSection,
+      tweetSection,
       '',
       line,
       'Review drafts on GitHub, edit if needed, then move to',
       'content/articles/ or content/guides/ to publish.',
+      '',
+      'Tweets: open docs/twitter-queue.md, copy PENDING tweets, paste to X.',
     ].join('\n');
 
     const resendKey = process.env.RESEND_API_KEY;
