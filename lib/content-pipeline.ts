@@ -165,7 +165,6 @@ export async function generateTweet(
   slug: string,
   pillar: string,
   excerpt: string,
-  date: string,
 ): Promise<string | null> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return null;
@@ -297,7 +296,7 @@ export async function runContentPipeline(): Promise<DraftResult[]> {
       const today        = new Date().toISOString().split('T')[0];
 
       // Generate tweet for this article
-      const tweet = await generateTweet(article.title, article.slug, pillar, excerpt, today);
+      const tweet = await generateTweet(article.title, article.slug, pillar, excerpt);
       if (tweet) {
         tweetEntries.push(formatTweetQueueEntry(today, article.title, article.slug, tweet));
       }
