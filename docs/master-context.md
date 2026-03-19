@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 16, 2026 · Session 11*
+*Last updated: March 19, 2026 · Session 16*
 
 ---
 
@@ -176,8 +176,15 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | chatgpt-claude-gemini-which-for-farmers.md | does-this-work | ✅ Written Session 14 |
 | teagasc-using-ai-whats-coming.md | whats-changing | ✅ Written Session 14 |
 | irish-co-ops-ai-milk-prices.md | whats-changing | ✅ Written Session 14 |
+| ai-farm-business-plan-bank.md | save-time | ✅ Written Session 15 |
+| ai-farm-cashflow-forecast.md | save-time | ✅ Written Session 15 |
+| ai-farm-insurance-policy-review.md | tools-explained | ✅ Written Session 15 |
+| ai-farming-topics-never-trust.md | does-this-work | ✅ Written Session 15 |
+| ai-grant-finder-prompt-ireland.md | save-time | ✅ Written Session 15 |
+| ai-wrong-information-fact-check.md | does-this-work | ✅ Written Session 15 |
+| chatgpt-not-working-common-mistakes.md | tools-explained | ✅ Written Session 15 |
 
-**Pillar distribution:** save-time: 8 · tools-explained: 9 · does-this-work: 5 · whats-changing: 5 — all pillars at 5+ target
+**Pillar distribution:** save-time: 11 · tools-explained: 11 · does-this-work: 7 · whats-changing: 5 — all pillars at 5+ target. 34 total.
 
 ---
 
@@ -228,6 +235,8 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 11 | **Completed:** All Vercel env vars set (RESEND, Anthropic, GitHub, Gmail OAuth x3, Mailchimp x2, Vercel API, Airtable KPI); Gmail OAuth confirmed working; Resend domain verified (farmai.ie); MX records added in Hosting Ireland DNS for Google Workspace; DMARC requirement added to CLONE.md; `/api/kpi-report` fully working — HTTP 200, email confirmed delivered to hello@farmai.ie; fixed build failure caused by API routes missing `force-dynamic` export; all Resend from addresses corrected from farmaiireland.ie → farmai.ie; 21 broken source links diagnosed and fixed across 11 content files (gov.ie restructure, Teagasc restructure, ICBF path changes, Merck/SenseHub brand change); `/docs/link-exceptions.md` created; source URL validation rule added to operating instructions and memory; 3 new articles written, persona-reviewed, and committed (chatgpt-first-10-prompts-farmers, icbf-ai-ebi-explained, variable-rate-fertiliser-ireland) — 16 articles total. **Deferred → Session 12:** `/api/content-pipeline` test; `/api/email-responder` test; UI polish; social launch; press release. |
 | Session 12 | **Completed:** Vercel cron blocker fixed — removed `crons` from vercel.json, created `docs/cron-setup.md` for manual cron-job.org setup; full UI polish sprint: Header (16px nav, Subscribe CTA, 72px height), Hero (clamp font sizing), ArticleCard full redesign (3px pillar bar, monospace tag, payoff line, verdict badge, hover lift), NewsletterForm shared component + `/api/newsletter` route (no Mailchimp redirect, inline confirm), site.json pillars restructured to 4 editorial categories, pillarImages added, FAQ expanded to 8 questions, Facebook removed, TopicPillars 4-tile grid, /read filter tabs + image dedup, /guides image dedup, About page 3-section redesign, Tools page clean placeholder, typography tightened (H1 clamp). Build clean, deployed. **Deferred → Session 13:** `/api/content-pipeline` end-to-end test; `/api/email-responder` test; review 3 existing drafts in /content/drafts/; mobile 375px visual check on live site; social launch; press release; cron-job.org manual setup. |
 | Session 14 | **Completed:** Content expansion — 8 new articles written (nitrates compliance, BCS apps, sheep scanning AI, carbon calculators, EU AI Act, ChatGPT vs Claude vs Gemini, Teagasc AI internally, co-ops AI milk prices); AI glossary expanded with 5 new terms (Prompt, AI Model, Token, Computer Vision, updated LLM); 3 stale duplicate drafts deleted. **SEO overhaul:** all 30 content files migrated from topic pillars to 4 editorial pillars (save-time, tools-explained, whats-changing, does-this-work); SEO frontmatter (seo.title, seo.description, seo.keywords) wired into generateMetadata; canonical URLs on all articles/guides; JSON-LD Article schema on every content page + Organization schema in root layout; site keywords expanded from 4 to 14; content-pipeline.ts updated for new pillars + SEO frontmatter. **Image system:** /api/og edge route built with @vercel/og for branded article images (pillar colour bar, title, FarmAI logo); ArticleCard redesigned with CSS pillar headers replacing duplicate Unsplash photos; OG images wired into social sharing metadata; image dedup logic removed. **Housekeeping:** Google Search Console added to infrastructure list; master-context updated with full content inventory and pillar distribution. All 4 pillars at 5+ target (save-time: 8, tools-explained: 9, does-this-work: 5, whats-changing: 5). 27 total articles/guides. |
+| Session 15 | **Completed:** Hero departures board bounce fixed on mobile (`df8933f`); Unsplash stock photos replaced with branded editorial illustrations + PillarIllustration component; 7 new articles written (farm business plan, cashflow forecast, insurance policy review, farming topics to never trust AI on, grant finder prompt, wrong information fact-check, ChatGPT not working fixes); Tools page built out with curated tool directory replacing placeholder; Core tenet codified — "save farmers time, money, or headache" added as Core Filter to brand-personality.md, content-strategy.md, content-review-prompt.md; identity evolved from "advocates" to "ambassadors and enablers" across all docs + About page; "value test" added as 8th quality check; content-pipeline.ts updated with value-first title guidance; all 27 article/guide titles rewritten to explicitly state what the farmer saves. 34 total articles/guides. **Deferred → Session 16:** Automation end-to-end testing (carried since Session 13); master-context update; Google Search Console; social launch; mobile 375px QA. |
+| Session 16 | **In progress:** Master-context updated to Session 16; automation testing; discovery setup. |
 
 ---
 
@@ -263,41 +272,69 @@ This keeps the context document live and accurate for the next session opener.
 
 ---
 
-## Session 15 — Next Actions (Priority Order)
+## Session 16 — Next Actions (Priority Order)
 
-### Priority 1 — Visual QA & Hero Fix
-
-| # | Action | Status |
-|---|--------|--------|
-| 1 | Mobile 375px visual check on live site — review all pages, note issues | ❌ Manual (John on mobile) |
-| 2 | Confirm Lora font loading on live Vercel | ❌ Manual (John on mobile) |
-| 3 | Fix hero departures board bounce — "Cut Paperwork" and "Tips & Tricks" wrap to 2 lines on mobile, pushing CTA buttons down; consider making phrases static or fixing min-height | ❌ |
-| 4 | Full review of site with fresh eyes — are operating instructions still relevant? Anything missing? | ❌ |
-
-### Priority 2 — Automation testing (carried from Session 13)
+### Tier 1 — Must Do (unblock everything else)
 
 | # | Action | Status |
 |---|--------|--------|
-| 5 | Trigger `/api/content-pipeline` — confirm drafts generated, GitHub commit, preview email sent | ❌ |
-| 6 | Trigger `/api/email-responder` — confirm Gmail OAuth works, labels found, draft replies created | ❌ |
+| 1 | Update master-context.md — add Sessions 15-16, update all tables | ✅ Done |
+| 2 | Test `/api/kpi-report` — confirm still works after changes since Session 11 | ❌ Manual — see test commands below |
+| 3 | Test `/api/content-pipeline` — trigger manually, verify GitHub commit + email (carried since Session 13) | ❌ Manual — see test commands below |
+| 4 | Test `/api/email-responder` — trigger manually, verify Gmail draft creation (carried since Session 13) | ❌ Manual — see test commands below |
 
-### Priority 3 — Manual steps (carried)
+#### Automation test commands (run from browser or terminal)
+
+If `CRON_SECRET` is set in Vercel, include the header. If not set, the endpoints are open.
+
+```bash
+# KPI Report — should return JSON with kpi object + send email to hello@farmai.ie
+curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/kpi-report
+
+# Content Pipeline — generates up to 3 drafts, commits to GitHub, sends preview email
+curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/content-pipeline
+
+# Email Responder — reads unread Gmail by label, creates draft replies
+curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
+```
+
+Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
+
+**What success looks like:**
+- KPI Report: `{ "ok": true, "kpi": { ... } }` + email arrives
+- Content Pipeline: `{ "ok": true, "draftsGenerated": 3, ... }` + check GitHub for new files in `content/drafts/`
+- Email Responder: `{ "ok": true, "totalDrafts": N, ... }` — if no unread emails, totalDrafts will be 0 (that's fine)
+
+### Tier 2 — Discovery (make the site findable)
 
 | # | Action | Status |
 |---|--------|--------|
-| 7  | Verify farmai.ie in Google Search Console — DNS TXT record method via Hosting Ireland: https://search.google.com/search-console | ❌ Manual |
-| 8  | Link Search Console to GA4 property (G-VQC7560BBN) | ❌ Manual |
-| 9  | Social accounts: follow /docs/social-setup.md | ❌ Manual |
-| 10 | Press release: send same day social goes live | ❌ Manual |
-| 11 | Set up Cloudflare after DNS is live | ❌ Manual |
-| 12 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual |
+| 5 | Verify farmai.ie in Google Search Console — DNS TXT record via Hosting Ireland | ❌ Manual (John) |
+| 6 | Link Search Console to GA4 property (G-VQC7560BBN) | ❌ Manual (John) |
+| 7 | Submit sitemap.xml to Search Console — gets 34 pages into Google's index queue | ❌ Manual (John) |
 
-### Priority 4 — Recurring
+### Tier 3 — Launch presence
+
+| # | Action | Status |
+|---|--------|--------|
+| 8  | Social accounts: follow /docs/social-setup.md | ❌ Manual (John) |
+| 9  | Press release: send same day social goes live | ❌ Manual (John) |
+
+### Tier 4 — Nice to have (carry forward)
+
+| # | Action | Status |
+|---|--------|--------|
+| 10 | Mobile 375px visual check on live site | ❌ Manual (John on mobile) |
+| 11 | Confirm Lora font loading on live Vercel | ❌ Manual (John on mobile) |
+| 12 | Set up Cloudflare after DNS is live | ❌ Manual (John) |
+| 13 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual (John) |
+
+### Recurring
 
 | # | Action | Cadence |
 |---|--------|---------|
-| 13 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
-| 14 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
+| 14 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
+| 15 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
 
 ---
 
