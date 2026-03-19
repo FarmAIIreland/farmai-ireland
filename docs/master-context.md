@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 19, 2026 · Session 16 (continued)*
+*Last updated: March 19, 2026 · Session 17*
 
 ---
 
@@ -241,6 +241,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 14 | **Completed:** Content expansion — 8 new articles written (nitrates compliance, BCS apps, sheep scanning AI, carbon calculators, EU AI Act, ChatGPT vs Claude vs Gemini, Teagasc AI internally, co-ops AI milk prices); AI glossary expanded with 5 new terms (Prompt, AI Model, Token, Computer Vision, updated LLM); 3 stale duplicate drafts deleted. **SEO overhaul:** all 30 content files migrated from topic pillars to 4 editorial pillars (save-time, tools-explained, whats-changing, does-this-work); SEO frontmatter (seo.title, seo.description, seo.keywords) wired into generateMetadata; canonical URLs on all articles/guides; JSON-LD Article schema on every content page + Organization schema in root layout; site keywords expanded from 4 to 14; content-pipeline.ts updated for new pillars + SEO frontmatter. **Image system:** /api/og edge route built with @vercel/og for branded article images (pillar colour bar, title, FarmAI logo); ArticleCard redesigned with CSS pillar headers replacing duplicate Unsplash photos; OG images wired into social sharing metadata; image dedup logic removed. **Housekeeping:** Google Search Console added to infrastructure list; master-context updated with full content inventory and pillar distribution. All 4 pillars at 5+ target (save-time: 8, tools-explained: 9, does-this-work: 5, whats-changing: 5). 27 total articles/guides. |
 | Session 15 | **Completed:** Hero departures board bounce fixed on mobile (`df8933f`); Unsplash stock photos replaced with branded editorial illustrations + PillarIllustration component; 7 new articles written (farm business plan, cashflow forecast, insurance policy review, farming topics to never trust AI on, grant finder prompt, wrong information fact-check, ChatGPT not working fixes); Tools page built out with curated tool directory replacing placeholder; Core tenet codified — "save farmers time, money, or headache" added as Core Filter to brand-personality.md, content-strategy.md, content-review-prompt.md; identity evolved from "advocates" to "ambassadors and enablers" across all docs + About page; "value test" added as 8th quality check; content-pipeline.ts updated with value-first title guidance; all 27 article/guide titles rewritten to explicitly state what the farmer saves. 34 total articles/guides. **Deferred → Session 16:** Automation end-to-end testing (carried since Session 13); master-context update; Google Search Console; social launch; mobile 375px QA. |
 | Session 16 | **Completed:** Twitter strategy fully implemented from Claude.ai Session 15 brief — @FarmAI_Ireland handle confirmed, `/docs/twitter-follow-list.md` (5-tier follow strategy), `/docs/twitter-queue.md` (copy-paste tweet queue), tweet auto-generation added to content pipeline (`lib/content-pipeline.ts`), Aoife + Pádraic persona filters applied to tweets. **Ways of working:** `/docs/session-briefs/` created for archiving Claude.ai briefs, `/docs/CHANGELOG.md` for session-level audit trail, `npm run context` script added. **Social decisions:** No Facebook, No Instagram, LinkedIn under consideration, YouTube blocked on Google Workspace sign-in. **Standing protocols codified:** session start/during/end rules, handoff rule ("if it wasn't committed, it doesn't exist"), master-context update is non-negotiable at session end. X handle updated from @FarmAIIreland to @FarmAI_Ireland in site.json + social-setup.md. |
+| Session 17 | **Completed:** Security hardening sweep — CRON_SECRET now required on all 3 cron endpoints (was optional), dashboard auth cookie hashed with SHA-256 (was plaintext password), session reduced from 7 days to 24 hours, HSTS + Permissions-Policy headers added to next.config.mjs, verbose error details removed from API responses (content-pipeline, kpi-report, email-responder), newsletter email validation tightened with proper regex, .gitignore hardened to block .env files. **Noted but deferred:** CSP unsafe-inline removal (needs nonce infra), rate limiting (Vercel handles DDoS), CSRF tokens (sameSite:strict suffices), Next.js 14→16 upgrade (major version, own session). |
 
 ---
 
@@ -299,20 +300,20 @@ If it wasn't committed to the repo, it doesn't exist. Claude.ai conversations ar
 
 ---
 
-## Session 16 — Next Actions (Priority Order)
+## Session 17 — Next Actions (Priority Order)
 
 ### Tier 1 — Must Do (unblock everything else)
 
 | # | Action | Status |
 |---|--------|--------|
-| 1 | Update master-context.md — add Sessions 15-16, update all tables | ✅ Done |
+| 1 | Update master-context.md — add Session 17 security sweep | ✅ Done |
 | 2 | Test `/api/kpi-report` — confirm still works after changes since Session 11 | ❌ Manual — see test commands below |
 | 3 | Test `/api/content-pipeline` — trigger manually, verify GitHub commit + email (carried since Session 13) | ❌ Manual — see test commands below |
 | 4 | Test `/api/email-responder` — trigger manually, verify Gmail draft creation (carried since Session 13) | ❌ Manual — see test commands below |
 
 #### Automation test commands (run from browser or terminal)
 
-If `CRON_SECRET` is set in Vercel, include the header. If not set, the endpoints are open.
+`CRON_SECRET` is **required** — all 3 endpoints return 401 without it. Include the header in every request.
 
 ```bash
 # KPI Report — should return JSON with kpi object + send email to hello@farmai.ie
@@ -324,8 +325,6 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/content-pipeline
 # Email Responder — reads unread Gmail by label, creates draft replies
 curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 ```
-
-Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
 
 **What success looks like:**
 - KPI Report: `{ "ok": true, "kpi": { ... } }` + email arrives
@@ -369,7 +368,7 @@ Or just visit the URLs directly in your browser (if no CRON_SECRET is set).
 
 Paste this at the start of the next Claude Code session:
 
-> Session 17. Read /docs/master-context.md first. Last session (16) implemented Twitter strategy: @FarmAI_Ireland live, follow list at /docs/twitter-follow-list.md, tweet queue at /docs/twitter-queue.md, pipeline auto-generates tweets. Ways of working protocols now in master-context. Priorities for this session: (1) automation end-to-end testing — /api/kpi-report, /api/content-pipeline, /api/email-responder (carried since Session 13), (2) Google Search Console DNS verification, (3) YouTube Google Workspace sign-in fix, (4) mobile 375px QA. Check CHANGELOG.md for session history.
+> Session 18. Read /docs/master-context.md first. Last session (17) was a security hardening sweep: CRON_SECRET now required on all cron endpoints, dashboard cookie hashed (SHA-256), 24h sessions, HSTS + Permissions-Policy headers added, verbose errors scrubbed, email validation tightened, .gitignore hardened. Deferred: CSP nonce setup, rate limiting, Next.js 14→16 upgrade. Priorities for this session: (1) automation end-to-end testing — /api/kpi-report, /api/content-pipeline, /api/email-responder (carried since Session 13 — CRON_SECRET header now required), (2) Google Search Console DNS verification, (3) YouTube Google Workspace sign-in fix, (4) mobile 375px QA. Check CHANGELOG.md for session history.
 
 ---
 
