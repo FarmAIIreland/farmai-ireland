@@ -8,7 +8,7 @@ export const maxDuration = 120;
 
 export async function GET(request: Request) {
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && request.headers.get('x-cron-secret') !== cronSecret) {
+  if (!cronSecret || request.headers.get('x-cron-secret') !== cronSecret) {
     return new Response('Unauthorized', { status: 401 });
   }
 
@@ -87,6 +87,6 @@ export async function GET(request: Request) {
     });
   } catch (err) {
     console.error('Content pipeline error:', err);
-    return NextResponse.json({ error: 'Pipeline failed', detail: String(err) }, { status: 500 });
+    return NextResponse.json({ error: 'Pipeline failed' }, { status: 500 });
   }
 }
