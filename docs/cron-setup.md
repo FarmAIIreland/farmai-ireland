@@ -3,6 +3,8 @@
 Cron scheduling is handled by **cron-job.org** (free, unlimited).
 Vercel runs the functions. cron-job.org triggers them on schedule.
 
+**Status:** All 3 jobs configured and active on cron-job.org (confirmed Session 19).
+
 ---
 
 ## One-time setup
@@ -31,12 +33,36 @@ In Vercel dashboard → Project → Settings → Environment Variables:
 
 ---
 
+## Required environment variables
+
+| Variable | Used by | Notes |
+|----------|---------|-------|
+| `CRON_SECRET` | All endpoints | Auth — must match cron-job.org header |
+| `RESEND_API_KEY` | KPI, Content, Email | Sends notification emails |
+| `RESEND_FROM_EMAIL` | KPI, Content, Email | e.g. `reports@farmai.ie` |
+| `ANTHROPIC_API_KEY` | Content Pipeline | Generates articles and tweets |
+| `GITHUB_TOKEN` | Content Pipeline | Commits drafts to GitHub |
+| `GMAIL_CLIENT_ID` | Email Responder | Google OAuth |
+| `GMAIL_CLIENT_SECRET` | Email Responder | Google OAuth |
+| `GMAIL_REFRESH_TOKEN` | Email Responder | Google OAuth |
+| `GOOGLE_SHEETS_ID` | Content Pipeline | Reader-submitted topic ideas |
+| `VERCEL_API_TOKEN` | KPI Report | Fetches visitor analytics |
+| `VERCEL_PROJECT_ID` | KPI Report | Vercel project identifier |
+| `MAILCHIMP_API_KEY` | KPI Report | Subscriber + open rate data |
+| `MAILCHIMP_LIST_ID` | KPI Report | Mailchimp audience ID |
+| `AIRTABLE_API_KEY` | KPI Report | Thumbs-up rate + KPI snapshots |
+| `AIRTABLE_BASE_ID` | KPI Report | Airtable base |
+| `AIRTABLE_TABLE_ID` | KPI Report | Thumbs-up votes table |
+| `AIRTABLE_KPI_TABLE_ID` | KPI Report | Week-on-week KPI snapshots |
+
+---
+
 ## Notes
 
-- All times UTC
+- All times UTC (Dublin = UTC+0 in winter, UTC+1 in summer)
 - cron-job.org free tier: unlimited jobs, email alerts on failure
-- If `CRON_SECRET` is not set in Vercel, the endpoints are open (safe for manual testing) — set it before going live
-- If farmai.ie domain is not yet pointed at Vercel, use the stable alias `farmai-ireland.vercel.app` temporarily
+- If `CRON_SECRET` is not set in Vercel, the endpoints return 401
+- If farmai.ie is not yet pointed at Vercel, use the stable alias `farmai-ireland.vercel.app` temporarily
 - The `/api/gmail-setup` route is one-time only — do not add to cron-job.org
 
 ---

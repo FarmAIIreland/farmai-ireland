@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title:       siteConfig.seo.defaultTitle,
     description: siteConfig.seo.defaultDescription,
     url:         siteConfig.site.url,
-    images:      [{ url: `/api/og?title=${encodeURIComponent(siteConfig.seo.defaultTitle)}&pillar=tools-explained&readTime=` }],
+    images:      [{ url: `${siteConfig.site.url}/api/og?title=${encodeURIComponent(siteConfig.seo.defaultTitle)}&pillar=tools-explained&readTime=`, width: 1200, height: 630, type: 'image/png' }],
   },
 };
 
