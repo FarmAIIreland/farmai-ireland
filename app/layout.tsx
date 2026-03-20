@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.site.name,
     locale:   'en_IE',
     type:     'website',
-    images:   [{ url: `/api/og?title=${encodeURIComponent('FarmAI Ireland — AI for Irish Farmers')}&pillar=tools-explained&readTime=` }],
+    images:   [{ url: `${siteConfig.site.url}/api/og?title=${encodeURIComponent('FarmAI Ireland — AI for Irish Farmers')}&pillar=tools-explained&readTime=`, width: 1200, height: 630, type: 'image/png' }],
   },
   twitter: {
     card:    'summary_large_image',
