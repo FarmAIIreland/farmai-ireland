@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 20, 2026 · Session 18*
+*Last updated: March 20, 2026 · Session 19*
 
 ---
 
@@ -35,13 +35,13 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | Airtable base + env vars in Vercel | ✅ Done — Session 5; table ID corrected Session 7 |
 | ArticleFeedback wired to Airtable | ✅ Done — Session 5; confirmed working Session 7 |
 | farmai.ie pointed at Vercel | ✅ Done — Session 12 — confirmed live (HTTP 200) |
-| Cloudflare in front of Vercel | ❌ Pending — manual Cloudflare account setup |
+| Cloudflare in front of Vercel | ✅ Done — Session 19 — Web Analytics beacon active, CSP updated to allow |
 | Google Analytics ID added | ✅ Done — Session 7 (G-VQC7560BBN in config/site.json) |
-| Google Search Console | ⏳ Property created — DNS TXT verification pending (John to add TXT record via Hosting Ireland support) |
+| Google Search Console | ✅ Done — Session 19 — verified, sitemap submitted |
 | KPI dashboard (/dashboard) | ✅ Done — Session 8/9 — password-protected, WoW deltas, farmland hero |
 | Monday KPI email + broken link check | ✅ Done — Session 8/9 — cron-job.org scheduled Mon 8am UTC — email delivery confirmed Session 11 |
-| Sunday content pipeline | ✅ Done — Session 9 — cron-job.org scheduled Sun 8pm UTC — end-to-end untested |
-| Daily email responder drafts | ✅ Done — Session 9 — cron-job.org scheduled daily 8am UTC — end-to-end untested |
+| Sunday content pipeline | ✅ Done — Session 9 — cron-job.org scheduled Sun 4pm — end-to-end untested |
+| Daily email responder drafts | ✅ Done — Session 9 — cron-job.org scheduled daily 4am — confirmed successful Session 19 (4.18s) |
 | Cron jobs moved to cron-job.org | ✅ Done — Session 12 — CRON_SECRET secured, 3 jobs live at farmai.ie URLs |
 | Gmail labels + filters setup | ✅ Done — Session 9 — /api/gmail-setup one-time route |
 | Gmail unread inbox monitor on dashboard | ✅ Done — Session 9 — Sponsorship + Media label counts |
@@ -58,13 +58,13 @@ A polished, AI-powered media brand making practical AI knowledge accessible to I
 | ArticleFeedback → Airtable | ✅ Wired Session 5 |
 | /read + /guides listing | ✅ Built |
 | /read/[slug] + /guides/[slug] | ✅ Built |
-| Lora font | ⏳ Confirm live on Vercel |
+| Lora font | ✅ Confirmed live — Session 19 |
 | /about, /contact, /sources, /tools | ⏳ Confirm live on Vercel |
 | All 4 legal pages | ⏳ Confirm live on Vercel |
 | Hero centering + button border fix | ✅ Done Session 7 — border-2 border-white/75 |
 | Ampersand fix + OfficialAdviceBanner | ✅ Confirmed correct in code — verify on live site |
 | Section spacing — 80px desktop / 48px mobile | ⏳ py-12 → py-12 md:py-20 needed on article/guide pages + home sections |
-| Mobile 375px check | ⏳ Visual check needed on live site |
+| Mobile 375px check | ✅ Confirmed — Session 19 |
 | Cookie banner | ✅ Done — Session 10 — localStorage flag, Accept/Decline, GA loads on Accept only |
 | sitemap.xml + robots.txt | ✅ Done Session 7 — app/sitemap.ts + public/robots.txt live |
 
@@ -243,6 +243,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 15 | **Completed:** Hero departures board bounce fixed on mobile (`df8933f`); Unsplash stock photos replaced with branded editorial illustrations + PillarIllustration component; 7 new articles written (farm business plan, cashflow forecast, insurance policy review, farming topics to never trust AI on, grant finder prompt, wrong information fact-check, ChatGPT not working fixes); Tools page built out with curated tool directory replacing placeholder; Core tenet codified — "save farmers time, money, or headache" added as Core Filter to brand-personality.md, content-strategy.md, content-review-prompt.md; identity evolved from "advocates" to "ambassadors and enablers" across all docs + About page; "value test" added as 8th quality check; content-pipeline.ts updated with value-first title guidance; all 27 article/guide titles rewritten to explicitly state what the farmer saves. 34 total articles/guides. **Deferred → Session 16:** Automation end-to-end testing (carried since Session 13); master-context update; Google Search Console; social launch; mobile 375px QA. |
 | Session 16 | **Completed:** Twitter strategy fully implemented from Claude.ai Session 15 brief — @FarmAI_Ireland handle confirmed, `/docs/twitter-follow-list.md` (5-tier follow strategy), `/docs/twitter-queue.md` (copy-paste tweet queue), tweet auto-generation added to content pipeline (`lib/content-pipeline.ts`), Aoife + Pádraic persona filters applied to tweets. **Ways of working:** `/docs/session-briefs/` created for archiving Claude.ai briefs, `/docs/CHANGELOG.md` for session-level audit trail, `npm run context` script added. **Social decisions:** No Facebook, No Instagram, LinkedIn under consideration, YouTube blocked on Google Workspace sign-in. **Standing protocols codified:** session start/during/end rules, handoff rule ("if it wasn't committed, it doesn't exist"), master-context update is non-negotiable at session end. X handle updated from @FarmAIIreland to @FarmAI_Ireland in site.json + social-setup.md. |
 | Session 17 | **Completed:** Security hardening sweep — CRON_SECRET now required on all 3 cron endpoints (was optional), dashboard auth cookie hashed with SHA-256 (was plaintext password), session reduced from 7 days to 24 hours, HSTS + Permissions-Policy headers added to next.config.mjs, verbose error details removed from API responses (content-pipeline, kpi-report, email-responder), newsletter email validation tightened with proper regex, .gitignore hardened to block .env files. **Noted but deferred:** CSP unsafe-inline removal (needs nonce infra), rate limiting (Vercel handles DDoS), CSRF tokens (sameSite:strict suffices), Next.js 14→16 upgrade (major version, own session). |
+| Session 19 | **Completed:** OG image fix — homepage and layout now use dynamic `/api/og` generator instead of missing static `farmai-og.jpg`, fixing broken LinkedIn/social previews; tweet launch strategy — 12 scheduled tweets (4 weeks, Mon/Wed/Fri) + 5 targeted engagement tweets for Tier 1-3 accounts in `/docs/twitter-queue.md`; PR #2 merged to master (8 commits from Sessions 17-19); Cloudflare confirmed active (Web Analytics beacon); CSP updated to allow `static.cloudflareinsights.com`; form field IDs added (newsletter + dashboard login); cron-job.org confirmed working — all 3 jobs active, Email Responder ran successfully (4.18s); cron-setup.md updated with full env var reference table; Lora font and mobile 375px confirmed live. **Not done:** YouTube still blocked (Google Workspace); press release on hold; content-pipeline and kpi-report endpoints not yet tested end-to-end. |
 | Session 18 | **Completed:** LinkedIn page setup — cross-referenced Claude Chat suggestions against brand docs (brand-personality.md, content-strategy.md, social-setup.md), fixed "advocates" → "ambassadors and enablers" per Session 15 rebrand, added Core Filter language; `/docs/linkedin-setup.md` created with finalised tagline, About section, and field values; standalone SVG logo (`/public/farmai-logo.svg`, 400×400 green F badge) and LinkedIn banner (`/public/farmai-linkedin-banner.svg`, 1584×396 editorial geometric style) generated; social-setup.md LinkedIn status updated to ✅ Created. Creative polish sprint: header size increase, hero flip text reduction, homepage reordered (articles before newsletter), 6 mixed-pillar articles on homepage, punchy page headers with pillar pills on /read, /guides, /tools. **DNS:** Google Search Console TXT verification in progress via Hosting Ireland. |
 
 ---
@@ -302,25 +303,17 @@ If it wasn't committed to the repo, it doesn't exist. Claude.ai conversations ar
 
 ---
 
-## Session 18 — Next Actions (Priority Order)
+## Session 19 — Next Actions (Priority Order)
 
-### Tier 1 — This Session
-
-| # | Action | Status |
-|---|--------|--------|
-| 1 | DNS: Add Google Search Console TXT verification record via Hosting Ireland | 🔄 In progress — John has Hosting Ireland open |
-| 2 | LinkedIn: Fill in page fields using `/docs/linkedin-setup.md` copy, upload logo + banner from `/public/` | ⏳ Manual (John) — assets ready |
-| 3 | LinkedIn: Change page name from "FarmAI - Ireland" to "FarmAI Ireland" | ⏳ Manual (John) |
-
-### Tier 2 — Automation Testing (carried since Session 13)
+### Tier 1 — Automation Testing (carried since Session 13)
 
 | # | Action | Status |
 |---|--------|--------|
-| 4 | Test `/api/kpi-report` — confirm still works after security changes | ❌ Manual — `CRON_SECRET` header required |
-| 5 | Test `/api/content-pipeline` — trigger manually, verify GitHub commit + email | ❌ Manual |
-| 6 | Test `/api/email-responder` — trigger manually, verify Gmail draft creation | ❌ Manual |
+| 1 | Test `/api/kpi-report` — trigger manually, verify email delivery | ⏳ cron-job.org will fire Monday 4am — check cron-job.org history |
+| 2 | Test `/api/content-pipeline` — trigger manually, verify GitHub commit + email | ⏳ cron-job.org will fire Sunday 4pm — check cron-job.org history |
+| 3 | Email Responder | ✅ Confirmed working — cron-job.org shows successful (4.18s) |
 
-#### Automation test commands
+#### Manual test commands
 
 `CRON_SECRET` is **required** — all 3 endpoints return 401 without it.
 
@@ -330,31 +323,31 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/content-pipeline
 curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 ```
 
-### Tier 3 — Discovery
+### Tier 2 — Social & Launch
 
 | # | Action | Status |
 |---|--------|--------|
-| 7 | After DNS TXT added: verify farmai.ie in Google Search Console | ⏳ Blocked by Step 1 |
-| 8 | Link Search Console to GA4 property (G-VQC7560BBN) | ⏳ Blocked by Step 7 |
-| 9 | Submit sitemap.xml to Search Console — gets 34+ pages into Google's index queue | ⏳ Blocked by Step 7 |
+| 4 | Post first tweet from `/docs/twitter-queue.md` | ⏳ Manual (John) — copy Week 1 Monday tweet |
+| 5 | Twitter: follow 20-30 accounts/day from Agriland's follower list | ⏳ Manual (John) — 10 min/day |
+| 6 | LinkedIn: test OG preview at linkedin.com/post-inspector | ⏳ Manual (John) |
+| 7 | YouTube — resolve Google Workspace admin sign-in | ⏳ Manual (John) |
+| 8 | Press release — send once YouTube sorted | ❌ On hold |
 
-### Tier 4 — Carry Forward
+### Tier 3 — Housekeeping
 
 | # | Action | Status |
 |---|--------|--------|
-| 10 | Social: YouTube ⏳ blocked (Google Workspace admin sign-in) | ⏳ Manual (John) |
-| 11 | Press release: send once YouTube + social sorted | ❌ Manual (John) |
-| 12 | Mobile 375px visual check on live site | ❌ Manual (John on mobile) |
-| 13 | Confirm Lora font loading on live Vercel | ❌ Manual (John on mobile) |
-| 14 | Set up Cloudflare after DNS is live | ❌ Manual (John) |
-| 15 | GitHub template repo: Settings → Template repository → tick box | ❌ Manual (John) |
+| 9 | Link Search Console to GA4 property (G-VQC7560BBN) | ⏳ Manual (John) |
+| 10 | GitHub template repo: Settings → Template repository → tick box | ⏳ Manual (John) |
+| 11 | Merge Session 19 branch to master | ⏳ Manual (John) — same PR process |
 
 ### Recurring
 
 | # | Action | Cadence |
 |---|--------|---------|
-| 16 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
-| 17 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
+| 12 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
+| 13 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
+| 14 | Twitter: post from queue Mon/Wed/Fri, engage with replies | 3x/week |
 
 ---
 
@@ -362,7 +355,7 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 
 Paste this at the start of the next Claude Code session:
 
-> Session 19. Read /docs/master-context.md first. Last session (18) added LinkedIn page setup (copy, logo SVG, banner SVG in /public/ and /docs/linkedin-setup.md), creative polish sprint (header, hero, homepage reorder, page headers), and DNS work with Hosting Ireland for Google Search Console verification. Automation testing still carried (since Session 13) — CRON_SECRET header required on all 3 endpoints. Check CHANGELOG.md for session history.
+> Session 20. Read /docs/master-context.md first. Last session (19) fixed LinkedIn OG previews (dynamic /api/og), added 17-tweet launch strategy, confirmed Cloudflare active + fixed CSP to allow beacon, confirmed cron-job.org running (email responder successful), merged PR #2 to master. KPI report and content pipeline crons fire Mon/Sun — check cron-job.org history to confirm. YouTube still blocked. Check CHANGELOG.md for session history.
 
 ---
 
