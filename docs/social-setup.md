@@ -9,7 +9,7 @@
 | Platform | Handle | Status |
 |----------|--------|--------|
 | X (Twitter) | @FarmAI_Ireland | ✅ Created |
-| YouTube Channel | FarmAI Ireland | ⏳ Blocked — can't sign into hello@farmai.ie Google account |
+| YouTube Channel | FarmAI Ireland | ⏳ Blocked — Google Workspace account under 30 days old. Unlocks automatically ~mid-April. See `/docs/youtube-brand-rules.md` for full video pipeline spec. |
 | LinkedIn Page | FarmAI Ireland | ✅ Created — copy and assets in `/docs/linkedin-setup.md` |
 | Facebook Page | — | ❌ Not doing |
 | Instagram | — | ❌ Not doing |
@@ -91,9 +91,12 @@ Do these in this order — it takes ~20 minutes total:
 - Share articles framed for the agri-business reader, not just the farmer
 
 ### YouTube
-- Start posting at Month 3 when video pipeline is established (ElevenLabs + Pictory)
+- **Pipeline**: Remotion (open-source, code-driven) + ElevenLabs TTS + Claude API script generation — fully automated, free
+- **Format**: 60–90 second text-card videos, Economist-style, no AI avatar — see `/docs/youtube-brand-rules.md`
+- **Prep plan**: 4-week build during Google Workspace 30-day wait (Weeks 1–4 of April)
 - Subscribe target: 1,000 for YouTube Partner Programme
-- Add channel description: "Plain English AI guides for Irish farmers. New video every week. All guides also at farmai.ie"
+- Channel description: "Plain English AI guides for Irish farmers. New videos weekly. Independent. Free. All guides also at farmai.ie"
+- HeyGen + Pictory deferred — Remotion is free and lives in the repo
 
 ### Instagram
 - Lowest priority — repurpose existing content rather than creating native posts
