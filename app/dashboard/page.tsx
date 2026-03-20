@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { fetchKpis, fetchPreviousSnapshot, fetchGmailUnread } from '@/lib/kpi';
+import IdeaForm from './IdeaForm';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -145,6 +146,37 @@ export default async function DashboardPage() {
               <code className="bg-white border border-ui-border rounded px-1">/api/gmail-setup</code> once.
             </p>
           )}
+        </div>
+
+        {/* Quick Actions */}
+        <div>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-ui-muted mb-4">Quick Actions</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <Link
+              href="/dashboard/drafts"
+              className="rounded-[12px] border border-ui-border bg-white p-6 hover:border-brand-green/50 hover:bg-emerald-50/30 transition-colors group"
+            >
+              <p className="text-sm font-bold text-ui-text group-hover:text-brand-green">Review & Publish Drafts</p>
+              <p className="text-xs text-ui-muted mt-1">
+                Run automated quality reviews, approve or reject pipeline-generated articles.
+              </p>
+            </Link>
+            <div className="rounded-[12px] border border-ui-border bg-white p-6">
+              <p className="text-sm font-bold text-ui-text mb-3">Submit a Topic Idea</p>
+              <IdeaForm />
+            </div>
+            <a
+              href="https://github.com/FarmAIIreland/farmai-ireland/blob/master/docs/twitter-queue.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-[12px] border border-ui-border bg-white p-6 hover:border-brand-green/50 hover:bg-emerald-50/30 transition-colors group"
+            >
+              <p className="text-sm font-bold text-ui-text group-hover:text-brand-green">Tweet Queue</p>
+              <p className="text-xs text-ui-muted mt-1">
+                View and copy pending tweets for X. Pipeline generates 3 per week.
+              </p>
+            </a>
+          </div>
         </div>
 
         <p className="text-xs text-ui-muted pb-4">
