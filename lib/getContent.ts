@@ -90,6 +90,34 @@ export function getGuideBySlug(slug: string): ArticleData | null {
   );
 }
 
+/** Pick N articles with pillar diversity: one from each pillar first, then fill with newest. */
+export function getFeaturedMix(count: number): ArticleMeta[] {
+  const all     = getArticles();
+  const pillars = ['save-time', 'tools-explained', 'whats-changing', 'does-this-work'];
+  const picked  = new Set<string>();
+  const result: ArticleMeta[] = [];
+
+  // One latest per pillar
+  for (const p of pillars) {
+    const article = all.find(a => a.pillar === p && !picked.has(a.slug));
+    if (article) {
+      result.push(article);
+      picked.add(article.slug);
+    }
+  }
+
+  // Fill remaining with newest unpicked
+  for (const a of all) {
+    if (result.length >= count) break;
+    if (!picked.has(a.slug)) {
+      result.push(a);
+      picked.add(a.slug);
+    }
+  }
+
+  return result.slice(0, count);
+}
+
 export function getArticleSlugs(): string[] {
   return getArticles().map(a => a.slug);
 }

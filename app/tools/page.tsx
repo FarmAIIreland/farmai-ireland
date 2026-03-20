@@ -136,36 +136,72 @@ const CATEGORY_ORDER = ['ai-assistant', 'management', 'livestock', 'grassland', 
 
 /* ── Page ───────────────────────────────────────────────────────────────────── */
 
-export default function ToolsPage() {
+interface Props {
+  searchParams: { category?: string };
+}
+
+export default function ToolsPage({ searchParams }: Props) {
+  const active = searchParams.category ?? '';
+  const visibleCategories = active
+    ? CATEGORY_ORDER.filter(k => k === active)
+    : CATEGORY_ORDER;
+
   return (
-    <main className="bg-ui-bg min-h-screen py-12 md:py-20 px-4">
-      <div className="max-w-site mx-auto">
+    <main className="bg-ui-bg min-h-screen">
 
-        {/* Header */}
-        <div className="max-w-reading mx-auto mb-12">
+      {/* Page header */}
+      <section className="bg-white border-b border-ui-border py-10 sm:py-12 px-4">
+        <div className="max-w-site mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-3">Tools</p>
           <h1
-            className="font-serif font-semibold text-ui-text mb-4"
-            style={{ fontSize: 'clamp(28px, 4vw, 42px)', letterSpacing: '-0.02em', lineHeight: 1.1 }}
+            className="font-serif font-semibold text-ui-text mb-2"
+            style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', letterSpacing: '-0.02em', lineHeight: 1.15 }}
           >
-            AI Tools for Irish Farmers
+            Tested tools. No affiliate links.
           </h1>
-          <p className="text-ui-muted text-lg leading-relaxed mb-2">
-            A curated list of tools we&apos;ve actually tested or written about. No affiliate links. No paid placements.
+          <p className="text-ui-muted text-sm sm:text-base mb-1">
+            Every tool links to our article so you can read the honest take first.
           </p>
-          <p className="text-ui-muted text-sm">
-            Each tool links to our article or review so you can read the honest take before you sign up for anything.
-          </p>
-        </div>
 
-        {/* Tool categories */}
+          {/* Category pills */}
+          <div className="flex flex-wrap gap-2 mt-5">
+            <Link
+              href="/tools"
+              className={`px-4 py-2 text-sm font-semibold rounded-full border transition-colors ${
+                !active
+                  ? 'bg-brand-green text-white border-brand-green'
+                  : 'bg-white text-ui-muted border-ui-border hover:border-brand-green hover:text-brand-green'
+              }`}
+            >
+              All
+            </Link>
+            {CATEGORY_ORDER.map(catKey => (
+              <Link
+                key={catKey}
+                href={`/tools?category=${catKey}`}
+                className={`px-4 py-2 text-sm font-semibold rounded-full border transition-colors ${
+                  active === catKey
+                    ? 'bg-brand-green text-white border-brand-green'
+                    : 'bg-white text-ui-muted border-ui-border hover:border-brand-green hover:text-brand-green'
+                }`}
+              >
+                {CATEGORIES[catKey].label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tool categories */}
+      <section className="py-10 sm:py-14 px-4">
         <div className="max-w-4xl mx-auto space-y-10">
-          {CATEGORY_ORDER.map(catKey => {
+          {visibleCategories.map(catKey => {
             const cat = CATEGORIES[catKey];
             const tools = TOOLS.filter(t => t.category === catKey);
             if (tools.length === 0) return null;
 
             return (
-              <section key={catKey}>
+              <div key={catKey}>
                 <div className="mb-4">
                   <h2 className="font-serif font-semibold text-ui-text text-xl mb-1">
                     {cat.label}
@@ -206,7 +242,7 @@ export default function ToolsPage() {
                     </div>
                   ))}
                 </div>
-              </section>
+              </div>
             );
           })}
         </div>
@@ -224,8 +260,7 @@ export default function ToolsPage() {
             {' '}and we&apos;ll take a look.
           </p>
         </div>
-
-      </div>
+      </section>
     </main>
   );
 }

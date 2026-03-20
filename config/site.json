@@ -47,7 +47,7 @@
   },
   "content": {
     "postsPerPage": 10,
-    "featuredArticlesOnHome": 3,
+    "featuredArticlesOnHome": 6,
     "pillars": [
       {
         "slug": "save-time",

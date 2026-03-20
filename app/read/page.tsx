@@ -28,62 +28,73 @@ export default function ReadPage({ searchParams }: Props) {
   const pillars = siteConfig.content.pillars;
 
   return (
-    <main className="py-12 sm:py-16 px-4 bg-ui-bg min-h-screen">
-      <div className="max-w-site mx-auto">
+    <main className="bg-ui-bg min-h-screen">
 
-        <div className="mb-8">
-          <h1 className="text-[26px] font-semibold text-ui-text mb-1" style={{ letterSpacing: '-0.01em' }}>Articles</h1>
-          <p className="text-ui-muted text-sm">Plain-English AI insight for Irish farmers</p>
-        </div>
-
-        {/* Filter tabs */}
-        <div className="flex flex-wrap gap-2 mb-8">
-          <Link
-            href="/read"
-            className={`px-3 py-1.5 text-sm font-medium rounded-full border transition-colors ${
-              !active
-                ? 'bg-brand-green text-white border-brand-green'
-                : 'bg-white text-ui-muted border-ui-border hover:border-brand-green hover:text-brand-green'
-            }`}
+      {/* Page header */}
+      <section className="bg-white border-b border-ui-border py-10 sm:py-12 px-4">
+        <div className="max-w-site mx-auto">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-green mb-3">Articles</p>
+          <h1
+            className="font-serif font-semibold text-ui-text mb-3"
+            style={{ fontSize: 'clamp(26px, 3.5vw, 38px)', letterSpacing: '-0.02em', lineHeight: 1.15 }}
           >
-            All
-          </Link>
-          {pillars.map(p => (
+            AI insight written for Irish farms
+          </h1>
+
+          {/* Pillar pills */}
+          <div className="flex flex-wrap gap-2 mt-5">
             <Link
-              key={p.slug}
-              href={`/read?pillar=${p.slug}`}
-              className={`px-3 py-1.5 text-sm font-medium rounded-full border transition-colors ${
-                active === p.slug
+              href="/read"
+              className={`px-4 py-2 text-sm font-semibold rounded-full border transition-colors ${
+                !active
                   ? 'bg-brand-green text-white border-brand-green'
                   : 'bg-white text-ui-muted border-ui-border hover:border-brand-green hover:text-brand-green'
               }`}
             >
-              {PILLAR_LABELS[p.slug] ?? p.label}
+              All
             </Link>
-          ))}
-        </div>
-
-        {articles.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {articles.map(article => (
-              <ArticleCard
-                key={article.slug}
-                title={article.title}
-                slug={article.slug}
-                pillar={article.pillar}
-                date={article.date}
-                readTime={article.readTime}
-                excerpt={article.excerpt}
-                payoff={article.payoff}
-                verdict={article.verdict}
-                basePath="read"
-              />
+            {pillars.map(p => (
+              <Link
+                key={p.slug}
+                href={`/read?pillar=${p.slug}`}
+                className={`px-4 py-2 text-sm font-semibold rounded-full border transition-colors ${
+                  active === p.slug
+                    ? 'bg-brand-green text-white border-brand-green'
+                    : 'bg-white text-ui-muted border-ui-border hover:border-brand-green hover:text-brand-green'
+                }`}
+              >
+                {PILLAR_LABELS[p.slug] ?? p.label}
+              </Link>
             ))}
           </div>
-        ) : (
-          <p className="text-ui-muted">No articles found.</p>
-        )}
-      </div>
+        </div>
+      </section>
+
+      {/* Article grid */}
+      <section className="py-10 sm:py-14 px-4">
+        <div className="max-w-site mx-auto">
+          {articles.length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {articles.map(article => (
+                <ArticleCard
+                  key={article.slug}
+                  title={article.title}
+                  slug={article.slug}
+                  pillar={article.pillar}
+                  date={article.date}
+                  readTime={article.readTime}
+                  excerpt={article.excerpt}
+                  payoff={article.payoff}
+                  verdict={article.verdict}
+                  basePath="read"
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="text-ui-muted">No articles found.</p>
+          )}
+        </div>
+      </section>
     </main>
   );
 }
