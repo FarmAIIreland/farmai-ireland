@@ -204,10 +204,9 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Vercel free tier | €0 |
 | Mailchimp free tier | €0 |
 | Airtable free tier | €0 |
-| ElevenLabs (Month 3+) | €20/month |
-| Pictory (Month 3+) | €17/month |
-| Core monthly burn | €99/month |
-| Full with YouTube | €136/month |
+| ElevenLabs Starter | €5/month |
+| Core monthly burn | €104/month |
+| Full with Pictory (if needed later) | €121/month |
 
 ---
 
