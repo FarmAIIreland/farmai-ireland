@@ -166,16 +166,19 @@ Every title and first paragraph must tell the reader what they save — time, mo
 
 ## YouTube / Video Personality
 
-**Tools**: HeyGen (AI presenter) + Pictory (article-to-video pipeline)
+**Tools (v1 — free, automated)**: Remotion (open-source video renderer) + ElevenLabs TTS (voice-over) + Claude API (script extraction). Full spec in `/docs/youtube-brand-rules.md`.
 
-**The presenter character**: To be developed — Irish, relatable, approachable. Slightly exasperated by technology but genuinely curious. Not a Silicon Valley tech bro. The physical embodiment of the brand voice.
+**Format (v1)**: 60–90 second text-card videos. No AI avatar, no presenter, no stock footage. Economist-style editorial cards with voice-over narration. Matches the geometric patterns and pillar colours from the site exactly.
+
+**Why no avatar yet**: HeyGen + Pictory are Month 3+ budget items. Remotion is free, lives in the repo, and can be fully automated via the existing content pipeline. Revisit avatar approach when subscriber count justifies the spend.
 
 **Tone on video**: Honest, dry, not over-produced. Resist the urge to make everything look too slick. Real feeling beats polished every time for this audience.
 
-**Series**:
-- "Does This Actually Work?" — testing AI tools on real farming tasks, honest verdict. No affiliate deals in this series. Ever.
-- "Plain English" — one scheme, one grant, one regulation explained in under three minutes
-- "What Teagasc Said" — weekly AI news roundup, Irish farming context
+**Series** (mapped to pillars):
+- "Does This Actually Work?" (`does-this-work`) — testing AI tools on real farming tasks, honest verdict. No affiliate deals in this series. Ever.
+- "Plain English" (`tools-explained`) — one tool, one concept explained in under 90 seconds
+- "What's Changing" (`whats-changing`) — policy, tech, and market shifts translated for Irish farms
+- "Time Savers" (`save-time`) — practical how-tos that save hours on farm admin
 
 ---
 

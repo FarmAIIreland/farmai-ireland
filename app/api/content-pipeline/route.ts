@@ -2,6 +2,7 @@ import { NextResponse }          from 'next/server';
 import { Resend }                from 'resend';
 import { runContentPipeline }   from '@/lib/content-pipeline';
 import { checkBrokenLinks }     from '@/lib/broken-links';
+import { scanTimelyTopics }     from '@/lib/news-scanner';
 
 export const dynamic = 'force-dynamic';
 export const maxDuration = 120;
@@ -13,9 +14,10 @@ export async function GET(request: Request) {
   }
 
   try {
-    const [drafts, broken] = await Promise.all([
+    const [drafts, broken, timely] = await Promise.all([
       runContentPipeline(),
       checkBrokenLinks(),
+      scanTimelyTopics(),
     ]);
 
     const dateStr = new Date().toLocaleDateString('en-IE', {
@@ -50,6 +52,20 @@ export async function GET(request: Request) {
         ].join('\n')
       : `\n${line}\nBroken Links: none found ✓`;
 
+    const timelySection = timely.length > 0
+      ? [
+          '',
+          line,
+          `Timely Topics Found (${timely.length}):`,
+          'These headlines from Irish ag news matched our keywords.',
+          'Consider an article angle if any are relevant.',
+          '',
+          ...timely.slice(0, 5).map(t =>
+            `  [${t.source}] ${t.headline}\n  Matched: ${t.matchedOn}\n  ${t.url}`
+          ),
+        ].join('\n')
+      : `\n${line}\nTimely Topics: no keyword matches this week`;
+
     const emailBody = [
       `FarmAI Ireland — Sunday Content Pipeline`,
       dateStr,
@@ -60,13 +76,17 @@ export async function GET(request: Request) {
       draftLines,
       brokenSection,
       tweetSection,
+      timelySection,
       '',
       line,
-      'Review drafts on GitHub, edit if needed, then move to',
-      'content/articles/ or content/guides/ to publish.',
-      '',
-      'Tweets: open docs/twitter-queue.md, copy PENDING tweets, paste to X.',
-    ].join('\n');
+      'NEXT STEPS:',
+      `  1. Review & approve drafts: https://farmai.ie/dashboard/drafts`,
+      `     (4-persona quality review runs automatically — just click Approve)`,
+      `  2. Copy tweets from docs/twitter-queue.md to X (3x this week)`,
+      timely.length > 0
+        ? `  3. Consider a timely article from the headlines above`
+        : '',
+    ].filter(Boolean).join('\n');
 
     const resendKey = process.env.RESEND_API_KEY;
     if (resendKey) {

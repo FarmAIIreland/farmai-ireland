@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 20, 2026 · Session 19*
+*Last updated: March 20, 2026 · Session 20*
 
 ---
 
@@ -146,6 +146,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | `docs/twitter-follow-list.md` | 5-tier follow strategy for @FarmAI_Ireland — agri media, industry bodies, agri tech, farmers, journalists |
 | `docs/twitter-queue.md` | Copy-paste tweet queue — pipeline auto-appends, John copies to X |
 | `docs/linkedin-setup.md` | LinkedIn company page copy, field values, and asset file paths — paste into LinkedIn admin |
+| `docs/youtube-brand-rules.md` | YouTube video pipeline spec — visual identity, 5-card format, voice-over rules, automation steps, 30-day prep plan |
 | `docs/CHANGELOG.md` | One-line session summaries — auto-appended when master-context is updated |
 | `docs/session-briefs/` | Archive of strategy briefs dragged from Claude.ai — permanent record of decisions |
 
@@ -203,10 +204,9 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Vercel free tier | €0 |
 | Mailchimp free tier | €0 |
 | Airtable free tier | €0 |
-| ElevenLabs (Month 3+) | €20/month |
-| Pictory (Month 3+) | €17/month |
-| Core monthly burn | €99/month |
-| Full with YouTube | €136/month |
+| ElevenLabs Starter | €5/month |
+| Core monthly burn | €104/month |
+| Full with Pictory (if needed later) | €121/month |
 
 ---
 
@@ -244,6 +244,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 16 | **Completed:** Twitter strategy fully implemented from Claude.ai Session 15 brief — @FarmAI_Ireland handle confirmed, `/docs/twitter-follow-list.md` (5-tier follow strategy), `/docs/twitter-queue.md` (copy-paste tweet queue), tweet auto-generation added to content pipeline (`lib/content-pipeline.ts`), Aoife + Pádraic persona filters applied to tweets. **Ways of working:** `/docs/session-briefs/` created for archiving Claude.ai briefs, `/docs/CHANGELOG.md` for session-level audit trail, `npm run context` script added. **Social decisions:** No Facebook, No Instagram, LinkedIn under consideration, YouTube blocked on Google Workspace sign-in. **Standing protocols codified:** session start/during/end rules, handoff rule ("if it wasn't committed, it doesn't exist"), master-context update is non-negotiable at session end. X handle updated from @FarmAIIreland to @FarmAI_Ireland in site.json + social-setup.md. |
 | Session 17 | **Completed:** Security hardening sweep — CRON_SECRET now required on all 3 cron endpoints (was optional), dashboard auth cookie hashed with SHA-256 (was plaintext password), session reduced from 7 days to 24 hours, HSTS + Permissions-Policy headers added to next.config.mjs, verbose error details removed from API responses (content-pipeline, kpi-report, email-responder), newsletter email validation tightened with proper regex, .gitignore hardened to block .env files. **Noted but deferred:** CSP unsafe-inline removal (needs nonce infra), rate limiting (Vercel handles DDoS), CSRF tokens (sameSite:strict suffices), Next.js 14→16 upgrade (major version, own session). |
 | Session 19 | **Completed:** OG image attempted fix — absolute URLs + width/height/type metadata + `next/og` import (replacing deprecated `@vercel/og`), but `/api/og` still returns blank page — **priority carry to Session 20**; tweet launch strategy — 12 scheduled tweets (4 weeks, Mon/Wed/Fri) + 5 targeted engagement tweets for Tier 1-3 accounts in `/docs/twitter-queue.md`; PR #2 merged to master (8 commits from Sessions 17-19); Cloudflare confirmed active (Web Analytics beacon); CSP updated to allow `static.cloudflareinsights.com`; Cloudflare "Block AI bots" on (fine — only blocks training crawlers, not social); Bot Fight Mode off; form field IDs added (newsletter + dashboard login); cron-job.org confirmed working — all 3 jobs active, Email Responder ran successfully (4.18s); cron-setup.md updated with full env var reference table; Lora font and mobile 375px confirmed live; GA4 linked to Search Console; GA tag confirmed site-wide via root layout; DMARC daily reports from Google explained (keep, filter in Gmail). **Not done:** OG image still broken (top priority); YouTube still blocked (Google Workspace); press release on hold; content-pipeline and kpi-report crons to verify Sunday/Monday. |
+| Session 20 | **Completed:** YouTube blocker diagnosed — Google Workspace account under 30 days old, unlocks automatically ~mid-April (no cost). `/docs/youtube-brand-rules.md` created — full video pipeline spec: Remotion (free, open-source) + ElevenLabs TTS + Claude API script extraction; 5-card format (60–90s); Economist-style text cards matching site pillar colours/patterns; no AI avatar in v1. Brand-personality.md and social-setup.md updated to reflect Remotion-first approach (HeyGen/Pictory deferred). 4-week prep plan documented. OG image fix attempted (Satori CSS cleanup) — still broken, parked. **Deferred → Session 21:** OG image; Remotion setup (Week 2); cron-job.org automation checks; press release. |
 | Session 18 | **Completed:** LinkedIn page setup — cross-referenced Claude Chat suggestions against brand docs (brand-personality.md, content-strategy.md, social-setup.md), fixed "advocates" → "ambassadors and enablers" per Session 15 rebrand, added Core Filter language; `/docs/linkedin-setup.md` created with finalised tagline, About section, and field values; standalone SVG logo (`/public/farmai-logo.svg`, 400×400 green F badge) and LinkedIn banner (`/public/farmai-linkedin-banner.svg`, 1584×396 editorial geometric style) generated; social-setup.md LinkedIn status updated to ✅ Created. Creative polish sprint: header size increase, hero flip text reduction, homepage reordered (articles before newsletter), 6 mixed-pillar articles on homepage, punchy page headers with pillar pills on /read, /guides, /tools. **DNS:** Google Search Console TXT verification in progress via Hosting Ireland. |
 
 ---
@@ -303,22 +304,31 @@ If it wasn't committed to the repo, it doesn't exist. Claude.ai conversations ar
 
 ---
 
-## Session 20 — Next Actions (Priority Order)
+## Session 21 — Next Actions (Priority Order)
 
-### Tier 0 — OG Image Fix (BROKEN — top priority)
+### Tier 0 — OG Image Fix (BROKEN — carried from Session 14)
 
 | # | Action | Status |
 |---|--------|--------|
-| 1 | **Fix `/api/og` endpoint** — currently returns blank page. Import changed from `@vercel/og` to `next/og` (unmerged on branch). Need to debug why ImageResponse returns nothing on Vercel edge runtime. Possible causes: (a) `next/og` import still not resolving, (b) edge runtime issue on Vercel free plan, (c) JSX rendering silently failing. **Fallback plan:** generate a static `public/og.png` and reference directly — guaranteed to work. | 🔴 Broken |
+| 1 | **Fix `/api/og` endpoint** — Satori CSS cleanup attempted Session 20, still broken. Likely need to abandon dynamic route entirely and generate a static `public/og.png` (or one per pillar). The dynamic approach has failed across 3 sessions. | 🔴 Broken |
 | 2 | Once OG works, re-test at `linkedin.com/post-inspector/inspect/farmai.ie` | ⏳ Blocked by #1 |
 
-### Tier 1 — Automation Testing (carried since Session 13)
+### Tier 1 — Video Pipeline Build (4-week plan in `/docs/youtube-brand-rules.md`)
 
 | # | Action | Status |
 |---|--------|--------|
-| 3 | Test `/api/kpi-report` — check cron-job.org history for Monday run | ⏳ cron-job.org fires Monday 4am |
-| 4 | Test `/api/content-pipeline` — check cron-job.org history for Sunday run | ⏳ cron-job.org fires Sunday 4pm |
-| 5 | Email Responder | ✅ Confirmed working (4.18s) |
+| 3 | **Week 2**: Install Remotion, build pillar-video-template matching site style | ⏳ Next session |
+| 4 | **Week 2**: Render one test video locally — title card + 3 key points + outro | ⏳ |
+| 5 | **Week 3**: Wire ElevenLabs TTS, combine audio with Remotion render | ⏳ |
+| 6 | **Week 4**: Full automation (Claude → TTS → Remotion → MP4), test 3 articles | ⏳ |
+
+### Tier 2 — Automation Testing (carried since Session 13)
+
+| # | Action | Status |
+|---|--------|--------|
+| 7 | Test `/api/kpi-report` — check cron-job.org history for Monday run | ⏳ cron-job.org fires Monday 4am |
+| 8 | Test `/api/content-pipeline` — check cron-job.org history for Sunday run | ⏳ cron-job.org fires Sunday 4pm |
+| 9 | Email Responder | ✅ Confirmed working (4.18s) |
 
 #### Manual test commands
 
@@ -330,29 +340,29 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/content-pipeline
 curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 ```
 
-### Tier 2 — Social & Launch
+### Tier 3 — Social & Launch
 
 | # | Action | Status |
 |---|--------|--------|
-| 6 | Post first tweet from `/docs/twitter-queue.md` | ⏳ Manual (John) — copy Week 1 Monday tweet |
-| 7 | Twitter: follow 20-30 accounts/day from Agriland's follower list | ⏳ Manual (John) — 10 min/day |
-| 8 | YouTube — resolve Google Workspace admin sign-in | ⏳ Manual (John) |
-| 9 | Press release — send once YouTube sorted | ❌ On hold |
+| 10 | Post first tweet from `/docs/twitter-queue.md` | ⏳ Manual (John) — copy Week 1 Monday tweet |
+| 11 | Twitter: follow 20-30 accounts/day from Agriland's follower list | ⏳ Manual (John) — 10 min/day |
+| 12 | YouTube — Google Workspace 30-day wait (unlocks ~mid-April) | ⏳ Waiting |
+| 13 | Press release — send once YouTube sorted | ❌ On hold |
 
-### Tier 3 — Housekeeping
+### Tier 4 — Housekeeping
 
 | # | Action | Status |
 |---|--------|--------|
-| 10 | GitHub template repo: Settings → Template repository → tick box | ⏳ Manual (John) |
-| 11 | Merge Session 19 branch to master | ⏳ Manual (John) — same PR process |
+| 14 | GitHub template repo: Settings → Template repository → tick box | ⏳ Manual (John) |
+| 15 | Merge Session 20 branch to master | ⏳ Manual (John) — same PR process |
 
 ### Recurring
 
 | # | Action | Cadence |
 |---|--------|---------|
-| 12 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
-| 13 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
-| 14 | Twitter: post from queue Mon/Wed/Fri, engage with replies | 3x/week |
+| 16 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
+| 17 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
+| 18 | Twitter: post from queue Mon/Wed/Fri, engage with replies | 3x/week |
 
 ---
 
@@ -360,7 +370,7 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 
 Paste this at the start of the next Claude Code session:
 
-> Session 20. Read /docs/master-context.md first. **Priority 1: OG image is broken.** The `/api/og` endpoint returns a blank page — LinkedIn shows "No image found". We changed the import from `@vercel/og` to `next/og` (Next.js 14.2.35) and made URLs absolute with width/height/type metadata, but it still doesn't work. The endpoint file is `app/api/og/route.tsx`. Cloudflare Bot Fight Mode is OFF, Block AI Bots is ON (only blocks training crawlers, not social). If the dynamic route can't be fixed quickly, fall back to a static `public/og.png`. Test at: `https://farmai.ie/api/og?title=Test&pillar=tools-explained&readTime=5` and `linkedin.com/post-inspector/inspect/farmai.ie`. Other open items: cron-job.org automation (kpi-report Mon, content-pipeline Sun — check history), YouTube still blocked on Google Workspace, press release on hold. GA4 tag is site-wide via root layout — no per-page tagging needed. Check CHANGELOG.md for full session history.
+> Session 21. Read /docs/master-context.md first. **Priority 1: Video pipeline build.** `/docs/youtube-brand-rules.md` has the full spec — Remotion + ElevenLabs TTS + Claude API. This session: install Remotion, build the pillar-video-template component (React/JSX reusing PillarIllustration patterns), render one test video. YouTube channel unlocks ~mid-April (Google Workspace 30-day wait). **Priority 2: OG image — consider static fallback.** Dynamic `/api/og` has failed across 3 sessions. Consider generating static PNG per pillar and referencing directly. **Other:** cron-job.org automation (kpi-report Mon, content-pipeline Sun — check history), press release on hold. Check CHANGELOG.md for full session history.
 
 ---
 

@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { Resend }       from 'resend';
+import fs               from 'fs';
+import path             from 'path';
 import { fetchKpis, saveKpiSnapshot } from '@/lib/kpi';
 import { checkBrokenLinks }           from '@/lib/broken-links';
 
@@ -42,6 +44,36 @@ export async function GET(request: Request) {
         ].join('\n')
       : `\n${line}\nBroken Links: none found ✓`;
 
+    // Count pending drafts
+    let draftCount = 0;
+    const draftsDir = path.join(process.cwd(), 'content/drafts');
+    if (fs.existsSync(draftsDir)) {
+      draftCount = fs.readdirSync(draftsDir).filter(f => f.endsWith('.md')).length;
+    }
+
+    // Count pending tweets
+    let pendingTweets = 0;
+    const tweetQueuePath = path.join(process.cwd(), 'docs/twitter-queue.md');
+    if (fs.existsSync(tweetQueuePath)) {
+      const queueContent = fs.readFileSync(tweetQueuePath, 'utf8');
+      pendingTweets = (queueContent.match(/\*\*STATUS:\*\* PENDING/g) ?? []).length;
+    }
+
+    // Build actionable next steps
+    const actions: string[] = [];
+    if (draftCount > 0) {
+      actions.push(`  -> ${draftCount} draft${draftCount !== 1 ? 's' : ''} waiting for review: https://farmai.ie/dashboard/drafts`);
+    }
+    if (pendingTweets > 0) {
+      actions.push(`  -> ${pendingTweets} tweet${pendingTweets !== 1 ? 's' : ''} ready to post (docs/twitter-queue.md)`);
+    }
+    if (kpi.subscribers !== null && kpi.subscribers > 0 && kpi.articleCount > 0) {
+      actions.push(`  -> Consider sending a newsletter this week if you haven't recently`);
+    }
+    if (actions.length === 0) {
+      actions.push(`  -> All clear — no immediate actions needed`);
+    }
+
     const emailBody = [
       `FarmAI Ireland — Weekly KPI Report`,
       dateStr,
@@ -56,7 +88,12 @@ export async function GET(request: Request) {
       brokenSection,
       ``,
       line,
+      `THIS WEEK:`,
+      ...actions,
+      ``,
+      line,
       `Generated automatically every Monday at 8am.`,
+      `Dashboard: https://farmai.ie/dashboard`,
       `FarmAI Ireland · hello@farmai.ie`,
     ].join('\n');
 
