@@ -176,6 +176,18 @@ export default async function DashboardPage() {
                 View and copy pending tweets for X. Pipeline generates 3 per week.
               </p>
             </a>
+            <Link
+              href="/dashboard/videos"
+              className="rounded-[12px] border border-ui-border bg-white p-6 hover:border-brand-green/50 hover:bg-emerald-50/30 transition-colors group"
+            >
+              <p className="text-sm font-bold text-ui-text group-hover:text-brand-green">Video Queue</p>
+              <p className="text-xs text-ui-muted mt-1">
+                Review and approve short-form video content before publishing to YouTube and socials.
+              </p>
+              <span className="inline-block mt-2 text-[10px] font-semibold uppercase tracking-widest text-amber-600 bg-amber-50 border border-amber-200 rounded px-2 py-0.5">
+                Coming soon
+              </span>
+            </Link>
           </div>
         </div>
 
