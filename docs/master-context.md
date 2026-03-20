@@ -1,6 +1,6 @@
 # FarmAI Ireland — Master Context Document
 
-*Last updated: March 20, 2026 · Session 20*
+*Last updated: March 20, 2026 · Session 21*
 
 ---
 
@@ -246,6 +246,7 @@ Copy the table ID and set it as `AIRTABLE_KPI_TABLE_ID` in Vercel. Week-on-week 
 | Session 19 | **Completed:** OG image attempted fix — absolute URLs + width/height/type metadata + `next/og` import (replacing deprecated `@vercel/og`), but `/api/og` still returns blank page — **priority carry to Session 20**; tweet launch strategy — 12 scheduled tweets (4 weeks, Mon/Wed/Fri) + 5 targeted engagement tweets for Tier 1-3 accounts in `/docs/twitter-queue.md`; PR #2 merged to master (8 commits from Sessions 17-19); Cloudflare confirmed active (Web Analytics beacon); CSP updated to allow `static.cloudflareinsights.com`; Cloudflare "Block AI bots" on (fine — only blocks training crawlers, not social); Bot Fight Mode off; form field IDs added (newsletter + dashboard login); cron-job.org confirmed working — all 3 jobs active, Email Responder ran successfully (4.18s); cron-setup.md updated with full env var reference table; Lora font and mobile 375px confirmed live; GA4 linked to Search Console; GA tag confirmed site-wide via root layout; DMARC daily reports from Google explained (keep, filter in Gmail). **Not done:** OG image still broken (top priority); YouTube still blocked (Google Workspace); press release on hold; content-pipeline and kpi-report crons to verify Sunday/Monday. |
 | Session 20 | **Completed:** YouTube blocker diagnosed — Google Workspace account under 30 days old, unlocks automatically ~mid-April (no cost). `/docs/youtube-brand-rules.md` created — full video pipeline spec: Remotion (free, open-source) + ElevenLabs TTS + Claude API script extraction; 5-card format (60–90s); Economist-style text cards matching site pillar colours/patterns; no AI avatar in v1. Brand-personality.md and social-setup.md updated to reflect Remotion-first approach (HeyGen/Pictory deferred). 4-week prep plan documented. OG image fix attempted (Satori CSS cleanup) — still broken, parked. **Deferred → Session 21:** OG image; Remotion setup (Week 2); cron-job.org automation checks; press release. |
 | Session 18 | **Completed:** LinkedIn page setup — cross-referenced Claude Chat suggestions against brand docs (brand-personality.md, content-strategy.md, social-setup.md), fixed "advocates" → "ambassadors and enablers" per Session 15 rebrand, added Core Filter language; `/docs/linkedin-setup.md` created with finalised tagline, About section, and field values; standalone SVG logo (`/public/farmai-logo.svg`, 400×400 green F badge) and LinkedIn banner (`/public/farmai-linkedin-banner.svg`, 1584×396 editorial geometric style) generated; social-setup.md LinkedIn status updated to ✅ Created. Creative polish sprint: header size increase, hero flip text reduction, homepage reordered (articles before newsletter), 6 mixed-pillar articles on homepage, punchy page headers with pillar pills on /read, /guides, /tools. **DNS:** Google Search Console TXT verification in progress via Hosting Ireland. |
+| Session 21 | **Completed:** OG image fix — rebuilt `/api/og` endpoint with simplified Satori-compatible JSX (no unsupported CSS), confirmed rendering; dashboard enhanced with 3 starter draft articles, video queue placeholder, idea submission form, news scanner, and actionable KPI email improvements; Mailchimp domain authenticated via Cloudflare (automatic DNS); Mailchimp "From" details guidance provided (hello@farmai.ie). **Deferred:** Mailchimp welcome email automation (requires Standard plan upgrade ~€13/month — added to future todo); Remotion video pipeline (Week 2); cron automation checks; press release. |
 
 ---
 
@@ -304,25 +305,25 @@ If it wasn't committed to the repo, it doesn't exist. Claude.ai conversations ar
 
 ---
 
-## Session 21 — Next Actions (Priority Order)
-
-### Tier 0 — OG Image Fix (BROKEN — carried from Session 14)
-
-| # | Action | Status |
-|---|--------|--------|
-| 1 | **Fix `/api/og` endpoint** — Satori CSS cleanup attempted Session 20, still broken. Likely need to abandon dynamic route entirely and generate a static `public/og.png` (or one per pillar). The dynamic approach has failed across 3 sessions. | 🔴 Broken |
-| 2 | Once OG works, re-test at `linkedin.com/post-inspector/inspect/farmai.ie` | ⏳ Blocked by #1 |
+## Session 22 — Next Actions (Priority Order)
 
 ### Tier 1 — Video Pipeline Build (4-week plan in `/docs/youtube-brand-rules.md`)
 
 | # | Action | Status |
 |---|--------|--------|
-| 3 | **Week 2**: Install Remotion, build pillar-video-template matching site style | ⏳ Next session |
-| 4 | **Week 2**: Render one test video locally — title card + 3 key points + outro | ⏳ |
-| 5 | **Week 3**: Wire ElevenLabs TTS, combine audio with Remotion render | ⏳ |
-| 6 | **Week 4**: Full automation (Claude → TTS → Remotion → MP4), test 3 articles | ⏳ |
+| 1 | **Week 2**: Install Remotion, build pillar-video-template matching site style | ⏳ Next session |
+| 2 | **Week 2**: Render one test video locally — title card + 3 key points + outro | ⏳ |
+| 3 | **Week 3**: Wire ElevenLabs TTS, combine audio with Remotion render | ⏳ |
+| 4 | **Week 4**: Full automation (Claude → TTS → Remotion → MP4), test 3 articles | ⏳ |
 
-### Tier 2 — Automation Testing (carried since Session 13)
+### Tier 2 — OG Image Verification
+
+| # | Action | Status |
+|---|--------|--------|
+| 5 | Verify `/api/og` rendering on live deploy after Session 21 merge | ⏳ |
+| 6 | Re-test at `linkedin.com/post-inspector/inspect/farmai.ie` | ⏳ Blocked by #5 |
+
+### Tier 3 — Automation Testing (carried since Session 13)
 
 | # | Action | Status |
 |---|--------|--------|
@@ -340,7 +341,7 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/content-pipeline
 curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 ```
 
-### Tier 3 — Social & Launch
+### Tier 4 — Social & Launch
 
 | # | Action | Status |
 |---|--------|--------|
@@ -349,20 +350,21 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 | 12 | YouTube — Google Workspace 30-day wait (unlocks ~mid-April) | ⏳ Waiting |
 | 13 | Press release — send once YouTube sorted | ❌ On hold |
 
-### Tier 4 — Housekeeping
+### Tier 5 — Housekeeping
 
 | # | Action | Status |
 |---|--------|--------|
 | 14 | GitHub template repo: Settings → Template repository → tick box | ⏳ Manual (John) |
-| 15 | Merge Session 20 branch to master | ⏳ Manual (John) — same PR process |
+| 15 | Merge Session 21 branch to master | ⏳ Manual (John) — same PR process |
+| 16 | **Mailchimp welcome email automation** — requires Standard plan (~€13/month). Set up when subscriber list grows enough to justify. Set "From" to "FarmAI Ireland" / hello@farmai.ie. | ⏳ Future — upgrade when justified |
 
 ### Recurring
 
 | # | Action | Cadence |
 |---|--------|---------|
-| 16 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
-| 17 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
-| 18 | Twitter: post from queue Mon/Wed/Fri, engage with replies | 3x/week |
+| 17 | SEO review: top keywords, article performance by pillar, Search Console data | Monthly |
+| 18 | Content gap check: ensure all pillars stay at 5+ articles | Monthly |
+| 19 | Twitter: post from queue Mon/Wed/Fri, engage with replies | 3x/week |
 
 ---
 
@@ -370,7 +372,7 @@ curl -H "x-cron-secret: YOUR_CRON_SECRET" https://farmai.ie/api/email-responder
 
 Paste this at the start of the next Claude Code session:
 
-> Session 21. Read /docs/master-context.md first. **Priority 1: Video pipeline build.** `/docs/youtube-brand-rules.md` has the full spec — Remotion + ElevenLabs TTS + Claude API. This session: install Remotion, build the pillar-video-template component (React/JSX reusing PillarIllustration patterns), render one test video. YouTube channel unlocks ~mid-April (Google Workspace 30-day wait). **Priority 2: OG image — consider static fallback.** Dynamic `/api/og` has failed across 3 sessions. Consider generating static PNG per pillar and referencing directly. **Other:** cron-job.org automation (kpi-report Mon, content-pipeline Sun — check history), press release on hold. Check CHANGELOG.md for full session history.
+> Session 22. Read /docs/master-context.md first. **Priority 1: Video pipeline build.** `/docs/youtube-brand-rules.md` has the full spec — Remotion + ElevenLabs TTS + Claude API. This session: install Remotion, build the pillar-video-template component (React/JSX reusing PillarIllustration patterns), render one test video. YouTube channel unlocks ~mid-April (Google Workspace 30-day wait). **Priority 2: OG image verification** — rebuilt in Session 21, verify on live deploy + LinkedIn post inspector. **Other:** cron-job.org automation checks (kpi-report Mon, content-pipeline Sun); Mailchimp welcome email deferred (needs Standard plan); press release on hold. Check CHANGELOG.md for full session history.
 
 ---
 
