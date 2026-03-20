@@ -38,6 +38,8 @@ export default function DashboardLogin() {
         <p className="text-sm text-ui-muted mb-8">Private — authorised access only</p>
         <form onSubmit={submit} className="space-y-4">
           <input
+            id="dashboard-password"
+            name="password"
             type="password"
             placeholder="Password"
             value={password}

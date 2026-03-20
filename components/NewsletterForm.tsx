@@ -47,6 +47,8 @@ export function NewsletterForm({ variant = 'dark' }: Props) {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 sm:gap-3">
       <input
+        id="newsletter-email"
+        name="email"
         type="email"
         value={email}
         onChange={e => setEmail(e.target.value)}
