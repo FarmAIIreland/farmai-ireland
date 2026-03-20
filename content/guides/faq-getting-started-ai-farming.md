@@ -1,5 +1,5 @@
 ---
-title: "FAQ: Getting started with AI on your farm — the questions we get asked most"
+title: "New to AI on the farm? These are the answers to the questions everyone asks"
 slug: "faq-getting-started-ai-farming"
 type: "faq"
 pillar: "tools-explained"
@@ -8,10 +8,9 @@ readTime: 4
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: false
-status: "draft"
 readNext: "ai-glossary"
 seo:
-  title: "AI Farming FAQ Ireland — Getting Started Questions Answered | FarmAI Ireland"
+  title: "AI on the Farm FAQ — Every Question Answered | FarmAI Ireland"
   description: "The most common questions Irish farmers ask about AI — answered honestly. Does it cost money? Is it complicated? Can it really help on my farm?"
   keywords: ["AI farming FAQ Ireland", "getting started AI farm", "ChatGPT farming questions", "is AI useful for farmers", "AI cost farming Ireland"]
 sponsorship:

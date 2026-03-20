@@ -86,14 +86,14 @@ export function HeroSection() {
           {/* Fixed height prevents CTA buttons from bouncing when phrase length varies */}
           <div
             className="overflow-hidden"
-            style={{ perspective: '700px', height: 'clamp(3.5rem, 11vw, 9rem)' }}
+            style={{ perspective: '700px', height: 'clamp(2.8rem, 9vw, 7rem)' }}
             aria-live="polite"
             aria-atomic="true"
           >
             <p
               className="font-bold leading-none inline-block whitespace-nowrap"
               style={{
-                fontSize:        'clamp(3.5rem, 11vw, 9rem)',
+                fontSize:        'clamp(2.8rem, 9vw, 7rem)',
                 color:           '#1D9E75',
                 transform,
                 transformOrigin: 'center center',
@@ -108,7 +108,7 @@ export function HeroSection() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5 sm:mt-6">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6 sm:mt-8">
             <Link
               href="/read"
               className="inline-block bg-brand-green text-white font-semibold px-6 sm:px-7 py-3 rounded-button hover:bg-opacity-90 transition-colors text-sm"

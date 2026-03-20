@@ -1,5 +1,5 @@
 ---
-title: "Does AI actually replace your Teagasc advisor? We looked at the evidence."
+title: "Don't cancel your Teagasc advisor — here's what AI actually does instead"
 slug: "does-ai-replace-teagasc-advisor"
 type: "review"
 pillar: "tools-explained"
@@ -8,10 +8,9 @@ readTime: 7
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: true
-status: "draft"
 readNext: "chatgpt-first-10-prompts-farmers"
 seo:
-  title: "Can AI Replace Your Teagasc Advisor? Honest Answer | FarmAI Ireland"
+  title: "Don't Cancel Your Teagasc Advisor — What AI Does Instead | FarmAI Ireland"
   description: "Short answer: no. Longer answer: here's what AI is genuinely useful for on your farm, and where you still need a human who knows your land."
   keywords: ["AI replace Teagasc advisor", "Teagasc vs AI farming", "AI farming advice Ireland", "is AI useful for farmers Ireland"]
 sponsorship:

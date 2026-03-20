@@ -13,7 +13,7 @@ function fmt(n: number | null, suffix = ''): string {
 
 export async function GET(request: Request) {
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && request.headers.get('x-cron-secret') !== cronSecret) {
+  if (!cronSecret || request.headers.get('x-cron-secret') !== cronSecret) {
     return new Response('Unauthorized', { status: 401 });
   }
 
@@ -76,7 +76,7 @@ export async function GET(request: Request) {
 
     if (error) {
       console.error('Resend error:', error);
-      return NextResponse.json({ error: 'Email send failed', detail: error }, { status: 500 });
+      return NextResponse.json({ error: 'Email send failed' }, { status: 500 });
     }
 
     // Save snapshot for week-on-week tracking
@@ -85,6 +85,6 @@ export async function GET(request: Request) {
     return NextResponse.json({ ok: true, kpi });
   } catch (err) {
     console.error('KPI report error:', err);
-    return NextResponse.json({ error: 'Unexpected error', detail: String(err) }, { status: 500 });
+    return NextResponse.json({ error: 'Unexpected error' }, { status: 500 });
   }
 }

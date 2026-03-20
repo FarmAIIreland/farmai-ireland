@@ -1,5 +1,5 @@
 ---
-title: "When AI gets farming wrong: the topics you should never trust it on"
+title: "Five farming decisions AI should never make for you"
 slug: "ai-farming-topics-never-trust"
 pillar: "does-this-work"
 date: "2026-04-05"
@@ -12,7 +12,7 @@ verdict: "mixed"
 excerpt: "Some things AI should never decide for you — here's the list"
 payoff: "Some things AI should never decide for you. Here's the list."
 seo:
-  title: "When AI Gets Farming Wrong — Topics to Never Trust | FarmAI Ireland"
+  title: "5 Farming Decisions AI Should Never Make for You | FarmAI Ireland"
   description: "AI is useful for drafting and brainstorming, but there are topics where trusting it can cost you money or put animals at risk. Here's where to draw the line."
   keywords: ["AI farming risks", "ChatGPT farming wrong", "AI limitations agriculture", "when not to use AI farming", "AI safety farming Ireland"]
 sources:

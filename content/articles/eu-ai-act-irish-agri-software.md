@@ -1,12 +1,12 @@
 ---
-title: "What the EU AI Act means for Irish agri software in plain English"
+title: "The EU AI Act is live — what it means for the apps on your phone right now"
 slug: "eu-ai-act-irish-agri-software"
 pillar: "whats-changing"
 date: "2026-03-26"
 readTime: 6
 difficulty: "beginner"
 seo:
-  title: "EU AI Act and Irish Agriculture — Plain English Explainer | FarmAI Ireland"
+  title: "EU AI Act Is Live — What It Means for Your Farm Apps | FarmAI Ireland"
   description: "The EU AI Act is the world's first major AI regulation. Here's what it actually means for the apps, tools, and software already on your phone — explained without the jargon."
   keywords: ["EU AI Act Ireland", "AI regulation agriculture", "EU AI Act farming", "artificial intelligence regulation Europe", "AI Act agri software", "EU AI rules farmers"]
 youtubeEmbed: ""

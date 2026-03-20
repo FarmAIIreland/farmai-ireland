@@ -17,7 +17,7 @@ Every guide is free. Every guide cites public sources — Teagasc, ICBF, gov.ie.
 
 FarmAI Ireland covers the three areas where AI is making the most immediate difference for Irish farms: grants and scheme paperwork, livestock management and record-keeping, and precision agriculture. A new guide is published twice a week.
 
-The platform launches with 12 guides already live — covering BISS applications, ACRES scheme paperwork, calving apps, heat detection tools, satellite mapping, and getting started with ChatGPT on a working farm.
+The platform launches with over 30 guides already live — covering BISS applications, ACRES scheme paperwork, TAMS applications, calving apps, heat detection tools, satellite mapping, carbon calculators, and getting started with ChatGPT on a working farm.
 
 The audience is the Irish farmer who has heard AI mentioned at the mart or on the radio and has no idea what it means for their farm specifically. FarmAI Ireland's answer: read everything, test the tools, report back in plain English. What works, what doesn't, what it costs, and what to do next.
 
@@ -67,7 +67,7 @@ I sent a press release last week about FarmAI Ireland — a new independent plat
 
 Thought I'd follow up in case it got buried. Happy to provide quotes, interview, or additional information if it's useful for a piece.
 
-The site is at farmai.ie — 12 guides live, two new ones each week.
+The site is at farmai.ie — 30+ guides live, two new ones each week.
 
 John
 hello@farmai.ie
@@ -83,7 +83,7 @@ hello@farmai.ie
 **Do not send the press release before:**
 1. farmai.ie is live on its own domain (not a Vercel subdomain)
 2. Social accounts are created and linked from the site
-3. At least 10 articles are live and polished
+3. At least 10 articles are live and polished (currently 34 ✅)
 
 The press release links to farmai.ie. A journalist who clicks through and finds a rough or incomplete site will not cover it. You only get one first impression.
 

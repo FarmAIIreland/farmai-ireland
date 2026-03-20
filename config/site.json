@@ -43,11 +43,11 @@
       "sheep farming technology Ireland"
     ],
     "ogImage": "/images/farmai-og.jpg",
-    "twitterHandle": "@FarmAIIreland"
+    "twitterHandle": "@FarmAI_Ireland"
   },
   "content": {
     "postsPerPage": 10,
-    "featuredArticlesOnHome": 3,
+    "featuredArticlesOnHome": 6,
     "pillars": [
       {
         "slug": "save-time",
@@ -123,7 +123,7 @@
   },
   "social": {
     "youtube": "https://www.youtube.com/@FarmAIIreland",
-    "twitter": "https://twitter.com/FarmAIIreland"
+    "twitter": "https://x.com/FarmAI_Ireland"
   },
   "hero": {
     "line1": "FarmAI Ireland —",

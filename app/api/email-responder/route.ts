@@ -68,14 +68,14 @@ function applyVars(template: string, vars: Record<string, string>): string {
 
 export async function GET(request: Request) {
   const cronSecret = process.env.CRON_SECRET;
-  if (cronSecret && request.headers.get('x-cron-secret') !== cronSecret) {
+  if (!cronSecret || request.headers.get('x-cron-secret') !== cronSecret) {
     return new Response('Unauthorized', { status: 401 });
   }
 
   const token = await getGoogleAccessToken();
   if (!token) {
     return NextResponse.json(
-      { error: 'Google auth failed — check GMAIL_* env vars' },
+      { error: 'Google auth failed' },
       { status: 500 },
     );
   }

@@ -8,7 +8,6 @@ readTime: 7
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: true
-status: "draft"
 readNext: "ai-acres-scheme-paperwork"
 seo:
   title: "ChatGPT for BISS Applications Ireland 2026 | FarmAI Ireland"

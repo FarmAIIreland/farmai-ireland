@@ -1,5 +1,5 @@
 ---
-title: "The Plain English AI Glossary for Irish Farmers"
+title: "Every AI term a farmer needs to know — explained without the jargon"
 slug: "ai-glossary"
 type: "glossary"
 pillar: "tools-explained"
@@ -8,10 +8,9 @@ readTime: 8
 difficulty: "beginner"
 featured: true
 officialAdviceBanner: false
-status: "draft"
 readNext: "chatgpt-first-10-prompts-farmers"
 seo:
-  title: "AI Glossary for Farmers — Plain English Definitions | FarmAI Ireland"
+  title: "AI Glossary for Farmers — No Jargon, Plain English | FarmAI Ireland"
   description: "Every AI term you'll encounter explained in plain English — written for Irish farmers, not tech people. No jargon, no waffle."
   keywords: ["AI glossary farmers", "what is AI farming", "ChatGPT explained farmers", "machine learning plain English Ireland", "AI terms agriculture"]
 sponsorship:

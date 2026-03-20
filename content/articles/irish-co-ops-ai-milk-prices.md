@@ -1,12 +1,12 @@
 ---
-title: "Are Irish co-ops using AI to set milk prices? What we found out"
+title: "Is AI setting your milk price? What we found out about co-op algorithms"
 slug: "irish-co-ops-ai-milk-prices"
 pillar: "whats-changing"
 date: "2026-04-01"
 readTime: 6
 difficulty: "beginner"
 seo:
-  title: "Are Irish Co-ops Using AI for Milk Prices? | FarmAI Ireland"
+  title: "Is AI Setting Your Milk Price? Co-op Algorithms Explained | FarmAI Ireland"
   description: "AI is changing how dairy processors forecast demand and manage supply. Here's what Irish co-ops are actually doing with AI and whether it affects the price you get at the tank."
   keywords: ["Irish co-ops AI", "milk price Ireland AI", "dairy processing AI", "Glanbia AI", "Kerry Group AI", "Lakeland Dairies technology"]
 youtubeEmbed: ""

@@ -1,12 +1,12 @@
 ---
-title: "AI-assisted nitrates action programme compliance checklist"
+title: "Avoid a nitrates cross-compliance penalty — the AI checklist that catches what you miss"
 slug: "ai-nitrates-compliance-checklist"
 pillar: "save-time"
 date: "2026-03-18"
 readTime: 7
 difficulty: "beginner"
 seo:
-  title: "AI-Assisted Nitrates Compliance Checklist | FarmAI Ireland"
+  title: "Avoid Nitrates Cross-Compliance Penalties — AI Checklist | FarmAI Ireland"
   description: "Nitrates rules are complicated and the penalties are real. Here's how to use AI tools to build a compliance checklist that actually matches your farm — before the inspector arrives."
   keywords: ["nitrates action programme Ireland", "nitrates compliance checklist", "farm nitrates rules", "slurry spreading dates Ireland", "AI farming compliance", "nitrates regulations Irish farms"]
 youtubeEmbed: ""

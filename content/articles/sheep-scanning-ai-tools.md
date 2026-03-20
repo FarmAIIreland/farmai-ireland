@@ -1,12 +1,12 @@
 ---
-title: "Sheep scanning and AI: what the new tools can and can't do"
+title: "AI for sheep farmers: what's worth the money and what's still hype"
 slug: "sheep-scanning-ai-tools"
 pillar: "does-this-work"
 date: "2026-03-22"
 readTime: 7
 difficulty: "beginner"
 seo:
-  title: "Sheep Scanning and AI Tools — What Irish Farmers Need to Know | FarmAI Ireland"
+  title: "AI for Sheep Farmers — What's Worth the Money | FarmAI Ireland"
   description: "AI is making headlines in cattle farming, but what about sheep? We looked at the tools available for Irish sheep farmers — from EID readers to flock management apps — and what's actually worth your time."
   keywords: ["sheep scanning AI Ireland", "sheep EID reader", "flock management app Ireland", "sheep farming technology", "AI sheep farming", "electronic identification sheep"]
 youtubeEmbed: ""

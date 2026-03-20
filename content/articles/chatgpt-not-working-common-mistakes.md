@@ -1,5 +1,5 @@
 ---
-title: "I tried ChatGPT and it was useless — the 5 mistakes you're probably making"
+title: "ChatGPT gave you nothing useful? These 5 fixes change that"
 slug: "chatgpt-not-working-common-mistakes"
 pillar: "tools-explained"
 date: "2026-04-01"
@@ -11,7 +11,7 @@ officialAdviceBanner: false
 excerpt: "It's not the tool — it's the prompt. Here's how to fix it"
 payoff: "It's not the tool. It's the prompt. Here's how to fix it."
 seo:
-  title: "ChatGPT Not Working? 5 Common Mistakes Farmers Make | FarmAI Ireland"
+  title: "ChatGPT Not Working? 5 Fixes That Change Everything | FarmAI Ireland"
   description: "If ChatGPT gave you a useless answer, you're probably making one of these five mistakes. Before/after prompt examples for Irish farming tasks."
   keywords: ["ChatGPT not working", "ChatGPT bad answers", "how to prompt ChatGPT", "ChatGPT tips farmers", "AI prompting farming Ireland"]
 sources:

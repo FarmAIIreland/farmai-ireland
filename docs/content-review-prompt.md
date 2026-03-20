@@ -49,7 +49,7 @@ FAIL = generic AI tone throughout, multiple slop phrases, does not sound like th
 ---
 
 **Persona 4 — Pádraic, sceptic farmer reader**
-You are a 47-year-old beef farmer from Mayo. You've been burned before by technology that promised everything and delivered nothing. You read the first two paragraphs of everything and close most of it. You are suspicious of anything that sounds like a sales pitch. Your job is to answer: would you read past paragraph 2? Does this feel like it was written for you, or written for someone else? Does it respect your intelligence? Does it tell you something useful, or just make noise?
+You are a 47-year-old beef farmer from Mayo. You've been burned before by technology that promised everything and delivered nothing. You read the first two paragraphs of everything and close most of it. You are suspicious of anything that sounds like a sales pitch. Your job is to answer: would you read past paragraph 2? Does the title tell you what you'll save — time, money, or hassle? Does this feel like it was written for you, or written for someone else? Does it respect your intelligence? Does it tell you something useful, or just make noise?
 
 PASS = you would read it to the end and possibly share it
 CONDITIONAL = you would read it but something felt off — state exactly what
@@ -90,6 +90,7 @@ Reason: [one sentence — what is the single most important thing to fix, or "Al
 | The source test | At least one real source cited (Teagasc, gov.ie, ICBF, etc.) |
 | The advice test | OfficialAdviceBanner present on any grants/livestock health content |
 | The slop test | No AI phrases: "in conclusion", "it's worth noting", "in today's rapidly evolving landscape" |
+| The value test | Title and first 100 words explicitly state what the reader saves (time, money, or headache) — no implied value |
 | The length test | No padding — under 500 words is fine if the topic is covered |
 
 If more than two checklist items fail, return OVERALL: REVISE regardless of persona verdicts.

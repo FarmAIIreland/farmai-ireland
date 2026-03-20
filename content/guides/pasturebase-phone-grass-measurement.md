@@ -8,7 +8,6 @@ readTime: 5
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: false
-status: "draft"
 readNext: "save-time-calving-apps"
 seo:
   title: "PastureBase Ireland — How to Use It on Your Phone | FarmAI Ireland"

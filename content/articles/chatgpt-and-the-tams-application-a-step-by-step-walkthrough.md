@@ -1,5 +1,5 @@
 ---
-title: "ChatGPT and the TAMS Application — a Step-by-Step Walkthrough"
+title: "Get your TAMS application done faster — a step-by-step AI walkthrough"
 slug: "chatgpt-and-the-tams-application-a-step-by-step-walkthrough"
 image: ""
 type: "article"
@@ -9,7 +9,6 @@ readTime: 5
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
-status: "draft"
 excerpt: "Use ChatGPT to cut through the TAMS paperwork and get your application moving faster"
 sources:
   - url: "https://www.gov.ie/en/department-of-agriculture-food-and-the-marine/services/targeted-agricultural-modernisation-scheme-3-tams-3/"

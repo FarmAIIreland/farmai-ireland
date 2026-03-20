@@ -1,12 +1,12 @@
 ---
-title: "How Teagasc is using AI internally — and what's coming to their advisory service"
+title: "Teagasc is building AI tools for your farm — here's what's coming and when"
 slug: "teagasc-using-ai-whats-coming"
 pillar: "whats-changing"
 date: "2026-03-30"
 readTime: 6
 difficulty: "beginner"
 seo:
-  title: "How Teagasc Is Using AI — What's Coming for Irish Farmers | FarmAI Ireland"
+  title: "Teagasc AI Tools for Farmers — What's Coming and When | FarmAI Ireland"
   description: "Teagasc is quietly building AI into its research, advisory tools, and farmer-facing services. Here's what's happening now and what it means for the next advisory visit."
   keywords: ["Teagasc AI", "Teagasc technology", "Irish farming advisory AI", "Teagasc precision farming", "smart farming Ireland Teagasc"]
 youtubeEmbed: ""

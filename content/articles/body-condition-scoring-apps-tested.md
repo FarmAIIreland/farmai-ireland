@@ -1,12 +1,12 @@
 ---
-title: "Using your phone camera for body condition scoring — the apps tested"
+title: "Score your cattle's body condition from your phone — we tested the apps so you don't have to"
 slug: "body-condition-scoring-apps-tested"
 pillar: "does-this-work"
 date: "2026-03-20"
 readTime: 7
 difficulty: "intermediate"
 seo:
-  title: "Body Condition Scoring Apps Tested — Irish Cattle Farmers | FarmAI Ireland"
+  title: "Cattle Body Condition Scoring Apps Tested | FarmAI Ireland"
   description: "Can your phone camera replace a trained eye for body condition scoring? We looked at the apps available to Irish farmers and tested what they actually deliver."
   keywords: ["body condition scoring cattle", "BCS app Ireland", "cattle body condition app", "dairy cow body condition", "beef cow condition scoring", "AI cattle assessment"]
 youtubeEmbed: ""

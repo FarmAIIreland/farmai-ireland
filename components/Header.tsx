@@ -12,23 +12,23 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-ui-border shadow-sm">
       <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-[80px]">
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 flex-shrink-0">
-            <span className="w-8 h-8 rounded-button bg-brand-green flex items-center justify-center text-white font-bold text-sm">F</span>
-            <span className="font-semibold text-ui-text text-lg leading-tight">
+            <span className="w-9 h-9 rounded-button bg-brand-green flex items-center justify-center text-white font-bold text-base">F</span>
+            <span className="font-semibold text-ui-text text-xl leading-tight">
               FarmAI <span className="text-brand-green">Ireland</span>
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-6">
+          <nav className="hidden md:flex items-center gap-7">
             {siteConfig.navigation.main.map(item => (
               <Link
                 key={item.path}
                 href={item.path}
-                className={`text-base font-medium transition-colors hover:text-brand-green ${
+                className={`text-[17px] font-medium transition-colors hover:text-brand-green ${
                   pathname === item.path ? 'text-brand-green' : 'text-ui-muted'
                 }`}
               >
@@ -41,7 +41,7 @@ export function Header() {
           <div className="hidden md:block">
             <Link
               href={subscribeHref}
-              className="inline-block bg-brand-green text-white text-sm font-semibold px-4 py-2 rounded-button hover:bg-opacity-90 transition-colors"
+              className="inline-block bg-brand-green text-white text-[15px] font-semibold px-5 py-2.5 rounded-button hover:bg-opacity-90 transition-colors"
             >
               Subscribe
             </Link>

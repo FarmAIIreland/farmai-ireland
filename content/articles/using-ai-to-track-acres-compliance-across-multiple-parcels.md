@@ -1,5 +1,5 @@
 ---
-title: "Using AI to Track ACRES Compliance Across Multiple Parcels"
+title: "Stop tracking ACRES deadlines in your head — let AI do it across every parcel"
 slug: "using-ai-to-track-acres-compliance-across-multiple-parcels"
 image: ""
 type: "article"
@@ -9,7 +9,6 @@ readTime: 5
 difficulty: "beginner"
 featured: false
 officialAdviceBanner: true
-status: "draft"
 excerpt: "How AI tools can help you stay on top of ACRES rules across every parcel without the paperwork headache"
 sources:
   - url: "https://teagasc.ie/rural-economy/rural-development/equine/grants-and-schemes/agri-climate-rural-environment-scheme/"

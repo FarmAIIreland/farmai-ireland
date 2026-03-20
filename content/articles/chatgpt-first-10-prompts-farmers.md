@@ -1,12 +1,12 @@
 ---
-title: "ChatGPT for Farmers: Your First 10 Prompts"
+title: "10 prompts that save you time on the farm — copy, paste, done"
 slug: "chatgpt-first-10-prompts-farmers"
 pillar: "tools-explained"
 date: "2026-03-16"
 readTime: 6
 difficulty: "beginner"
 seo:
-  title: "ChatGPT for Irish Farmers: 10 Prompts to Start With"
+  title: "10 Time-Saving ChatGPT Prompts for Irish Farmers | FarmAI Ireland"
   description: "Ten specific ChatGPT prompts tested on real Irish farming tasks — from grant paperwork to vet call prep. Start here if you've never used it before."
   keywords: ["ChatGPT for farmers Ireland", "AI prompts farming", "ChatGPT farm admin", "beginner AI farming Ireland", "ChatGPT BISS", "AI tools Irish farmers"]
 youtubeEmbed: ""

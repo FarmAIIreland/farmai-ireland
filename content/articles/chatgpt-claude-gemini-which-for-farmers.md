@@ -1,12 +1,12 @@
 ---
-title: "ChatGPT, Claude or Gemini — which one should an Irish farmer use?"
+title: "ChatGPT, Claude, or Gemini — which one is worth your time as a farmer?"
 slug: "chatgpt-claude-gemini-which-for-farmers"
 pillar: "does-this-work"
 date: "2026-03-28"
 readTime: 7
 difficulty: "beginner"
 seo:
-  title: "ChatGPT vs Claude vs Gemini for Farmers — Honest Comparison | FarmAI Ireland"
+  title: "ChatGPT vs Claude vs Gemini — Which Is Worth Your Time? | FarmAI Ireland"
   description: "Three AI tools, three very different experiences. We tested ChatGPT, Claude and Gemini on real Irish farming tasks and scored them on what actually matters."
   keywords: ["ChatGPT for farmers", "Claude AI farming", "Gemini AI agriculture", "best AI tool for farmers", "AI comparison Irish farming", "free AI tools farming"]
 youtubeEmbed: ""

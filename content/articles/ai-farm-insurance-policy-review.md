@@ -1,5 +1,5 @@
 ---
-title: "Using AI to understand your farm insurance policy before renewal"
+title: "Find out what your farm insurance actually covers — before you need to claim"
 slug: "ai-farm-insurance-policy-review"
 pillar: "tools-explained"
 date: "2026-04-07"
@@ -11,7 +11,7 @@ officialAdviceBanner: false
 excerpt: "What your policy actually covers — in plain English"
 payoff: "What your policy actually covers — in plain English."
 seo:
-  title: "AI Farm Insurance Policy Review — Plain English | FarmAI Ireland"
+  title: "What Your Farm Insurance Actually Covers — AI Breakdown | FarmAI Ireland"
   description: "Upload your farm insurance policy to ChatGPT or Claude and get plain-English answers about what's covered, what's excluded, and what to ask your broker."
   keywords: ["farm insurance Ireland", "AI insurance review", "ChatGPT insurance policy", "farm insurance cover", "agricultural insurance Ireland"]
 sources:

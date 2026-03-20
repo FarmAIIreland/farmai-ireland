@@ -1,12 +1,12 @@
 ---
-title: "How to Use AI for Your ACRES Scheme Paperwork"
+title: "Cut your ACRES paperwork in half with one free AI tool"
 slug: "ai-acres-scheme-paperwork"
 pillar: "save-time"
 date: "2026-03-16"
 readTime: 7
 difficulty: "beginner"
 seo:
-  title: "Using AI for ACRES Scheme Paperwork | FarmAI Ireland"
+  title: "Cut Your ACRES Paperwork in Half With AI | FarmAI Ireland"
   description: "ACRES forms are genuinely painful. Here's how Irish farmers are using AI tools to cut the prep time and avoid the most common mistakes — without compromising their application."
   keywords: ["ACRES scheme Ireland", "ACRES paperwork AI", "agri climate rural environment scheme", "ACRES application help", "farm grant AI Ireland"]
 youtubeEmbed: ""
