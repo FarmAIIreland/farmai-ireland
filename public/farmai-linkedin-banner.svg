@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1584" height="396" viewBox="0 0 1584 396">
+  <defs>
+    <clipPath id="bannerClip">
+      <rect width="1584" height="396"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#bannerClip)">
+    <!-- Deep green background -->
+    <rect width="1584" height="396" fill="#0B4D3B"/>
+
+    <!-- Top accent bar -->
+    <rect width="1584" height="4" fill="#1D9E75"/>
+
+    <!-- Diagonal lines (subtle geometric pattern) -->
+    <line x1="900" y1="-50" x2="750" y2="450" stroke="#2CC98F" stroke-width="2" opacity="0.06"/>
+    <line x1="1050" y1="-50" x2="900" y2="450" stroke="#2CC98F" stroke-width="1.5" opacity="0.05"/>
+    <line x1="1200" y1="-50" x2="1050" y2="450" stroke="#2CC98F" stroke-width="2" opacity="0.07"/>
+    <line x1="1350" y1="-50" x2="1200" y2="450" stroke="#2CC98F" stroke-width="1.5" opacity="0.04"/>
+    <line x1="1500" y1="-50" x2="1350" y2="450" stroke="#2CC98F" stroke-width="2" opacity="0.06"/>
+
+    <!-- Large circle accent (bottom-right) -->
+    <circle cx="1450" cy="420" r="200" fill="none" stroke="#2CC98F" stroke-width="2" opacity="0.06"/>
+    <circle cx="1450" cy="420" r="140" fill="none" stroke="#2CC98F" stroke-width="1.5" opacity="0.04"/>
+
+    <!-- Small circle accent (top-right) -->
+    <circle cx="1300" cy="60" r="35" fill="none" stroke="#2CC98F" stroke-width="1.5" opacity="0.08"/>
+
+    <!-- Accent dots -->
+    <circle cx="950" cy="320" r="3" fill="#2CC98F" opacity="0.15"/>
+    <circle cx="1020" cy="280" r="2" fill="#2CC98F" opacity="0.12"/>
+    <circle cx="1100" cy="340" r="2.5" fill="#2CC98F" opacity="0.10"/>
+    <circle cx="880" cy="250" r="2" fill="#2CC98F" opacity="0.08"/>
+
+    <!-- Logo mark: green rounded square with white F -->
+    <rect x="80" y="100" width="64" height="64" rx="12" ry="12" fill="#1D9E75"/>
+    <text
+      x="112"
+      y="148"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="42"
+      font-weight="700"
+      fill="#FFFFFF"
+      text-anchor="middle"
+    >F</text>
+
+    <!-- Brand name -->
+    <text
+      x="164"
+      y="147"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="44"
+      font-weight="600"
+      fill="#FFFFFF"
+      opacity="0.95"
+      letter-spacing="-1"
+    >FarmAI Ireland</text>
+
+    <!-- Tagline -->
+    <text
+      x="82"
+      y="210"
+      font-family="Georgia, 'Times New Roman', serif"
+      font-size="22"
+      fill="#2CC98F"
+      opacity="0.85"
+    >Plain-English AI guides for Irish farmers</text>
+
+    <!-- Divider line -->
+    <line x1="82" y1="240" x2="520" y2="240" stroke="#2CC98F" stroke-width="1" opacity="0.15"/>
+
+    <!-- Sub-tagline -->
+    <text
+      x="82"
+      y="272"
+      font-family="'Courier New', monospace"
+      font-size="14"
+      fill="#2CC98F"
+      opacity="0.45"
+      letter-spacing="2"
+    >INDEPENDENT  ·  FREE  ·  NO JARGON</text>
+
+    <!-- Domain (right side) -->
+    <text
+      x="1480"
+      y="340"
+      font-family="'Courier New', monospace"
+      font-size="18"
+      fill="#2CC98F"
+      opacity="0.4"
+      text-anchor="end"
+    >farmai.ie</text>
+  </g>
+</svg>

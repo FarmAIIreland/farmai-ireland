@@ -10,7 +10,7 @@
 |----------|--------|--------|
 | X (Twitter) | @FarmAI_Ireland | ✅ Created |
 | YouTube Channel | FarmAI Ireland | ⏳ Blocked — can't sign into hello@farmai.ie Google account |
-| LinkedIn Page | FarmAI Ireland | 🤔 Considering — create from John's personal LinkedIn |
+| LinkedIn Page | FarmAI Ireland | ✅ Created — copy and assets in `/docs/linkedin-setup.md` |
 | Facebook Page | — | ❌ Not doing |
 | Instagram | — | ❌ Not doing |
 | TikTok | — | ❌ Not doing |
