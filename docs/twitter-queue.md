@@ -273,3 +273,49 @@ farmai.ie/read/carbon-calculator-apps-ireland
 *Tweets below this line are auto-appended by the content pipeline when new articles are published.*
 
 ---
+
+---
+
+**DATE:** 2026-03-22
+**ARTICLE:** Stop Losing Money on BISS — Audit Your Entitlements in Under an Hour with AI
+**URL:** https://farmai.ie/read/stop-losing-money-on-biss-audit-your-entitlements-in-under-a
+**STATUS:** PENDING
+
+**TWEET:**
+BISS deadline is close and one wrong entry could cost you hundreds.
+
+A quick AI audit catches entitlement gaps before it is too late.
+
+https://farmai.ie/read/stop-losing-money-on-biss-audit-your-entitlements-in-under-a
+
+#IrishFarming #FarmAI #BISS
+
+---
+
+**DATE:** 2026-03-22
+**ARTICLE:** Save 3 Hours on Your TAMS Application with ChatGPT
+**URL:** https://farmai.ie/read/save-3-hours-on-your-tams-application-with-chatgpt
+**STATUS:** PENDING
+
+**TWEET:**
+TAMS paperwork eats hours you don't have. ChatGPT can draft, check, and tighten your application before you submit.
+
+https://farmai.ie/read/save-3-hours-on-your-tams-application-with-chatgpt
+
+#IrishFarming #FarmAI #TAMS
+
+---
+
+**DATE:** 2026-03-22
+**ARTICLE:** Save Hours Every Month on ACRES Compliance Across All Your Parcels
+**URL:** https://farmai.ie/read/save-hours-every-month-on-acres-compliance-across-all-your-p
+**STATUS:** PENDING
+
+**TWEET:**
+ACRES paperwork is eating hours you do not have.
+
+FarmAI tracks every parcel deadline so you stop missing payments.
+
+https://farmai.ie/read/save-hours-every-month-on-acres-compliance-across-all-your-p
+
+#IrishFarming #FarmAI #ACRES
